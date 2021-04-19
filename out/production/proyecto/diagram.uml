@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="10.5" y="459.0">servidor.persistence.dao.Entity</node>
+    <node x="1002.5" y="33.0">servidor.persistence.DataSource</node>
+    <node x="325.53020833333323" y="0.0">servidor.persistence.dto.Dto</node>
+    <node x="762.8979166666666" y="961.0">servidor.persistence.person.PersonaDao</node>
+    <node x="955.5" y="475.5">servidor.persistence.dao.Dao</node>
+    <node x="556.5" y="261.0">servidor.persistence.person.Person</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="servidor.persistence.person.PersonaDao" target="servidor.persistence.person.Person">
+      <point x="-80.5" y="-72.5" />
+      <point x="843.3979166666666" y="931.0" />
+      <point x="651.25" y="931.0" />
+      <point x="-94.75" y="320.0" />
+    </edge>
+    <edge source="servidor.persistence.person.PersonaDao" target="servidor.persistence.dao.Dao">
+      <point x="80.5" y="-72.5" />
+      <point x="1004.3979166666666" y="931.0" />
+      <point x="1155.0" y="931.0" />
+      <point x="66.5" y="105.5" />
+    </edge>
+    <edge source="servidor.persistence.dao.Entity" target="servidor.persistence.dto.Dto">
+      <point x="-131.5" y="-122.0" />
+      <point x="142.0" y="241.0" />
+      <point x="390.3302083333332" y="241.0" />
+      <point x="-43.200000000000045" y="105.5" />
+    </edge>
+    <edge source="servidor.persistence.dao.Dao" target="servidor.persistence.DataSource">
+      <point x="0.0" y="-105.5" />
+      <point x="1088.5" y="241.0" />
+      <point x="1067.6666666666665" y="241.0" />
+      <point x="-130.33333333333334" y="72.5" />
+    </edge>
+    <edge source="servidor.persistence.person.PersonaDao" target="servidor.persistence.dto.Dto">
+      <point x="-134.16666666666663" y="-72.5" />
+      <point x="789.7312499999999" y="941.0" />
+      <point x="0.0" y="941.0" />
+      <point x="0.0" y="231.0" />
+      <point x="347.13020833333326" y="231.0" />
+      <point x="-86.39999999999998" y="105.5" />
+    </edge>
+    <edge source="servidor.persistence.person.Person" target="servidor.persistence.dto.Dto">
+      <point x="0.0" y="-320.0" />
+      <point x="746.0" y="241.0" />
+      <point x="476.7302083333333" y="241.0" />
+      <point x="43.200000000000045" y="105.5" />
+    </edge>
+    <edge source="servidor.persistence.dao.Dao" target="servidor.persistence.dto.Dto">
+      <point x="-88.66666666666669" y="-105.5" />
+      <point x="999.8333333333333" y="231.0" />
+      <point x="519.9302083333332" y="231.0" />
+      <point x="86.39999999999998" y="105.5" />
+    </edge>
+    <edge source="servidor.persistence.person.PersonaDao" target="servidor.persistence.DataSource">
+      <point x="134.1666666666666" y="-72.5" />
+      <point x="1058.0645833333333" y="941.0" />
+      <point x="1232.0" y="941.0" />
+      <point x="1232.0" y="241.0" />
+      <point x="1328.3333333333335" y="241.0" />
+      <point x="130.33333333333337" y="72.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.8960923623445826" x="697.0" y="553.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
