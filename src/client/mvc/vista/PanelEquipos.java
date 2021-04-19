@@ -37,8 +37,6 @@ import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
-import uniandes.cupi2.mundial.mundo.Equipo;
-
 /**
  * Panel en el que se muestran los equipos
  */

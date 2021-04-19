@@ -31,9 +31,6 @@ import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
-import uniandes.cupi2.mundial.mundo.Equipo;
-import uniandes.cupi2.mundial.mundo.Jugador;
-
 /**
  * Es el panel con los jugadores de un equipo
  */
