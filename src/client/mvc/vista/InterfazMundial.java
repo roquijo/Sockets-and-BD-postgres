@@ -34,6 +34,8 @@ import javax.swing.JOptionPane;
  */
 public class InterfazMundial extends JFrame
 {
+
+    //hola
     // -----------------------------------------------------------------
     // Constantes
     // -----------------------------------------------------------------
