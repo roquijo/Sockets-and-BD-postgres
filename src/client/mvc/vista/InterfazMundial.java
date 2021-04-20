@@ -29,13 +29,6 @@ import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-import uniandes.cupi2.mundial.mundo.ArchivoJugadoresException;
-import uniandes.cupi2.mundial.mundo.ElementoExisteException;
-import uniandes.cupi2.mundial.mundo.Equipo;
-import uniandes.cupi2.mundial.mundo.Jugador;
-import uniandes.cupi2.mundial.mundo.Mundial;
-import uniandes.cupi2.mundial.mundo.PersistenciaException;
-
 /**
  * Esta es la ventana principal de la aplicaci�n.
  */
