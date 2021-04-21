@@ -1,6 +1,8 @@
 package client.socket;
 
 import client.collection.NodeList;
+import server.persistence.serverSocket.RequestDataBase;
+import server.persistence.serverSocket.TypeOperation;
 
 import java.io.*;
 import java.net.InetAddress;
@@ -13,7 +15,7 @@ public class SingleTCPEchoClientHybrid
     private InetAddress host;
     private static final int   PORT = 1234;
     ObjectInputStream in;
-    PrintWriter out;
+    ObjectOutputStream out;
 
 
     public static void main(String[] args)
@@ -43,31 +45,25 @@ public class SingleTCPEchoClientHybrid
 
         try
         {
-            int numMsg = 0;
 
-
-            sock = new Socket(host, PORT);
+             sock = new Socket(host, PORT);
              in = new ObjectInputStream((sock.getInputStream()));
-             out = new PrintWriter(sock.getOutputStream(), true);
-
-            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-
-            String msgOut, msgIn;
-            Object input;
+             out = new ObjectOutputStream(sock.getOutputStream());
+             RequestDataBase sql= null;
 
             do {
-                System.out.println("Enter sql statement: ");
-                msgOut = reader.readLine();
-
-                out.println(msgOut);
+                
+                out.writeObject(sql);
 
                 NodeList<Object> nodeList = (NodeList<Object>) in.readObject();
+
                 for (int i = 0; i < nodeList.getSize(); i++) {
 
                     System.out.println(nodeList.pop(i));
+                
                 }
 
-            } while (!msgOut.equalsIgnoreCase("EXIT"));
+            } while (sql.getOperation() != TypeOperation.EXIT);
         }
         catch (IOException | ClassNotFoundException e)
         {

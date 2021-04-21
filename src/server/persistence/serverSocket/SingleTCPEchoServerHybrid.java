@@ -26,11 +26,9 @@ public class SingleTCPEchoServerHybrid extends Thread{
 
     private DataSource dataSource = null;
 
-    private BufferedReader in;
+    private ObjectInputStream in;
 
     private ObjectOutputStream out;
-
-    private Connection con;
 
     public SingleTCPEchoServerHybrid(Socket sock, DataSource dataSource)
     {
@@ -39,7 +37,7 @@ public class SingleTCPEchoServerHybrid extends Thread{
 
         try
         {
-            in =new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            in = new ObjectInputStream(socket.getInputStream());
 
             out = new ObjectOutputStream(socket.getOutputStream());
         }
@@ -55,35 +53,18 @@ public class SingleTCPEchoServerHybrid extends Thread{
 
         try
         {
-            RequestDataBase request;
-            int numMsg = 0;
-            String sql= null;
+            RequestDataBase sql= null;
             do
             {
-                sql = in.readLine();
+                sql = (RequestDataBase) in.readObject();
 
-                if(!sql.equalsIgnoreCase("EXIT")) {
-                    if (sql.contains("player")) {
-                        PlayerDto playerDto = new PlayerDto();
-                        ResultSet resultSet = dataSource.runExecuteQuery(sql);
-                        Entity<Dto> entity = new Entity<Dto>(playerDto.getClass());
-                        NodeList<Dto> facultyDtoNodeList = entity.getMultipleRows(resultSet);
-                        out.writeObject(facultyDtoNodeList);
-                    } else if (sql.contains("team")) {
-                        TeamDto teamDto = new TeamDto();
-                        ResultSet resultSet = dataSource.runExecuteQuery(sql);
-                        Entity<Dto> entity = new Entity<Dto>(teamDto.getClass());
-                        NodeList<Dto> teamDtoNodeList = entity.getMultipleRows(resultSet);
-                        out.writeObject(teamDtoNodeList);
-                    } else {
-                        FacultyDto facultyDto = new FacultyDto();
-                        ResultSet resultSet = dataSource.runExecuteQuery(sql);
-                        Entity<Dto> entity = new Entity<Dto>(facultyDto.getClass());
-                        NodeList<Dto> facultyDtoNodeList = entity.getMultipleRows(resultSet);
-                        out.writeObject(facultyDtoNodeList);
-                    }
+                if(sql.getOperation() != TypeOperation.EXIT) {
+
+                        Entity<Dto> entity = new Entity<>(sql.getEntity());
+                        NodeList<Dto> dtoNodeList = (NodeList<Dto>) Operation.doOperation(sql, entity);
+                        out.writeObject(dtoNodeList);
                 }
-            } while(!sql.equalsIgnoreCase("EXIT")/**request.getOperation() != TypeOperation.EXIT **/);
+            } while(sql.getOperation() != TypeOperation.EXIT);/**request.getOperation() != TypeOperation.EXIT **/
 
             System.out.println("Client disconnected...");
         }

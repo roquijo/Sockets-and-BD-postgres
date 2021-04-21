@@ -1,6 +1,5 @@
 package server.persistence.serverSocket;
 
-import client.collection.Node;
 import client.collection.NodeList;
 import client.dto.Dto;
 import server.bdConection.DataSource;
@@ -8,14 +7,13 @@ import server.bdConection.Entity;
 
 public class Operation {
 
-    private TypeOperation typeOperation;
-
-    public Object doOperation(RequestDataBase requestDataBase, Entity entity){
+    public static Object doOperation(RequestDataBase requestDataBase, Entity entity){
 
         if(requestDataBase.getOperation().equals(TypeOperation.SELECT)){
             NodeList<Dto> list =  entity.getMultipleRows(DataSource.getInstance().runExecuteQuery(requestDataBase.getQuery()));
             return list;
-        }else if(requestDataBase.getOperation().equals(TypeOperation.FIND_ID)) {
+        }
+        else if(requestDataBase.getOperation().equals(TypeOperation.FIND_ID)) {
             Dto object = entity.getSingleRow(DataSource.getInstance().runExecuteQuery(requestDataBase.getQuery()));
             return object;
         }
