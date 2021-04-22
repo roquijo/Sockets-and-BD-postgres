@@ -10,6 +10,7 @@ public class Node<T> implements Serializable {
     private int index;
 
     //Comenbtario
+    //Jorge
 
     public Node(T data, Node<T> next, int index) {
 
