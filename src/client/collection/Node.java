@@ -9,6 +9,8 @@ public class Node<T> implements Serializable {
     private Node<T> next;
     private int index;
 
+    //Comenbtario
+
     public Node(T data, Node<T> next, int index) {
 
         setData(data);
