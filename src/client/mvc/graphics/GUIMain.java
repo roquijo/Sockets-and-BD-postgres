@@ -10,7 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class GUIMain {
-
+//prueba
     public GUIMain() {
 
         JComboBox comboFacultad = new JComboBox();
