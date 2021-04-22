@@ -45,7 +45,6 @@ public class SingleTCPEchoClientHybrid
 
         try
         {
-
              sock = new Socket(host, PORT);
              in = new ObjectInputStream((sock.getInputStream()));
              out = new ObjectOutputStream(sock.getOutputStream());
