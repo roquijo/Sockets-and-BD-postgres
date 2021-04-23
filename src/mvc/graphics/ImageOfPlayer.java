@@ -7,7 +7,7 @@ public class ImageOfPlayer extends JPanel {
 
     private JLabel etiquetaImagen;
 
-
+        //Player
         public ImageOfPlayer(String ruta)
         {
 
