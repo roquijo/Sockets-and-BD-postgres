@@ -10,21 +10,21 @@ import java.awt.event.ActionListener;
 
 public class ButtonPlayerPanel extends JPanel implements ActionListener {
 
-    private static final String ADD_FACULTY = "AgregarEquipo";
+    private static final String ADD_PLAYER = "AgregarEquipo";
 
-    private static final String DELETE_FACULTY = "AgregarJugador";
+    private static final String DELETE_PLAYER = "AgregarJugador";
 
-    private static final String MODIFY_FACULTY = "CalcularNomina";
+    private static final String MODIFY_PLAYER = "CalcularNomina";
 
     private static final String MODIFICAR_INFORMACION_JUGADORES = "ModificarInformacionJugadores";
 
     private InterfaceTournament principal;
 
-    private JButton addFaculty;
+    private JButton addPlayer;
 
-    private JButton deleteFaculty;
+    private JButton deletePlayer;
 
-    private JButton modifyFaculty;
+    private JButton modifyPlayer;
 
     public ButtonPlayerPanel( InterfaceTournament ventana )
     {
@@ -32,20 +32,20 @@ public class ButtonPlayerPanel extends JPanel implements ActionListener {
         setBorder( new CompoundBorder( new EmptyBorder( 5, 5, 5, 5 ), new TitledBorder( "Opciones" ) ) );
         setLayout( new GridLayout( 3, 1 ));
 
-        addFaculty = new JButton( "Agregar Facultad" );
-        addFaculty.setActionCommand(ADD_FACULTY);
-        addFaculty.addActionListener( this );
-        add(addFaculty);
+        addPlayer = new JButton( "Agregar Jugador" );
+        addPlayer.setActionCommand(ADD_PLAYER);
+        addPlayer.addActionListener( this );
+        add(addPlayer);
 
-        deleteFaculty = new JButton( "Eliminar Facultad" );
-        deleteFaculty.setActionCommand(DELETE_FACULTY);
-        deleteFaculty.addActionListener( this );
-        add(deleteFaculty);
+        deletePlayer = new JButton( "Eliminar Jugador" );
+        deletePlayer.setActionCommand(DELETE_PLAYER);
+        deletePlayer.addActionListener( this );
+        add(deletePlayer);
 
-        modifyFaculty = new JButton( "Modificar Facultad" );
-        modifyFaculty.setActionCommand(MODIFY_FACULTY);
-        modifyFaculty.addActionListener( this );
-        add(modifyFaculty);
+        modifyPlayer = new JButton( "Modificar Jugador" );
+        modifyPlayer.setActionCommand(MODIFY_PLAYER);
+        modifyPlayer.addActionListener( this );
+        add(modifyPlayer);
 
     }
 

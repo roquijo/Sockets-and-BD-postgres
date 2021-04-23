@@ -9,14 +9,18 @@ public class InterfaceTournament extends  JFrame{
 
     private  BuilderObject builderObject;
     private  ButtonFacultyPanel buttonFacultyPanel;
+    private  ButtonTeamPanel buttonTeamPanel;
+    private  ButtonPlayerPanel buttonPlayerPanel;
+    private  FacultyInfoPanel facultyInfoPanel;
+    private  TeamInfoPanel teamInfoPanel;
+    private  PlayerInfoPanel playerInfoPanel;
 
+    public InterfaceTournament() {
 
-    public InterfaceTournament(BuilderObject object) {
-
-        builderObject = object;
+        //builderObject = object;
 
         setLayout( new GridBagLayout( ) );
-        setSize( 560, 600 );
+        setSize( 800, 600 );
         setDefaultCloseOperation( JFrame.DISPOSE_ON_CLOSE );
         setResizable(false);
 
@@ -28,6 +32,26 @@ public class InterfaceTournament extends  JFrame{
         buttonFacultyPanel = new ButtonFacultyPanel( this );
         gbc.gridy = 3;
         add( buttonFacultyPanel, gbc );
+
+        buttonTeamPanel = new ButtonTeamPanel( this );
+        gbc.gridy = 4;
+        add( buttonTeamPanel, gbc );
+
+        buttonPlayerPanel = new ButtonPlayerPanel( this );
+        gbc.gridy = 5;
+        add( buttonPlayerPanel, gbc );
+
+        facultyInfoPanel = new FacultyInfoPanel( this );
+        gbc.gridy = 5;
+        add( facultyInfoPanel, gbc );
+
+        teamInfoPanel = new TeamInfoPanel( this );
+        gbc.gridy = 5;
+        add( teamInfoPanel, gbc );
+
+        playerInfoPanel = new PlayerInfoPanel( this );
+        gbc.gridy = 5;
+        add( playerInfoPanel, gbc );
     }
 /*
     JComboBox comboFacultad = new JComboBox();
@@ -57,7 +81,7 @@ public class InterfaceTournament extends  JFrame{
     }
  */
     public static void main( String[] args )
-    {
+    {/*
         BuilderObject builderObject = null;
 
         try
@@ -69,7 +93,8 @@ public class InterfaceTournament extends  JFrame{
             e.printStackTrace( );
             System.exit( 1 );
         }
-        InterfaceTournament id = new InterfaceTournament( builderObject );
+        */
+        InterfaceTournament id = new InterfaceTournament( );
         id.setVisible( true );
     }
 }

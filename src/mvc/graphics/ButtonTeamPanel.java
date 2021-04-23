@@ -10,21 +10,21 @@ import java.awt.event.ActionListener;
 
 public class ButtonTeamPanel extends JPanel implements ActionListener {
 
-    private static final String ADD_FACULTY = "AgregarEquipo";
+    private static final String ADD_TEAM = "AgregarEquipo";
 
-    private static final String DELETE_FACULTY = "AgregarJugador";
+    private static final String DELETE_TEAM = "EliminarEquipo";
 
-    private static final String MODIFY_FACULTY = "CalcularNomina";
+    private static final String MODIFY_TEAM = "CalcularNomina";
 
     private static final String MODIFICAR_INFORMACION_JUGADORES = "ModificarInformacionJugadores";
 
     private InterfaceTournament principal;
 
-    private JButton addFaculty;
+    private JButton addTeam;
 
-    private JButton deleteFaculty;
+    private JButton deleteTeam;
 
-    private JButton modifyFaculty;
+    private JButton modifyTeam;
 
     public ButtonTeamPanel( InterfaceTournament ventana )
     {
@@ -32,20 +32,20 @@ public class ButtonTeamPanel extends JPanel implements ActionListener {
         setBorder( new CompoundBorder( new EmptyBorder( 5, 5, 5, 5 ), new TitledBorder( "Opciones" ) ) );
         setLayout( new GridLayout( 3, 1 ));
 
-        addFaculty = new JButton( "Agregar Facultad" );
-        addFaculty.setActionCommand(ADD_FACULTY);
-        addFaculty.addActionListener( this );
-        add(addFaculty);
+        addTeam = new JButton( "Agregar Equipo" );
+        addTeam.setActionCommand(ADD_TEAM);
+        addTeam.addActionListener( this );
+        add(addTeam);
 
-        deleteFaculty = new JButton( "Eliminar Facultad" );
-        deleteFaculty.setActionCommand(DELETE_FACULTY);
-        deleteFaculty.addActionListener( this );
-        add(deleteFaculty);
+        deleteTeam = new JButton( "Eliminar Equipo" );
+        deleteTeam.setActionCommand(DELETE_TEAM);
+        deleteTeam.addActionListener( this );
+        add(deleteTeam);
 
-        modifyFaculty = new JButton( "Modificar Facultad" );
-        modifyFaculty.setActionCommand(MODIFY_FACULTY);
-        modifyFaculty.addActionListener( this );
-        add(modifyFaculty);
+        modifyTeam = new JButton( "Modificar Equipo" );
+        modifyTeam.setActionCommand(MODIFY_TEAM);
+        modifyTeam.addActionListener( this );
+        add(modifyTeam);
 
     }
 
