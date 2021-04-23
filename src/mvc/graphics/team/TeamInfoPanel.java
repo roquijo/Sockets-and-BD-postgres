@@ -11,9 +11,9 @@ public class TeamInfoPanel extends JPanel implements ActionListener {
 
 
     private JLabel jlblNombre;
-    private JLabel jlblIdentificacion;
-    private JLabel jlblEdad;
-    private JLabel jlblPosicion;
+    private JLabel jlblCapitan;
+    private JLabel jlblIdentificador;
+
 
     private JComboBox comboJugadores;
     private JTextField txtIdentificacion;
@@ -22,12 +22,16 @@ public class TeamInfoPanel extends JPanel implements ActionListener {
     
     public TeamInfoPanel(){
 
-        setLayout(new GridLayout(4,2));
+        setLayout(new GridLayout(3,2));
 
         jlblNombre = new JLabel("Nombre");
-        jlblIdentificacion = new JLabel("Identificacion");
-        jlblEdad = new JLabel("Edad");
-        jlblPosicion = new JLabel("Posicion");
+        jlblNombre.setFont(new Font(jlblNombre.getName(), Font.PLAIN, 18));
+
+        jlblCapitan = new JLabel("Capitan");
+        jlblCapitan.setFont(new Font(jlblCapitan.getName(), Font.PLAIN, 18));
+
+        jlblIdentificador = new JLabel("Identificador");
+        jlblIdentificador.setFont(new Font(jlblIdentificador.getName(), Font.PLAIN, 18));
 
         comboJugadores = new JComboBox( );
         comboJugadores.setEditable( false );

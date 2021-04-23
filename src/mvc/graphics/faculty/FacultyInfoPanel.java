@@ -11,7 +11,7 @@ public class FacultyInfoPanel extends JPanel implements ActionListener {
 
     private static final String CAMBIAR_FACULTAD = "CambiarFacultad";
 
-
+//Mn
     private JLabel jlblFacultad;
     private JLabel jlblCodigo;
     private JLabel jlblIdentificador;
@@ -25,8 +25,13 @@ public class FacultyInfoPanel extends JPanel implements ActionListener {
         setLayout(new GridLayout(3,2));
 
         jlblFacultad = new JLabel("Facultad");
+        jlblFacultad.setFont(new Font(jlblFacultad.getName(), Font.PLAIN, 18));
+
         jlblCodigo = new JLabel("Codigo");
+        jlblCodigo.setFont(new Font(jlblFacultad.getName(), Font.PLAIN, 18));
+
         jlblIdentificador = new JLabel("Identificador");
+        jlblIdentificador.setFont(new Font(jlblFacultad.getName(), Font.PLAIN, 18));
 
         comboFacultades = new JComboBox( );
         comboFacultades.setEditable( false );

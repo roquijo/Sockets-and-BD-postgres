@@ -1,6 +1,7 @@
 package mvc.graphics;
 
 import mvc.controller.BuilderObject;
+import mvc.graphics.banner.PanelBanner;
 import mvc.graphics.faculty.FacultyPanel;
 import mvc.graphics.player.PlayerPanel;
 import mvc.graphics.team.TeamPanel;
@@ -15,27 +16,40 @@ public class InterfaceTournament extends  JFrame{
     private FacultyPanel facultyPanel;
     private TeamPanel teamPanel;
     private PlayerPanel playerPanel;
+    private PanelBanner panelBanner;
 
     public InterfaceTournament() {
 
         //builderObject = object;
-
-        setLayout( new GridLayout( 3, 1 ));
-        setSize( 800, 600 );
+        setTitle("Torneo Unibague");
+        setLayout( new GridLayout( 4, 1 ));
+        setSize( 1150, 1100 );
         setDefaultCloseOperation( JFrame.DISPOSE_ON_CLOSE );
         setResizable(false);
 
-        GridBagConstraints gbc = new GridBagConstraints( );
-        gbc.fill = GridBagConstraints.BOTH;
+        panelBanner = new PanelBanner(this);
+        add(panelBanner);
 
         facultyPanel = new FacultyPanel( this );
-        add(facultyPanel, gbc );
+        facultyPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null,
+        "Facultades", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION,
+        javax.swing.border.TitledBorder.DEFAULT_POSITION,
+         new java.awt.Font("Arial", 3, 24)));
+        add(facultyPanel );
 
         teamPanel = new TeamPanel( this );
-        add(teamPanel, gbc );
+        teamPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null,
+                "Equipos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION,
+                javax.swing.border.TitledBorder.DEFAULT_POSITION,
+                 new java.awt.Font("Arial", 3, 24)));
+        add(teamPanel);
 
         playerPanel = new PlayerPanel( this );
-        add(playerPanel, gbc );
+        playerPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null,
+                        "Jugadores", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION,
+                        javax.swing.border.TitledBorder.DEFAULT_POSITION,
+                         new java.awt.Font("Arial", 3, 24)));
+        add(playerPanel);
 
     }
 /*

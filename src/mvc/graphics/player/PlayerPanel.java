@@ -11,7 +11,7 @@ import java.awt.*;
 public class PlayerPanel extends JPanel {
 
     private ButtonTeamPanel buttonPlayerPanel;
-    private TeamInfoPanel playerInfoPanel;
+    private PlayerInfoPanel playerInfoPanel;
     private ImageOfTeam imageOfPlayer;
     private InterfaceTournament principal;
 
@@ -19,10 +19,12 @@ public class PlayerPanel extends JPanel {
 
         principal = ventana;
         setLayout( new GridLayout( 1, 3 ));
-        setBorder( new CompoundBorder( new EmptyBorder(0 , 0, 0, 0 ), new TitledBorder( "Jugadores" ) ) );
+        setBorder( new TitledBorder("Jugadores"));
+        
 
 
-        playerInfoPanel = new TeamInfoPanel();
+
+        playerInfoPanel = new PlayerInfoPanel();
         add(playerInfoPanel);
 
         imageOfPlayer = new ImageOfTeam();
