@@ -1,4 +1,6 @@
-package mvc.graphics;
+package mvc.graphics.faculty;
+
+import mvc.graphics.InterfaceTournament;
 
 import javax.swing.*;
 import java.awt.*;

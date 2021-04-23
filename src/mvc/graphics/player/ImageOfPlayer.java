@@ -1,4 +1,4 @@
-package mvc.graphics;
+package mvc.graphics.player;
 
 import javax.swing.*;
 import java.awt.*;

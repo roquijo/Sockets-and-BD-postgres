@@ -1,4 +1,6 @@
-package mvc.graphics;
+package mvc.graphics.team;
+
+import mvc.graphics.InterfaceTournament;
 
 import javax.swing.*;
 import javax.swing.border.CompoundBorder;

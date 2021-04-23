@@ -1,19 +1,19 @@
-package mvc.graphics;
+package mvc.graphics.team;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class ImageOfFaculty extends JPanel{
+public class ImageOfTeam extends JPanel{
 
     private JLabel etiquetaImagen;
 
-    public ImageOfFaculty(String ruta)
+    public ImageOfTeam(String ruta)
     {
         FlowLayout fl = new FlowLayout();
         setLayout(fl);
 
         ImageIcon imagen = new ImageIcon(ruta);
-        etiquetaImagen = new JLabel("" );
+        etiquetaImagen = new JLabel("");
         etiquetaImagen.setIcon(imagen);
 
     }

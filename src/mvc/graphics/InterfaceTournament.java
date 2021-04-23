@@ -1,6 +1,12 @@
 package mvc.graphics;
 
 import mvc.controller.BuilderObject;
+import mvc.graphics.faculty.ButtonFacultyPanel;
+import mvc.graphics.faculty.FacultyInfoPanel;
+import mvc.graphics.player.ButtonPlayerPanel;
+import mvc.graphics.player.PlayerInfoPanel;
+import mvc.graphics.team.ButtonTeamPanel;
+import mvc.graphics.team.TeamInfoPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,12 +14,12 @@ import java.awt.*;
 public class InterfaceTournament extends  JFrame{
 
     private  BuilderObject builderObject;
-    private  ButtonFacultyPanel buttonFacultyPanel;
-    private  ButtonTeamPanel buttonTeamPanel;
-    private  ButtonPlayerPanel buttonPlayerPanel;
-    private  FacultyInfoPanel facultyInfoPanel;
-    private  TeamInfoPanel teamInfoPanel;
-    private  PlayerInfoPanel playerInfoPanel;
+    private ButtonFacultyPanel buttonFacultyPanel;
+    private ButtonTeamPanel buttonTeamPanel;
+    private ButtonPlayerPanel buttonPlayerPanel;
+    private FacultyInfoPanel facultyInfoPanel;
+    private TeamInfoPanel teamInfoPanel;
+    private PlayerInfoPanel playerInfoPanel;
 
     public InterfaceTournament() {
 
