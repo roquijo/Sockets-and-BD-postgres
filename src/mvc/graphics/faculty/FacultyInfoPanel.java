@@ -11,7 +11,7 @@ public class FacultyInfoPanel extends JPanel implements ActionListener {
 
     private static final String CAMBIAR_FACULTAD = "CambiarFacultad";
 
-
+//Mn
     private JLabel jlblFacultad;
     private JLabel jlblCodigo;
     private JLabel jlblIdentificador;
