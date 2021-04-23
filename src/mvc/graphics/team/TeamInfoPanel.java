@@ -16,9 +16,9 @@ public class TeamInfoPanel extends JPanel implements ActionListener {
 
 
     private JComboBox comboJugadores;
-    private JTextField txtIdentificacion;
+    private JTextField txtCapitan;
     private JTextField txtEdad;
-    private JTextField txtPosicion;
+    private JTextField txtIdentificador;
     
     public TeamInfoPanel(){
 
@@ -39,21 +39,18 @@ public class TeamInfoPanel extends JPanel implements ActionListener {
         comboJugadores.setActionCommand( CAMBIAR_JUGADOR );
         comboJugadores.setPreferredSize( new Dimension( 230, 20 ) );
 
-        txtIdentificacion = new JTextField();
+        txtCapitan = new JTextField();
         txtEdad = new JTextField();
-        txtPosicion = new JTextField();
+        txtIdentificador = new JTextField();
 
         add(jlblNombre);
         add(comboJugadores);
 
-        add(jlblIdentificacion);
-        add(txtIdentificacion);
+        add(jlblCapitan);
+        add(txtCapitan);
 
-        add(jlblEdad);
-        add(txtEdad);
-
-        add(jlblPosicion);
-        add(txtPosicion);
+        add(jlblIdentificador);
+        add(txtIdentificador);
     }
 
     @Override
