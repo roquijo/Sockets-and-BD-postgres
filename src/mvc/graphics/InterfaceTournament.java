@@ -11,6 +11,7 @@ import mvc.graphics.team.TeamInfoPanel;
 import javax.swing.*;
 import java.awt.*;
 
+//Interface Main
 public class InterfaceTournament extends  JFrame{
 
     private  BuilderObject builderObject;
