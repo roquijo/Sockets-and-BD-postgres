@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ButtonTeamPanel extends JPanel implements ActionListener {
+
     private static final String ADD_FACULTY = "AgregarEquipo";
 
     private static final String DELETE_FACULTY = "AgregarJugador";
