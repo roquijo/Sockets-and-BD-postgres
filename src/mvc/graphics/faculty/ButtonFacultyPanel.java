@@ -18,17 +18,14 @@ public class ButtonFacultyPanel extends JPanel implements ActionListener {
 
     private static final String MODIFY_FACULTY = "ModificarFacultad";
 
-    private InterfaceTournament principal;
-
     private JButton addFaculty;
 
     private JButton deleteFaculty;
 
     private JButton modifyFaculty;
 
-    public ButtonFacultyPanel( InterfaceTournament ventana )
+    public ButtonFacultyPanel(  )
     {
-        principal = ventana;
         setBorder( new CompoundBorder( new EmptyBorder(0 , 0, 0, 0 ), new TitledBorder( "Opciones" ) ) );
         setLayout( new GridLayout( 3, 1 ));
 

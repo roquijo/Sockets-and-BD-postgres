@@ -7,11 +7,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class PlayerInfoPanel extends JPanel implements ActionListener {
+public class TeamInfoPanel extends JPanel implements ActionListener {
 
     private static final String CAMBIAR_JUGADOR = "CambiarJugador";
 
-    private InterfaceTournament principal;
 
     private JLabel jlblNombre;
     private JLabel jlblIdentificacion;
@@ -23,9 +22,7 @@ public class PlayerInfoPanel extends JPanel implements ActionListener {
     private JTextField txtEdad;
     private JTextField txtPosicion;
     
-    public PlayerInfoPanel(InterfaceTournament ventana){
-
-        principal = ventana;
+    public TeamInfoPanel(){
 
         setLayout(new GridLayout(4,2));
 

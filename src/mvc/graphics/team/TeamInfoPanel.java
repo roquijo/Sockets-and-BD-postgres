@@ -1,7 +1,5 @@
 package mvc.graphics.team;
 
-import mvc.graphics.InterfaceTournament;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -9,48 +7,49 @@ import java.awt.event.ActionListener;
 
 public class TeamInfoPanel extends JPanel implements ActionListener {
 
-    private static final String CAMBIAR_EQUIPO = "CambiarEquipo";
+    private static final String CAMBIAR_JUGADOR = "CambiarJugador";
 
-    private InterfaceTournament principal;
 
-    private JLabel jlblNombreEquipo;
-    private JLabel jlblCapitan;
+    private JLabel jlblNombre;
     private JLabel jlblIdentificacion;
+    private JLabel jlblEdad;
+    private JLabel jlblPosicion;
 
-
-    private JComboBox comboEquipos;
-    private JTextField txtCapitan;
+    private JComboBox comboJugadores;
     private JTextField txtIdentificacion;
+    private JTextField txtEdad;
+    private JTextField txtPosicion;
+    
+    public TeamInfoPanel(){
 
-    public TeamInfoPanel(InterfaceTournament ventana){
+        setLayout(new GridLayout(4,2));
 
-        principal = ventana;
-
-        setLayout(new GridLayout(3,2));
-
-        jlblNombreEquipo = new JLabel("Equipo");
-        jlblCapitan = new JLabel("Capitan");
+        jlblNombre = new JLabel("Nombre");
         jlblIdentificacion = new JLabel("Identificacion");
+        jlblEdad = new JLabel("Edad");
+        jlblPosicion = new JLabel("Posicion");
 
-        comboEquipos = new JComboBox( );
-        comboEquipos.setEditable( false );
-        comboEquipos.addActionListener( this );
-        comboEquipos.setActionCommand( CAMBIAR_EQUIPO );
-        comboEquipos.setPreferredSize( new Dimension( 230, 20 ) );
+        comboJugadores = new JComboBox( );
+        comboJugadores.setEditable( false );
+        comboJugadores.addActionListener( this );
+        comboJugadores.setActionCommand( CAMBIAR_JUGADOR );
+        comboJugadores.setPreferredSize( new Dimension( 230, 20 ) );
 
         txtIdentificacion = new JTextField();
-        txtCapitan = new JTextField();
-        txtIdentificacion = new JTextField();
+        txtEdad = new JTextField();
+        txtPosicion = new JTextField();
 
-        add(jlblNombreEquipo);
-        add(comboEquipos);
-
-        add(jlblCapitan);
-        add(txtCapitan);
+        add(jlblNombre);
+        add(comboJugadores);
 
         add(jlblIdentificacion);
         add(txtIdentificacion);
 
+        add(jlblEdad);
+        add(txtEdad);
+
+        add(jlblPosicion);
+        add(txtPosicion);
     }
 
     @Override

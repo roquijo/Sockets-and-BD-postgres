@@ -1,12 +1,8 @@
 package mvc.graphics;
 
 import mvc.controller.BuilderObject;
-import mvc.graphics.faculty.ButtonFacultyPanel;
-import mvc.graphics.faculty.FacultyInfoPanel;
-import mvc.graphics.player.ButtonPlayerPanel;
-import mvc.graphics.player.PlayerInfoPanel;
-import mvc.graphics.team.ButtonTeamPanel;
-import mvc.graphics.team.TeamInfoPanel;
+import mvc.graphics.faculty.FacultyPanel;
+import mvc.graphics.player.TeamInfoPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,12 +11,10 @@ import java.awt.*;
 public class InterfaceTournament extends  JFrame{
 
     private  BuilderObject builderObject;
-    private ButtonFacultyPanel buttonFacultyPanel;
-    private ButtonTeamPanel buttonTeamPanel;
-    private ButtonPlayerPanel buttonPlayerPanel;
-    private FacultyInfoPanel facultyInfoPanel;
-    private TeamInfoPanel teamInfoPanel;
-    private PlayerInfoPanel playerInfoPanel;
+    private FacultyPanel facultyPanel;
+    private TeamPanel teamPanel;
+
+    private TeamInfoPanel playerInfoPanel;
 
     public InterfaceTournament() {
 
@@ -36,29 +30,11 @@ public class InterfaceTournament extends  JFrame{
         gbc.gridy = 0;
         gbc.fill = GridBagConstraints.BOTH;
 
-        buttonFacultyPanel = new ButtonFacultyPanel( this );
-        add( buttonFacultyPanel, gbc );
+        facultyPanel = new FacultyPanel( this );
+        add(facultyPanel, gbc );
 
-        buttonTeamPanel = new ButtonTeamPanel( this );
-        gbc.gridy = 2;
-        add( buttonTeamPanel, gbc );
-
-        buttonPlayerPanel = new ButtonPlayerPanel( this );
-        gbc.gridy = 4;
-        add( buttonPlayerPanel, gbc );
-
-        facultyInfoPanel = new FacultyInfoPanel( this );
-        gbc.gridx = 0;
-        gbc.gridy = 0;
-        add( facultyInfoPanel, gbc );
-
-        teamInfoPanel = new TeamInfoPanel( this );
-        gbc.gridy = 2;
-        add( teamInfoPanel, gbc );
-
-        playerInfoPanel = new PlayerInfoPanel( this );
-        gbc.gridy = 4;
-        add( playerInfoPanel, gbc );
+        teamPanel = new TeamPanel( this );
+        add(teamPanel, gbc );
 
     }
 /*

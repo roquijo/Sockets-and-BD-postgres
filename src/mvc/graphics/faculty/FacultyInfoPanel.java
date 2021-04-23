@@ -11,7 +11,6 @@ public class FacultyInfoPanel extends JPanel implements ActionListener {
 
     private static final String CAMBIAR_FACULTAD = "CambiarFacultad";
 
-    private InterfaceTournament principal;
 
     private JLabel jlblFacultad;
     private JLabel jlblCodigo;
@@ -21,9 +20,7 @@ public class FacultyInfoPanel extends JPanel implements ActionListener {
     private JTextField txtCodigo;
     private JTextField txtIdentificador;
 
-    public FacultyInfoPanel(InterfaceTournament ventana){
-
-        principal = ventana;
+    public FacultyInfoPanel(){
 
         setLayout(new GridLayout(3,2));
 

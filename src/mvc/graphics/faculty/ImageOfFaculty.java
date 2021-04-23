@@ -6,8 +6,9 @@ import java.awt.*;
 public class ImageOfFaculty extends JPanel{
 
     private JLabel etiquetaImagen;
+    private String ruta;
 
-    public ImageOfFaculty(String ruta)
+    public ImageOfFaculty()
     {
         FlowLayout fl = new FlowLayout();
         setLayout(fl);

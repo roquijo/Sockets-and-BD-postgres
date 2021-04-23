@@ -3,12 +3,13 @@ package mvc.graphics.player;
 import javax.swing.*;
 import java.awt.*;
 
-public class ImageOfPlayer extends JPanel {
+public class ImageOfTeam extends JPanel {
 
     private JLabel etiquetaImagen;
+    private String ruta;
 
         //Player
-        public ImageOfPlayer(String ruta)
+        public ImageOfTeam()
         {
 
             FlowLayout fl = new FlowLayout();
