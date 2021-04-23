@@ -3,7 +3,6 @@ package mvc.graphics;
 import mvc.controller.BuilderObject;
 import mvc.graphics.faculty.FacultyPanel;
 import mvc.graphics.player.PlayerPanel;
-import mvc.graphics.player.TeamInfoPanel;
 import mvc.graphics.team.TeamPanel;
 
 import javax.swing.*;

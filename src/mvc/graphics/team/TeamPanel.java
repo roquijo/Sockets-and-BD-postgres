@@ -6,6 +6,9 @@ import mvc.graphics.player.ImageOfTeam;
 import mvc.graphics.player.TeamInfoPanel;
 
 import javax.swing.*;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.TitledBorder;
 import java.awt.*;
 
 public class TeamPanel extends JPanel {
@@ -19,6 +22,7 @@ public class TeamPanel extends JPanel {
 
         principal = ventana;
         setLayout( new GridLayout( 1, 3 ));
+        setBorder( new CompoundBorder( new EmptyBorder(0 , 0, 0, 0 ), new TitledBorder( "Equipos" ) ) );
 
         teamInfoPanel = new TeamInfoPanel();
         add(teamInfoPanel);
