@@ -27,7 +27,7 @@ public class ButtonPlayerPanel extends JPanel implements ActionListener {
     public ButtonPlayerPanel( InterfaceTournament ventana )
     {
         principal = ventana;
-        setBorder( new CompoundBorder( new EmptyBorder( 5, 5, 5, 5 ), new TitledBorder( "Opciones" ) ) );
+        setBorder( new CompoundBorder( new EmptyBorder(0 , 0, 0, 0 ), new TitledBorder( "Opciones" ) ) );
         setLayout( new GridLayout( 3, 1 ));
 
         addPlayer = new JButton( "Agregar Jugador" );
