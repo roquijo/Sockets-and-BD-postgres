@@ -53,10 +53,10 @@ public class InterfaceTournament extends  JFrame{
         add(playerPanel);
 
     }
-/*
+
     JComboBox comboFacultad = new JComboBox();
 
-    NodeList<FacultyDto> facultyList = new NodeList<>();
+    NodeList<Requistdatabsae.get> facultyList = new NodeList<>();
     FacultyDao faculty = new FacultyDao();
     FacultyDto facultyDto = new FacultyDto();
     facultyList = faculty.read(facultyDto);
