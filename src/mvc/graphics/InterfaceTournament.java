@@ -2,7 +2,9 @@ package mvc.graphics;
 
 import mvc.controller.BuilderObject;
 import mvc.graphics.faculty.FacultyPanel;
+import mvc.graphics.player.PlayerPanel;
 import mvc.graphics.player.TeamInfoPanel;
+import mvc.graphics.team.TeamPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,21 +15,18 @@ public class InterfaceTournament extends  JFrame{
     private  BuilderObject builderObject;
     private FacultyPanel facultyPanel;
     private TeamPanel teamPanel;
-
-    private TeamInfoPanel playerInfoPanel;
+    private PlayerPanel playerPanel;
 
     public InterfaceTournament() {
 
         //builderObject = object;
 
-        setLayout( new GridBagLayout( ) );
+        setLayout( new GridLayout( 3, 1 ));
         setSize( 800, 600 );
         setDefaultCloseOperation( JFrame.DISPOSE_ON_CLOSE );
         setResizable(false);
 
         GridBagConstraints gbc = new GridBagConstraints( );
-        gbc.gridx = 10;
-        gbc.gridy = 0;
         gbc.fill = GridBagConstraints.BOTH;
 
         facultyPanel = new FacultyPanel( this );
@@ -35,6 +34,9 @@ public class InterfaceTournament extends  JFrame{
 
         teamPanel = new TeamPanel( this );
         add(teamPanel, gbc );
+
+        playerPanel = new PlayerPanel( this );
+        add(playerPanel, gbc );
 
     }
 /*
