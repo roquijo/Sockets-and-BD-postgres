@@ -3,6 +3,7 @@ package mvc.graphics.faculty;
 import mvc.graphics.InterfaceTournament;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
@@ -26,7 +27,7 @@ public class ButtonFacultyPanel extends JPanel implements ActionListener {
 
     public ButtonFacultyPanel(  )
     {
-        setBorder( new CompoundBorder( new EmptyBorder(0 , 0, 0, 0 ), new TitledBorder( "Opciones" ) ) );
+        setBorder( new CompoundBorder( new EmptyBorder(0, 0 , 20, 0 ), new TitledBorder( "Opciones" ) ) );
         setLayout( new GridLayout( 3, 1 ));
 
         addFaculty = new JButton( "Agregar Facultad" );

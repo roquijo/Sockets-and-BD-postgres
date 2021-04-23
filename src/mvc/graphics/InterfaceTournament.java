@@ -25,6 +25,7 @@ public class InterfaceTournament extends  JFrame{
         setLayout( new GridLayout( 4, 1 ));
         setSize( 950, 700 );
         setDefaultCloseOperation( JFrame.DISPOSE_ON_CLOSE );
+        setLocationRelativeTo(null);
         setResizable(false);
 
         panelBanner = new PanelBanner(this);
@@ -34,21 +35,21 @@ public class InterfaceTournament extends  JFrame{
         facultyPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null,
         "Facultades", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION,
         javax.swing.border.TitledBorder.DEFAULT_POSITION,
-         new java.awt.Font("Arial", 3, 24)));
+         new java.awt.Font("Arial", 3, 20)));
         add(facultyPanel );
 
         teamPanel = new TeamPanel( this );
         teamPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null,
                 "Equipos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION,
                 javax.swing.border.TitledBorder.DEFAULT_POSITION,
-                 new java.awt.Font("Arial", 3, 24)));
+                 new java.awt.Font("Arial", 3, 20)));
         add(teamPanel);
 
         playerPanel = new PlayerPanel( this );
         playerPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(null,
                         "Jugadores", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION,
                         javax.swing.border.TitledBorder.DEFAULT_POSITION,
-                         new java.awt.Font("Arial", 3, 24)));
+                         new java.awt.Font("Arial", 3, 20)));
         add(playerPanel);
 
     }

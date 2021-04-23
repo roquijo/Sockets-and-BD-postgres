@@ -29,7 +29,7 @@ public class ButtonTeamPanel extends JPanel implements ActionListener {
     public ButtonTeamPanel( InterfaceTournament ventana )
     {
         principal = ventana;
-        setBorder( new CompoundBorder( new EmptyBorder(0 , 0, 0, 0 ), new TitledBorder( "Opciones" ) ) );
+        setBorder( new CompoundBorder( new EmptyBorder(0 , 0, 20, 0 ), new TitledBorder( "Opciones" ) ) );
         setLayout( new GridLayout( 3, 1 ));
 
         addTeam = new JButton( "Agregar Equipo" );

@@ -24,14 +24,16 @@ public class TeamInfoPanel extends JPanel implements ActionListener {
 
         setLayout(new GridLayout(3,2));
 
+        Font font = new Font("Arial", 2, 18);
+
         jlblNombre = new JLabel("Nombre");
-        jlblNombre.setFont(new Font(jlblNombre.getName(), Font.PLAIN, 18));
+        jlblNombre.setFont(font);
 
         jlblCapitan = new JLabel("Capitan");
-        jlblCapitan.setFont(new Font(jlblCapitan.getName(), Font.PLAIN, 18));
+        jlblCapitan.setFont(font);
 
         jlblIdentificador = new JLabel("Identificador");
-        jlblIdentificador.setFont(new Font(jlblIdentificador.getName(), Font.PLAIN, 18));
+        jlblIdentificador.setFont(font);
 
         comboJugadores = new JComboBox( );
         comboJugadores.setEditable( false );

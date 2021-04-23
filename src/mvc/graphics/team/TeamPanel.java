@@ -1,7 +1,7 @@
 package mvc.graphics.team;
 
 import mvc.graphics.InterfaceTournament;
-import mvc.graphics.player.ButtonTeamPanel;
+import mvc.graphics.player.ButtonPlayerPanel;
 import mvc.graphics.player.ImageOfTeam;
 import mvc.graphics.player.PlayerInfoPanel;
 
@@ -13,7 +13,7 @@ import java.awt.*;
 
 public class TeamPanel extends JPanel {
 
-    private ButtonTeamPanel buttonTeamPanel;
+    private ButtonPlayerPanel buttonTeamPanel;
     private PlayerInfoPanel playerInfoPanel;
     private ImageOfTeam imageOfTeam;
     private InterfaceTournament principal;
@@ -30,7 +30,7 @@ public class TeamPanel extends JPanel {
         imageOfTeam = new ImageOfTeam();
         add(imageOfTeam);
 
-        buttonTeamPanel = new ButtonTeamPanel();
+        buttonTeamPanel = new ButtonPlayerPanel();
         add(buttonTeamPanel);
     }
 }

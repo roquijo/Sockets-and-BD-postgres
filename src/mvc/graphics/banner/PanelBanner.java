@@ -8,7 +8,7 @@ import java.awt.*;
 public class PanelBanner extends JPanel {
 
     private JLabel etiquetaPanel;
-    private String rutaBanner = "src/mvc/graphics/banner/Banner.jpeg";
+    private String rutaBanner = "src/mvc/graphics/banner/Banner.jpg";
     private InterfaceTournament principal;
 
     public PanelBanner(InterfaceTournament ventana)

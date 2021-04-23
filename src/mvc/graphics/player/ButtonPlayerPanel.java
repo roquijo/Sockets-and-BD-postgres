@@ -10,7 +10,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ButtonTeamPanel extends JPanel implements ActionListener {
+public class ButtonPlayerPanel extends JPanel implements ActionListener {
 
     private static final String ADD_PLAYER = "AgregarJugador";
 
@@ -24,9 +24,9 @@ public class ButtonTeamPanel extends JPanel implements ActionListener {
 
     private JButton modifyPlayer;
 
-    public ButtonTeamPanel( )
+    public ButtonPlayerPanel( )
     {
-        setBorder( new CompoundBorder( new EmptyBorder(0 , 0, 0, 0 ), new TitledBorder( "Opciones" ) ) );
+        setBorder( new CompoundBorder( new EmptyBorder( 0, 0, 20, 0 ), new TitledBorder( "Opciones" ) ) );
         setLayout( new GridLayout( 3, 1 ));
 
         addPlayer = new JButton( "Agregar Jugador" );

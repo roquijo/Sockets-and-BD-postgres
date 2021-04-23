@@ -23,15 +23,16 @@ public class FacultyInfoPanel extends JPanel implements ActionListener {
     public FacultyInfoPanel(){
 
         setLayout(new GridLayout(3,2));
+        Font font = new Font("Arial", 2, 18);
 
         jlblFacultad = new JLabel("Facultad");
-        jlblFacultad.setFont(new Font(jlblFacultad.getName(), Font.PLAIN, 18));
+        jlblFacultad.setFont(font);
 
         jlblCodigo = new JLabel("Codigo");
-        jlblCodigo.setFont(new Font(jlblFacultad.getName(), Font.PLAIN, 18));
+        jlblCodigo.setFont(font);
 
         jlblIdentificador = new JLabel("Identificador");
-        jlblIdentificador.setFont(new Font(jlblFacultad.getName(), Font.PLAIN, 18));
+        jlblIdentificador.setFont(font);
 
         comboFacultades = new JComboBox( );
         comboFacultades.setEditable( false );

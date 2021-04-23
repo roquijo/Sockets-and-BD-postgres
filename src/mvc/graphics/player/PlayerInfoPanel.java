@@ -25,18 +25,19 @@ public class PlayerInfoPanel extends JPanel implements ActionListener {
     public PlayerInfoPanel(){
 
         setLayout(new GridLayout(4,2));
+        Font font = new Font("Arial", 2, 18);
 
         jlblNombre = new JLabel("Nombre");
-        jlblNombre.setFont(new Font(jlblNombre.getName(), Font.PLAIN, 18));
+        jlblNombre.setFont(font);
         
         jlblIdentificacion = new JLabel("Identificacion");
-        jlblIdentificacion.setFont(new Font(jlblIdentificacion.getName(), Font.PLAIN, 18));
+        jlblIdentificacion.setFont(font);
 
         jlblEdad = new JLabel("Edad");
-        jlblEdad.setFont(new Font(jlblEdad.getName(), Font.PLAIN, 18));
+        jlblEdad.setFont(font);
 
         jlblPosicion = new JLabel("Posicion");
-        jlblPosicion.setFont(new Font(jlblPosicion.getName(), Font.PLAIN, 18));
+        jlblPosicion.setFont(font);
 
 
         comboJugadores = new JComboBox( );
