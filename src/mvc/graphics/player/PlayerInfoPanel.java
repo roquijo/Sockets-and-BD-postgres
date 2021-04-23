@@ -7,7 +7,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class TeamInfoPanel extends JPanel implements ActionListener {
+public class PlayerInfoPanel extends JPanel implements ActionListener {
 
     private static final String CAMBIAR_JUGADOR = "CambiarJugador";
 
@@ -22,20 +22,28 @@ public class TeamInfoPanel extends JPanel implements ActionListener {
     private JTextField txtEdad;
     private JTextField txtPosicion;
     
-    public TeamInfoPanel(){
+    public PlayerInfoPanel(){
 
         setLayout(new GridLayout(4,2));
 
         jlblNombre = new JLabel("Nombre");
+        jlblNombre.setFont(new Font(jlblNombre.getName(), Font.PLAIN, 18));
+        
         jlblIdentificacion = new JLabel("Identificacion");
+        jlblIdentificacion.setFont(new Font(jlblIdentificacion.getName(), Font.PLAIN, 18));
+
         jlblEdad = new JLabel("Edad");
+        jlblEdad.setFont(new Font(jlblEdad.getName(), Font.PLAIN, 18));
+
         jlblPosicion = new JLabel("Posicion");
+        jlblPosicion.setFont(new Font(jlblPosicion.getName(), Font.PLAIN, 18));
+
 
         comboJugadores = new JComboBox( );
         comboJugadores.setEditable( false );
         comboJugadores.addActionListener( this );
         comboJugadores.setActionCommand( CAMBIAR_JUGADOR );
-        comboJugadores.setPreferredSize( new Dimension( 230, 20 ) );
+        comboJugadores.setPreferredSize( new Dimension( 100, 100 ) );
 
         txtIdentificacion = new JTextField();
         txtEdad = new JTextField();
