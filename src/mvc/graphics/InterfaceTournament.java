@@ -25,33 +25,34 @@ public class InterfaceTournament extends  JFrame{
         setResizable(false);
 
         GridBagConstraints gbc = new GridBagConstraints( );
-        gbc.gridx = 0;
+        gbc.gridx = 10;
         gbc.gridy = 0;
         gbc.fill = GridBagConstraints.BOTH;
 
         buttonFacultyPanel = new ButtonFacultyPanel( this );
-        gbc.gridy = 3;
         add( buttonFacultyPanel, gbc );
 
         buttonTeamPanel = new ButtonTeamPanel( this );
-        gbc.gridy = 4;
+        gbc.gridy = 2;
         add( buttonTeamPanel, gbc );
 
         buttonPlayerPanel = new ButtonPlayerPanel( this );
-        gbc.gridy = 5;
+        gbc.gridy = 4;
         add( buttonPlayerPanel, gbc );
 
         facultyInfoPanel = new FacultyInfoPanel( this );
-        gbc.gridy = 5;
+        gbc.gridx = 0;
+        gbc.gridy = 0;
         add( facultyInfoPanel, gbc );
 
         teamInfoPanel = new TeamInfoPanel( this );
-        gbc.gridy = 5;
+        gbc.gridy = 2;
         add( teamInfoPanel, gbc );
 
         playerInfoPanel = new PlayerInfoPanel( this );
-        gbc.gridy = 5;
+        gbc.gridy = 4;
         add( playerInfoPanel, gbc );
+
     }
 /*
     JComboBox comboFacultad = new JComboBox();

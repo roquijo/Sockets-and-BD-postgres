@@ -28,7 +28,7 @@ public class TeamInfoPanel extends JPanel implements ActionListener {
 
         principal = ventana;
 
-        setLayout(new GridLayout(3,3));
+        setLayout(new GridLayout(4,2));
 
 
         jlblNombreEquipo = new JLabel("Equipo");
