@@ -7,61 +7,48 @@ import java.awt.event.ActionListener;
 
 public class FacultyInfoPanel extends JPanel implements ActionListener {
 
-    private static final String CAMBIAR_JUGADOR = "CambiarJugador";
+    private static final String CAMBIAR_FACULTAD = "CambiarFacultad";
 
     private InterfaceTournament principal;
 
-    private JLabel jlblNombre;
-    private JLabel jlblIdentificacion;
-    private JLabel jlblEdad;
-    private JLabel jlblPosicion;
+    private JLabel jlblFacultad;
+    private JLabel jlblCodigo;
+    private JLabel jlblIdentificador;
 
-    private JComboBox comboJugadores;
-    private JTextField txtIdentificacion;
-    private JTextField txtEdad;
-    private JTextField txtPosicion;
-
-
-
-
+    private JComboBox comboFacultades;
+    private JTextField txtCodigo;
+    private JTextField txtIdentificador;
 
     public FacultyInfoPanel(InterfaceTournament ventana){
 
         principal = ventana;
 
-        setLayout(new GridLayout(4,2));
+        setLayout(new GridLayout(3,2));
 
+        jlblFacultad = new JLabel("Facultad");
+        jlblCodigo = new JLabel("Codigo");
+        jlblIdentificador = new JLabel("Identificador");
 
-        jlblNombre = new JLabel("Nombre");
-        jlblIdentificacion = new JLabel("Identificacion");
-        jlblEdad = new JLabel("Edad");
-        jlblPosicion = new JLabel("Posicion");
+        comboFacultades = new JComboBox( );
+        comboFacultades.setEditable( false );
+        comboFacultades.addActionListener( this );
+        comboFacultades.setActionCommand(CAMBIAR_FACULTAD);
+        comboFacultades.setPreferredSize( new Dimension( 230, 20 ) );
 
-        comboJugadores = new JComboBox( );
-        comboJugadores.setEditable( false );
-        comboJugadores.addActionListener( this );
-        comboJugadores.setActionCommand( CAMBIAR_JUGADOR );
-        comboJugadores.setPreferredSize( new Dimension( 230, 20 ) );
+        txtCodigo = new JTextField();
+        txtIdentificador = new JTextField();
 
-        txtIdentificacion = new JTextField();
-        txtEdad = new JTextField();
-        txtPosicion = new JTextField();
+        add(jlblFacultad);
+        add(comboFacultades);
 
-        add(jlblNombre);
-        add(comboJugadores);
+        add(jlblCodigo);
+        add(txtCodigo);
 
-        add(jlblIdentificacion);
-        add(txtIdentificacion);
-
-        add(jlblEdad);
-        add(txtEdad);
-
-        add(jlblPosicion);
-        add(txtPosicion);
-    }
+        add(jlblIdentificador);
+        add(txtIdentificador);
+        }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
     }
 }

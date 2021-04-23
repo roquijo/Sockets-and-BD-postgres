@@ -10,13 +10,11 @@ import java.awt.event.ActionListener;
 
 public class ButtonPlayerPanel extends JPanel implements ActionListener {
 
-    private static final String ADD_PLAYER = "AgregarEquipo";
+    private static final String ADD_PLAYER = "AgregarJugador";
 
-    private static final String DELETE_PLAYER = "AgregarJugador";
+    private static final String DELETE_PLAYER = "EliminarJugador";
 
-    private static final String MODIFY_PLAYER = "CalcularNomina";
-
-    private static final String MODIFICAR_INFORMACION_JUGADORES = "ModificarInformacionJugadores";
+    private static final String MODIFY_PLAYER = "ModificarJugador";
 
     private InterfaceTournament principal;
 

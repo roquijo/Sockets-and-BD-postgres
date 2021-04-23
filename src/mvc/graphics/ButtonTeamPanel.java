@@ -14,9 +14,7 @@ public class ButtonTeamPanel extends JPanel implements ActionListener {
 
     private static final String DELETE_TEAM = "EliminarEquipo";
 
-    private static final String MODIFY_TEAM = "CalcularNomina";
-
-    private static final String MODIFICAR_INFORMACION_JUGADORES = "ModificarInformacionJugadores";
+    private static final String MODIFY_TEAM = "ModificarEquipo";
 
     private InterfaceTournament principal;
 

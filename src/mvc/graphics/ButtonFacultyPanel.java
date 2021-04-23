@@ -10,13 +10,11 @@ import java.awt.event.ActionListener;
 
 public class ButtonFacultyPanel extends JPanel implements ActionListener {
 
-    private static final String ADD_FACULTY = "AgregarEquipo";
+    private static final String ADD_FACULTY = "AgregarFacultad";
 
-    private static final String DELETE_FACULTY = "AgregarJugador";
+    private static final String DELETE_FACULTY = "EliminarFacultad";
 
-    private static final String MODIFY_FACULTY = "CalcularNomina";
-
-    private static final String MODIFICAR_INFORMACION_JUGADORES = "ModificarInformacionJugadores";
+    private static final String MODIFY_FACULTY = "ModificarFacultad";
 
     private InterfaceTournament principal;
 
@@ -29,7 +27,7 @@ public class ButtonFacultyPanel extends JPanel implements ActionListener {
     public ButtonFacultyPanel( InterfaceTournament ventana )
     {
         principal = ventana;
-        setBorder( new CompoundBorder( new EmptyBorder( 5, 5, 5, 5 ), new TitledBorder( "Opciones" ) ) );
+        setBorder( new CompoundBorder( new EmptyBorder(0 , 0, 0, 0 ), new TitledBorder( "Opciones" ) ) );
         setLayout( new GridLayout( 3, 1 ));
 
         addFaculty = new JButton( "Agregar Facultad" );

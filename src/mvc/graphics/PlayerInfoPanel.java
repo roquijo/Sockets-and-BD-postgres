@@ -20,17 +20,12 @@ public class PlayerInfoPanel extends JPanel implements ActionListener {
     private JTextField txtIdentificacion;
     private JTextField txtEdad;
     private JTextField txtPosicion;
-
-
-
-
-
+    
     public PlayerInfoPanel(InterfaceTournament ventana){
 
         principal = ventana;
 
         setLayout(new GridLayout(4,2));
-
 
         jlblNombre = new JLabel("Nombre");
         jlblIdentificacion = new JLabel("Identificacion");

@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class TeamInfoPanel extends JPanel implements ActionListener {
+
     private static final String CAMBIAR_EQUIPO = "CambiarEquipo";
 
     private InterfaceTournament principal;
@@ -19,24 +20,15 @@ public class TeamInfoPanel extends JPanel implements ActionListener {
     private JTextField txtCapitan;
     private JTextField txtIdentificacion;
 
-
-
-
-
-
     public TeamInfoPanel(InterfaceTournament ventana){
 
         principal = ventana;
 
-        setLayout(new GridLayout(4,2));
-
+        setLayout(new GridLayout(3,2));
 
         jlblNombreEquipo = new JLabel("Equipo");
         jlblCapitan = new JLabel("Capitan");
         jlblIdentificacion = new JLabel("Identificacion");
-
-
-
 
         comboEquipos = new JComboBox( );
         comboEquipos.setEditable( false );
