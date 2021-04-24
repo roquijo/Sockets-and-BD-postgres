@@ -24,19 +24,21 @@ public class PlayerInfoPanel extends JPanel implements ActionListener {
     
     public PlayerInfoPanel(){
 
-        setLayout(new GridLayout(4,2));
-        Font font = new Font("Arial", 2, 18);
+        setLayout(new FlowLayout());
 
-        jlblNombre = new JLabel("Nombre");
+        Font font = new Font("Arial", 2, 18);
+        Font fontTxt = new Font("Arial", 2, 16);
+
+        jlblNombre = new JLabel("Nombre       ");
         jlblNombre.setFont(font);
         
-        jlblIdentificacion = new JLabel("Identificacion");
+        jlblIdentificacion = new JLabel("Identificador");
         jlblIdentificacion.setFont(font);
 
-        jlblEdad = new JLabel("Edad");
+        jlblEdad = new JLabel("Edad         ");
         jlblEdad.setFont(font);
 
-        jlblPosicion = new JLabel("Posicion");
+        jlblPosicion = new JLabel("Posicion     ");
         jlblPosicion.setFont(font);
 
 
@@ -44,11 +46,19 @@ public class PlayerInfoPanel extends JPanel implements ActionListener {
         comboJugadores.setEditable( false );
         comboJugadores.addActionListener( this );
         comboJugadores.setActionCommand( CAMBIAR_JUGADOR );
-        comboJugadores.setPreferredSize( new Dimension( 100, 100 ) );
+        comboJugadores.setPreferredSize( new Dimension( 195, 38 ) );
 
         txtIdentificacion = new JTextField();
+        txtIdentificacion.setFont(fontTxt);
+        txtIdentificacion.setPreferredSize(new Dimension( 195, 38  ));
+
         txtEdad = new JTextField();
+        txtEdad.setFont(fontTxt);
+        txtEdad.setPreferredSize(new Dimension( 195, 38  ));
+
         txtPosicion = new JTextField();
+        txtPosicion.setFont(fontTxt);
+        txtPosicion.setPreferredSize(new Dimension( 195, 38  ));
 
         add(jlblNombre);
         add(comboJugadores);

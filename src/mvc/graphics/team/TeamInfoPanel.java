@@ -22,14 +22,15 @@ public class TeamInfoPanel extends JPanel implements ActionListener {
     
     public TeamInfoPanel(){
 
-        setLayout(new GridLayout(3,2));
+        setLayout(new FlowLayout());
 
         Font font = new Font("Arial", 2, 18);
+        Font fontTxt = new Font("Arial", 2, 16);
 
-        jlblNombre = new JLabel("Nombre");
+        jlblNombre = new JLabel("Nombre      ");
         jlblNombre.setFont(font);
 
-        jlblCapitan = new JLabel("Capitan");
+        jlblCapitan = new JLabel("Capitan       ");
         jlblCapitan.setFont(font);
 
         jlblIdentificador = new JLabel("Identificador");
@@ -39,11 +40,16 @@ public class TeamInfoPanel extends JPanel implements ActionListener {
         comboJugadores.setEditable( false );
         comboJugadores.addActionListener( this );
         comboJugadores.setActionCommand( CAMBIAR_JUGADOR );
-        comboJugadores.setPreferredSize( new Dimension( 230, 20 ) );
+        comboJugadores.setPreferredSize( new Dimension( 195, 38  ) );
 
         txtCapitan = new JTextField();
-        txtEdad = new JTextField();
+        txtCapitan.setPreferredSize(new Dimension( 200, 38 ));
+        txtCapitan.setFont(fontTxt);
+
+
         txtIdentificador = new JTextField();
+        txtIdentificador.setPreferredSize(new Dimension( 200, 38 ));
+        txtIdentificador.setFont(fontTxt);
 
         add(jlblNombre);
         add(comboJugadores);

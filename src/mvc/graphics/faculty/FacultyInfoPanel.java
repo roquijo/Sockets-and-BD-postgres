@@ -22,13 +22,15 @@ public class FacultyInfoPanel extends JPanel implements ActionListener {
 
     public FacultyInfoPanel(){
 
-        setLayout(new GridLayout(3,2));
-        Font font = new Font("Arial", 2, 18);
 
-        jlblFacultad = new JLabel("Facultad");
+        setLayout(new FlowLayout());
+        Font font = new Font("Arial", 2, 18);
+        Font fontTxt = new Font("Arial", 2, 16);
+
+        jlblFacultad = new JLabel("Facultad     ");
         jlblFacultad.setFont(font);
 
-        jlblCodigo = new JLabel("Codigo");
+        jlblCodigo = new JLabel("Codigo        ");
         jlblCodigo.setFont(font);
 
         jlblIdentificador = new JLabel("Identificador");
@@ -38,10 +40,15 @@ public class FacultyInfoPanel extends JPanel implements ActionListener {
         comboFacultades.setEditable( false );
         comboFacultades.addActionListener( this );
         comboFacultades.setActionCommand(CAMBIAR_FACULTAD);
-        comboFacultades.setPreferredSize( new Dimension( 230, 20 ) );
+        comboFacultades.setPreferredSize( new Dimension( 195, 38 ) );
 
         txtCodigo = new JTextField();
+        txtCodigo.setPreferredSize(new Dimension( 200, 38 ) );
+        txtCodigo.setFont(fontTxt);
+
         txtIdentificador = new JTextField();
+        txtIdentificador.setFont(fontTxt);
+        txtIdentificador.setPreferredSize(new Dimension( 200, 38 ) );
 
         add(jlblFacultad);
         add(comboFacultades);

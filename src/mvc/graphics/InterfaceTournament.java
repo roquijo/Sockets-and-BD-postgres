@@ -23,7 +23,7 @@ public class InterfaceTournament extends  JFrame{
         //builderObject = object;
         setTitle("Torneo Unibague");
         setLayout( new GridLayout( 4, 1 ));
-        setSize( 950, 700 );
+        setSize( 950, 710 );
         setDefaultCloseOperation( JFrame.DISPOSE_ON_CLOSE );
         setLocationRelativeTo(null);
         setResizable(false);

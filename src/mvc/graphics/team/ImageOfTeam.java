@@ -12,9 +12,12 @@ public class ImageOfTeam extends JPanel{
         FlowLayout fl = new FlowLayout();
         setLayout(fl);
 
-        ImageIcon imagen = new ImageIcon(ruta);
+        ImageIcon imagen = new ImageIcon("src/mvc/images/equipos/laMafiaRusa.png");
         etiquetaImagen = new JLabel("");
         etiquetaImagen.setIcon(imagen);
+        
+         add(etiquetaImagen);
+
 
     }
 }
