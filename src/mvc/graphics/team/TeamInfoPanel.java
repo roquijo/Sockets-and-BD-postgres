@@ -13,6 +13,9 @@ public class TeamInfoPanel extends JPanel implements ActionListener {
     private JLabel jlblNombre;
     private JLabel jlblCapitan;
     private JLabel jlblIdentificador;
+    private JLabel blanco1;
+     private JLabel blanco2;
+
 
 
     private JComboBox comboJugadores;
@@ -24,8 +27,11 @@ public class TeamInfoPanel extends JPanel implements ActionListener {
 
         setLayout(new FlowLayout());
 
-        Font font = new Font("Arial", 2, 18);
+        Font font = new Font("Arial", 2, 16);
         Font fontTxt = new Font("Arial", 2, 16);
+
+        blanco1 = new JLabel("                          ");
+        blanco2 = new JLabel("                                             ");
 
         jlblNombre = new JLabel("Nombre      ");
         jlblNombre.setFont(font);
@@ -40,16 +46,20 @@ public class TeamInfoPanel extends JPanel implements ActionListener {
         comboJugadores.setEditable( false );
         comboJugadores.addActionListener( this );
         comboJugadores.setActionCommand( CAMBIAR_JUGADOR );
-        comboJugadores.setPreferredSize( new Dimension( 195, 38  ) );
+        comboJugadores.setPreferredSize( new Dimension( 195, 30  ) );
 
         txtCapitan = new JTextField();
-        txtCapitan.setPreferredSize(new Dimension( 200, 38 ));
+        txtCapitan.setPreferredSize(new Dimension( 200, 30 ));
         txtCapitan.setFont(fontTxt);
-
+        txtCapitan.setEditable(false);
 
         txtIdentificador = new JTextField();
-        txtIdentificador.setPreferredSize(new Dimension( 200, 38 ));
+        txtIdentificador.setPreferredSize(new Dimension( 200, 30 ));
         txtIdentificador.setFont(fontTxt);
+        txtIdentificador.setEditable(false);
+
+        add(blanco1);
+        add(blanco2);
 
         add(jlblNombre);
         add(comboJugadores);
