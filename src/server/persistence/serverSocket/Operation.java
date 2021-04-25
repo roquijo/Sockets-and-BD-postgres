@@ -21,7 +21,7 @@ public class Operation {
             return null;
         }
         else{
-            int answer = DataSource.getInstance().runExecuteUpdate(requestDataBase.getQuery());
+            boolean answer = DataSource.getInstance().runExecuteUpdate(requestDataBase.getQuery());
             return  answer;
         }
     }

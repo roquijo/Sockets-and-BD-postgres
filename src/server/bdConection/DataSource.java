@@ -49,16 +49,16 @@ public class DataSource {
 		return resultSet;
 	}
 
-	public int runExecuteUpdate(String sql){
-		int rows=0;
+	public boolean runExecuteUpdate(String sql){
+
 		try {
 			Statement statement = con.createStatement();
-			rows = statement.executeUpdate(sql);
 			System.out.println("Successful query: "+sql);
 			System.out.println("Query done... ");
+			return true;
 		} catch (SQLException e) {
 			System.out.println("Query error: "+e.getMessage());
 		}
-		return rows;
+		return false;
 	}
 }

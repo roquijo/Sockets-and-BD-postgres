@@ -18,7 +18,7 @@ public abstract class Dao<T extends Dto>
         this.dataSource = dataSource;
     }
 
-    public int insert(Dto data)
+    public boolean insert(Dto data)
     {
         return dataSource.runExecuteUpdate(data.insert());
     }
@@ -29,12 +29,12 @@ public abstract class Dao<T extends Dto>
         ResultSet resultSet = dataSource.runExecuteQuery(data.read());
         return entity.getMultipleRows(resultSet);
     }
-    public int update(Dto data)
+    public boolean update(Dto data)
     {
         return dataSource.runExecuteUpdate(data.update());
     }
 
-    public int delete(Dto data)
+    public boolean delete(Dto data)
     {
         return dataSource.runExecuteUpdate(data.delete());
     }
