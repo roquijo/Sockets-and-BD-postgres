@@ -18,6 +18,7 @@ public class SingleTCPEchoClientHybrid
     ObjectInputStream in;
     ObjectOutputStream out;
     RequestDataBase requestDataBase;
+    static NodeList<Object> lista;
 
     public RequestDataBase getRequestDataBase() {
         return requestDataBase;
@@ -63,11 +64,13 @@ public class SingleTCPEchoClientHybrid
 
                 in = new ObjectInputStream(socket.getInputStream());
 
-                NodeList<Object> nodeList = (NodeList<Object>) in.readObject();
-
+                lista = (NodeList<Object>) in.readObject();
+/*
                 for (int i = 0; i < nodeList.getSize(); i++) {
                     System.out.println(nodeList.pop(i));
                 }
+
+ */
         }
         catch (IOException | ClassNotFoundException e)
         {
@@ -84,5 +87,13 @@ public class SingleTCPEchoClientHybrid
                 e.printStackTrace();
             }
         }
+    }
+
+    public static  NodeList<Object> getLista() {
+        return lista;
+    }
+
+    public void setLista(NodeList<Object> lista) {
+        this.lista = lista;
     }
 }

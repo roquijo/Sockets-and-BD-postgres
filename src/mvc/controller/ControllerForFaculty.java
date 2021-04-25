@@ -11,7 +11,7 @@ public class ControllerForFaculty {
 
     public ControllerForFaculty() {
 
-        FacultyDto facultyDto = new FacultyDto(2000);
+        FacultyDto facultyDto = new FacultyDto();
         FacultyDao facultyDao = new FacultyDao();
 
         RequestDataBase requestDataBase = new RequestDataBase(FacultyDto.class,facultyDto.delete(), TypeOperation.DELETE);

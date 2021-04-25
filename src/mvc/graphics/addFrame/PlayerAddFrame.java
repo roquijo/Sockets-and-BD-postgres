@@ -164,8 +164,9 @@ public class PlayerAddFrame extends JFrame implements ActionListener {
 
         if(ADD.equals(comando))
         {
-            new PlayerDto(Integer.parseInt(txtIdentificador.getText()), txtNombre.getText(),txtPosicion.getText(), Integer.parseInt(txtEdad.getText()), txtNombreEquipo.getText(), txtImagen.getText());
-            new ControllerForPlayer();
+            System.out.println(txtNombre.getText());
+            PlayerDto playerDto = new PlayerDto(Integer.parseInt(txtIdentificador.getText()), txtNombre.getText(),txtPosicion.getText(), Integer.parseInt(txtEdad.getText()), txtNombreEquipo.getText(), txtImagen.getText());
+            ControllerForPlayer.ControllerForAddPlayer(playerDto);
             JOptionPane.showMessageDialog(null,"Jugador Agregado");
             dispose();
 

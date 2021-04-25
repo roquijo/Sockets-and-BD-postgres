@@ -53,8 +53,10 @@ public class DataSource {
 
 		try {
 			Statement statement = con.createStatement();
-			System.out.println("Successful query: "+sql);
-			System.out.println("Query done... ");
+			if(statement.executeUpdate(sql) == 1) {
+				System.out.println("Successful query: " + sql);
+				System.out.println("Query done... ");
+			}
 			return true;
 		} catch (SQLException e) {
 			System.out.println("Query error: "+e.getMessage());

@@ -1,6 +1,9 @@
 package mvc.graphics.player;
 
+import client.dto.PlayerDto;
+import client.socket.SingleTCPEchoClientHybrid;
 import mvc.graphics.InterfaceTournament;
+import mvc.graphics.addFrame.PlayerAddFrame;
 
 import javax.swing.*;
 import java.awt.*;
@@ -78,5 +81,13 @@ public class PlayerInfoPanel extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
+        String comando = e.getActionCommand();
+        
+        if(CAMBIAR_JUGADOR.equals(comando))
+        {
+            for (int i = 0; i < SingleTCPEchoClientHybrid.getLista().getSize(); i++) {
+                comboJugadores.add(SingleTCPEchoClientHybrid.getLista().pop(i).getClass().getName(), null);
+            }
+        }
     }
 }

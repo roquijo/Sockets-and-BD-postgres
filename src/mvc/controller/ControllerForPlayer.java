@@ -11,15 +11,36 @@ public class ControllerForPlayer {
 
     public static void ControllerForDeletePlayer() {
 
-        PlayerDto playerDto = new PlayerDto(123);
+        PlayerDto playerDto = new PlayerDto();
         PlayerDao playerDao = new PlayerDao();
 
-        RequestDataBase requestDataBase = new RequestDataBase(PlayerDto.class,playerDto.delete(), TypeOperation.INSERT);
-
+        RequestDataBase requestDataBase = new RequestDataBase(PlayerDto.class,playerDto.delete(), TypeOperation.DELETE);
 
         ControllerForClient.getInstance(requestDataBase);
         playerDao.delete(playerDto);
         ControllerForClient.runClient();
+    }
 
+    public static void ControllerForAddPlayer(PlayerDto playerDto) {
+
+        PlayerDao playerDao = new PlayerDao();
+
+        RequestDataBase requestDataBase = new RequestDataBase(PlayerDto.class,playerDto.insert(), TypeOperation.INSERT);
+
+        ControllerForClient.getInstance(requestDataBase);
+        playerDao.insert(playerDto);
+        ControllerForClient.runClient();
+    }
+
+    public static void ControllerForReadPlayer() {
+
+        PlayerDto playerDto = new PlayerDto();
+        PlayerDao playerDao = new PlayerDao();
+
+        RequestDataBase requestDataBase = new RequestDataBase(PlayerDto.class,playerDto.read(), TypeOperation.INSERT);
+
+        ControllerForClient.getInstance(requestDataBase);
+        playerDao.read(playerDto);
+        ControllerForClient.runClient();
     }
 }

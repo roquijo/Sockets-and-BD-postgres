@@ -10,7 +10,8 @@ public class ControllerForInterface {
 
     public ControllerForInterface() {
         new InterfaceTournament();
-        
+        new ControllerForClient(null);
+
     }
 
     public static void main(String[] args) {

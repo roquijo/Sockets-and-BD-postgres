@@ -21,7 +21,11 @@ public class PlayerDto implements Dto, Serializable {
         this.age = age;
         this.nameOfTeam = nameOfTeam;
         this.imagePlayer = imagePlayer;
+
+        System.out.println(name);
     }
+
+
 
     public PlayerDto(int identification) {
 
@@ -35,14 +39,14 @@ public class PlayerDto implements Dto, Serializable {
     public String insert() {
 
         //INSERT INTO public.player(id_player, name, position, age, name_of_team, image_player) VALUES ('123','jorge','delantero','15','nacional','asdasd')
-
+        System.out.println(name);
         String sql = "INSERT INTO public.player(id_player, name, position, age, name_of_team, image_player) VALUES ('"
                 + idPlayer +"', '"
-                + name.trim() + "','"
-                + position.trim() + "','"
+                + name + "','"
+                + position + "','"
                 + age + "','"
-                + nameOfTeam.trim()+ "','"
-                + imagePlayer.trim()+"');";
+                + nameOfTeam+ "','"
+                + imagePlayer+"');";
         System.out.println(sql);
         return sql;
     }
