@@ -3,6 +3,7 @@ package mvc.graphics.team;
 import mvc.controller.ControllerBuildObject;
 import mvc.graphics.InterfaceTournament;
 import client.dto.TeamDto;
+import mvc.graphics.addFrame.TeamAddFrame;
 import server.persistence.serverSocket.TypeOperation;
 
 import javax.swing.*;
@@ -22,6 +23,8 @@ public class ButtonTeamPanel extends JPanel implements ActionListener {
     private static final String MODIFY_TEAM = "ModificarEquipo";
 
     private InterfaceTournament principal;
+
+    private TeamAddFrame addFrame;
 
     private JButton addTeam;
 
@@ -56,7 +59,14 @@ public class ButtonTeamPanel extends JPanel implements ActionListener {
         String comando = evento.getActionCommand( );
         TeamDto facultyDto = new TeamDto();
 
-        if( DELETE_TEAM.equals( comando ) )
+        if(ADD_TEAM.equals(comando))
+        {
+             addFrame = new TeamAddFrame();
+             addFrame.setVisible(true);
+
+
+        }
+        else if( DELETE_TEAM.equals( comando ) )
         {
             int resp = JOptionPane.showConfirmDialog(null, "Esta Seguro Que Desea Eliminar El Equipo?","Eliminar Equipo", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
 

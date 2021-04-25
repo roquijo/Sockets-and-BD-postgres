@@ -4,6 +4,8 @@ import mvc.controller.ControllerBuildObject;
 import mvc.controller.ControllerForPlayer;
 import mvc.graphics.InterfaceTournament;
 import client.dto.PlayerDto;
+import mvc.graphics.addFrame.PlayerAddFrame;
+import mvc.graphics.addFrame.TeamAddFrame;
 import server.persistence.serverSocket.TypeOperation;
 
 import javax.swing.*;
@@ -21,6 +23,8 @@ public class ButtonPlayerPanel extends JPanel implements ActionListener {
     private static final String DELETE_PLAYER = "EliminarJugador";
 
     private static final String MODIFY_PLAYER = "ModificarJugador";
+
+    private PlayerAddFrame addFrame;
 
     private JButton addPlayer;
 
@@ -54,7 +58,12 @@ public class ButtonPlayerPanel extends JPanel implements ActionListener {
         String comando = evento.getActionCommand();
         PlayerDto playerDto = new PlayerDto();
 
-        if( DELETE_PLAYER.equals( comando ) )
+        if(ADD_PLAYER.equals(comando))
+        {
+            addFrame = new PlayerAddFrame();
+            addFrame.setVisible(true);
+        }
+        else if( DELETE_PLAYER.equals( comando ) )
         {
             int resp = JOptionPane.showConfirmDialog(null, "Esta Seguro Que Desea Eliminar el jugador?","Eliminar Jugador", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
 
