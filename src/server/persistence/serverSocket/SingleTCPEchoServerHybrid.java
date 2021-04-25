@@ -50,7 +50,6 @@ public class SingleTCPEchoServerHybrid extends Thread{
 
     public void run()
     {
-
         try
         {
             RequestDataBase sql= null;
@@ -78,8 +77,6 @@ public class SingleTCPEchoServerHybrid extends Thread{
             try
             {
                 this.socket.close();
-                in.close();
-                out.close();
             }
             catch (IOException ex)
             {

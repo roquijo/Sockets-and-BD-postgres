@@ -52,6 +52,7 @@ public class InterfaceTournament extends  JFrame{
                          new java.awt.Font("Arial", 3, 20)));
         add(playerPanel);
 
+        setVisible( true );
     }
 /*
     JComboBox comboFacultad = new JComboBox();

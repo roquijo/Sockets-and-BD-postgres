@@ -16,6 +16,7 @@ public class SingleTCPEchoClientHybrid
     private static final int   PORT = 1234;
     ObjectInputStream in;
     ObjectOutputStream out;
+    Socket sock;
 
 
     public static void main(String[] args)
@@ -25,6 +26,7 @@ public class SingleTCPEchoClientHybrid
 
     public SingleTCPEchoClientHybrid()
     {
+
         System.out.println("Port open");
         try
         {
@@ -36,24 +38,26 @@ public class SingleTCPEchoClientHybrid
             System.out.println("Host not found!");
             System.exit(1);
         }
-        run();
+        this.run();
+    }
+
+    public void createSocket() throws IOException {
+            sock = new Socket(host, PORT);
+            in = new ObjectInputStream((sock.getInputStream()));
+            out = new ObjectOutputStream(sock.getOutputStream());
     }
 
     private void run() {
 
-        Socket sock = null;
 
         try
         {
-             sock = new Socket(host, PORT);
-             in = new ObjectInputStream((sock.getInputStream()));
-             out = new ObjectOutputStream(sock.getOutputStream());
+             createSocket();
              RequestDataBase sql= null;
 
             do {
                 
                 out.writeObject(sql);
-
                 NodeList<Object> nodeList = (NodeList<Object>) in.readObject();
 
                 for (int i = 0; i < nodeList.getSize(); i++) {
@@ -74,8 +78,6 @@ public class SingleTCPEchoClientHybrid
             try
             {
                 sock.close();
-                in.close();
-                out.close();
             }
             catch (IOException e)
             {
