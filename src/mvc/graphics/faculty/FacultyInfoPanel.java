@@ -51,7 +51,7 @@ public class FacultyInfoPanel extends JPanel implements ActionListener {
         txtCodigo = new JTextField();
         txtCodigo.setPreferredSize(new Dimension( 200, 30 ) );
         txtCodigo.setFont(fontTxt);
-        txtCodigo.setEditable(false);
+        txtCodigo.setEditable(true);
 
         txtIdentificador = new JTextField();
         txtIdentificador.setFont(fontTxt);

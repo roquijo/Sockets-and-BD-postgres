@@ -37,7 +37,7 @@ public class ControllerForPlayer {
         PlayerDto playerDto = new PlayerDto();
         PlayerDao playerDao = new PlayerDao();
 
-        RequestDataBase requestDataBase = new RequestDataBase(PlayerDto.class,playerDto.read(), TypeOperation.INSERT);
+        RequestDataBase requestDataBase = new RequestDataBase(PlayerDto.class,playerDto.read(), TypeOperation.SELECT);
 
         ControllerForClient.getInstance(requestDataBase);
         playerDao.read(playerDto);

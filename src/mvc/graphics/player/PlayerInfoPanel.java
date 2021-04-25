@@ -58,12 +58,12 @@ public class PlayerInfoPanel extends JPanel implements ActionListener {
         txtEdad = new JTextField();
         txtEdad.setFont(fontTxt);
         txtEdad.setPreferredSize(new Dimension( 195, 27 ));
-        txtEdad.setEditable(false);
+        txtEdad.setEditable(true);
 
         txtPosicion = new JTextField();
         txtPosicion.setFont(fontTxt);
         txtPosicion.setPreferredSize(new Dimension( 195, 27  ));
-        txtPosicion.setEditable(false);
+        txtPosicion.setEditable(true);
 
         add(jlblNombre);
         add(comboJugadores);
