@@ -3,6 +3,7 @@ package mvc.graphics.faculty;
 import client.dto.FacultyDto;
 import mvc.controller.ControllerBuildObject;
 import mvc.controller.ControllerForFaculty;
+import mvc.graphics.addFrame.FacultyAddFrame;
 import server.persistence.serverSocket.TypeOperation;
 
 import javax.swing.*;
@@ -26,6 +27,8 @@ public class ButtonFacultyPanel extends JPanel implements ActionListener {
     private JButton deleteFaculty;
 
     private JButton modifyFaculty;
+
+    private FacultyAddFrame addFrame;
 
     public ButtonFacultyPanel(  )
     {
@@ -55,7 +58,8 @@ public class ButtonFacultyPanel extends JPanel implements ActionListener {
 
         if(ADD_FACULTY.equals(comando))
         {
-            
+            addFrame = new FacultyAddFrame();
+            addFrame.setVisible(true);
         }
         else if( DELETE_FACULTY.equals( comando ) )
         {

@@ -14,7 +14,7 @@ public class TeamInfoPanel extends JPanel implements ActionListener {
     private JLabel jlblCapitan;
     private JLabel jlblIdentificador;
     private JLabel blanco1;
-     private JLabel blanco2;
+    private JLabel blanco2;
 
 
 
