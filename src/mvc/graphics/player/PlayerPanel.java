@@ -18,9 +18,6 @@ public class PlayerPanel extends JPanel {
         principal = ventana;
         setLayout( new GridLayout( 1, 3 ));
         setBorder( new TitledBorder("Jugadores"));
-        
-
-
 
         playerInfoPanel = new PlayerInfoPanel();
         add(playerInfoPanel);
