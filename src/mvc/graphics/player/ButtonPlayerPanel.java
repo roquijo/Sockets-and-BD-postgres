@@ -1,6 +1,7 @@
 package mvc.graphics.player;
 
 import mvc.controller.ControllerBuildObject;
+import mvc.controller.ControllerForPlayer;
 import mvc.graphics.InterfaceTournament;
 import client.dto.PlayerDto;
 import server.persistence.serverSocket.TypeOperation;
@@ -59,7 +60,7 @@ public class ButtonPlayerPanel extends JPanel implements ActionListener {
 
             if(resp == JOptionPane.YES_OPTION)
             {
-                ControllerBuildObject.crearObjeto(playerDto.getClass(),playerDto.delete(), TypeOperation.DELETE);
+                new ControllerForPlayer();
                 JOptionPane.showMessageDialog(this, "Borrado");
             }
         }

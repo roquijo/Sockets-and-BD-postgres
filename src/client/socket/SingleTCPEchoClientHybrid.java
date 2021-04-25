@@ -14,6 +14,7 @@ public class SingleTCPEchoClientHybrid
 
     private InetAddress host;
     private static final int   PORT = 1234;
+    private Socket socket = null;
     ObjectInputStream in;
     ObjectOutputStream out;
     RequestDataBase requestDataBase;
@@ -40,29 +41,29 @@ public class SingleTCPEchoClientHybrid
         {
             //Se busca el Host
             host = InetAddress.getLocalHost();
+
+            socket = new Socket(host, PORT);
+
+            out = new ObjectOutputStream(socket.getOutputStream());
         }
         catch (UnknownHostException e)
         {
             System.out.println("Host not found!");
             System.exit(1);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
     public void run() {
 
-        Socket sock = null;
-
         try
         {
-             sock = new Socket(host, PORT);
+                out.writeObject(requestDataBase);
 
-             InputStream inputStream = sock.getInputStream();
-             in = new ObjectInputStream(inputStream);
-             out = new ObjectOutputStream(sock.getOutputStream());
+                in = new ObjectInputStream(socket.getInputStream());
 
-             out.writeObject(requestDataBase);
-
-             NodeList<Object> nodeList = (NodeList<Object>) in.readObject();
+                NodeList<Object> nodeList = (NodeList<Object>) in.readObject();
 
                 for (int i = 0; i < nodeList.getSize(); i++) {
                     System.out.println(nodeList.pop(i));
@@ -76,7 +77,7 @@ public class SingleTCPEchoClientHybrid
         {
             try
             {
-                sock.close();
+                socket.close();
             }
             catch (IOException e)
             {

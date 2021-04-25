@@ -53,7 +53,11 @@ public class ButtonFacultyPanel extends JPanel implements ActionListener {
     {
         String comando = evento.getActionCommand( );
 
-        if( DELETE_FACULTY.equals( comando ) )
+        if(ADD_FACULTY.equals(comando))
+        {
+            
+        }
+        else if( DELETE_FACULTY.equals( comando ) )
         {
             int resp = JOptionPane.showConfirmDialog(null, "Esta Seguro Que Desea Eliminar La Facultad?","Eliminar Facultad", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
 

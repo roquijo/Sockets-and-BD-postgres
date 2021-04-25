@@ -1,6 +1,10 @@
 package server.persistence.serverSocket;
 
-public class RequestDataBase {
+import java.io.Serializable;
+
+public class RequestDataBase implements  Serializable{
+
+    private static final long       serialVersionUID = 916582397570182364L;
     
     private  final Class entity;
     private  final String query;
@@ -23,5 +27,14 @@ public class RequestDataBase {
 
     public  TypeOperation getOperation() {
         return operation;
+    }
+
+    @Override
+    public String toString() {
+        return "RequestDataBase{" +
+                "entity=" + entity +
+                ", query='" + query + '\'' +
+                ", operation=" + operation +
+                '}';
     }
 }

@@ -56,7 +56,7 @@ public class SingleTCPEchoServerHybrid extends Thread{
 
                 sql = (RequestDataBase) in.readObject();
 
-                System.out.println("Message recived" +" "+sql);
+                System.out.println("Message recived" +" "+sql.toString());
 
                 if(sql.getOperation() != TypeOperation.EXIT) {
 
