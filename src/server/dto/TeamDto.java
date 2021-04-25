@@ -29,9 +29,9 @@ public class TeamDto implements Dto, Serializable {
     @Override
     public String insert() {
         String sql = "INSERT INTO public.team(name, captain, image_team, id_faculty) VALUES ("+"'"
-                + name.trim() + "','"
-                + captain.trim() + "','"
-                + imageTeam.trim() + "',"
+                + name + "','"
+                + captain + "','"
+                + imageTeam+ "',"
                 + idFaculty + ")"
                 ;
         System.out.println(sql);
@@ -41,9 +41,9 @@ public class TeamDto implements Dto, Serializable {
     @Override
     public String update() {
 
-        String sql = "UPDATE public.team SET name= '"+name.trim()
-                +"', captain='" + captain.trim()
-                +"', image_team= '"+ imageTeam.trim() +
+        String sql = "UPDATE public.team SET name= '"+name
+                +"', captain='" + captain
+                +"', image_team= '"+ imageTeam +
                 "' WHERE id_of_faculty = " + idFaculty;
         System.out.println(sql);
         return sql;

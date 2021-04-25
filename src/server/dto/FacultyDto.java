@@ -33,9 +33,9 @@ public class FacultyDto implements Dto, Serializable {
 
         String sql = "INSERT INTO public.faculty(id_Faculty, name, code, image_faculty) VALUES ('"
                 + idFaculty +"', '"
-                + name.trim() + "','"
+                + name + "','"
                 + code + "','"
-                + imageFaculty.trim() + "');";
+                + imageFaculty + "');";
         System.out.println(sql);
         return sql;
     }
@@ -49,10 +49,10 @@ public class FacultyDto implements Dto, Serializable {
     @Override
     public String update() {
 
-        String sql = "UPDATE public.faculty SET name= '"+name.trim()
-                +"', code='"+code
-                +"', image_faculty='"+imageFaculty.trim()+
-                "' WHERE id_faculty = " + idFaculty;
+        String sql = "UPDATE public.faculty SET name= '"+name
+                +"', code='"+ code
+                +"', image_faculty='"+ imageFaculty
+                +"' WHERE id_faculty = " + idFaculty;
         System.out.println(sql);
         return sql;
     }

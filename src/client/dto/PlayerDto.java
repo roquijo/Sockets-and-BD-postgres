@@ -54,10 +54,10 @@ public class PlayerDto implements Dto, Serializable {
     @Override
     public String update() {
 
-        String sql = "UPDATE public.player SET name= '"+name.trim()
-                +"', position='" + position.trim()
+        String sql = "UPDATE public.player SET name= '"+name
+                +"', position='" + position
                 +"', age='" + age
-                +"', image_player= '"+imagePlayer.trim() +
+                +"', image_player= '"+imagePlayer +
                 "' WHERE id_player = " + idPlayer;
         System.out.println(sql);
         return sql;

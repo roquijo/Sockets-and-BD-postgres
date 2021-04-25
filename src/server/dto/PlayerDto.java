@@ -36,11 +36,11 @@ public class PlayerDto implements Dto, Serializable {
 
         String sql = "INSERT INTO public.player(id_player, name, position, age, name_of_team, image_player) VALUES ('"
                 + idPlayer +"', '"
-                + name.trim() + "','"
-                + position.trim() + "','"
+                + name + "','"
+                + position + "','"
                 + age + "','"
-                + nameOfTeam.trim()+ "','"
-                + imagePlayer.trim()+"');";
+                + nameOfTeam+ "','"
+                + imagePlayer+"');";
         System.out.println(sql);
         return sql;
     }
@@ -48,10 +48,10 @@ public class PlayerDto implements Dto, Serializable {
     @Override
     public String update() {
 
-        String sql = "UPDATE public.player SET name= '"+name.trim()
-                +"', position='" + position.trim()
+        String sql = "UPDATE public.player SET name= '"+name
+                +"', position='" + position
                 +"', age='" + age
-                +"', image_player= '"+imagePlayer.trim() +
+                +"', image_player= '"+imagePlayer +
                 "' WHERE id_player = " + idPlayer;
         System.out.println(sql);
         return sql;
