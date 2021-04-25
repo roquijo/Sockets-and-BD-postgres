@@ -51,12 +51,12 @@ public class TeamInfoPanel extends JPanel implements ActionListener {
         txtCapitan = new JTextField();
         txtCapitan.setPreferredSize(new Dimension( 200, 30 ));
         txtCapitan.setFont(fontTxt);
-        txtCapitan.setEditable(false);
+        txtCapitan.setEditable(true);
 
         txtIdentificador = new JTextField();
         txtIdentificador.setPreferredSize(new Dimension( 200, 30 ));
         txtIdentificador.setFont(fontTxt);
-        txtIdentificador.setEditable(false);
+        txtIdentificador.setEditable(true);
 
         add(blanco1);
         add(blanco2);
