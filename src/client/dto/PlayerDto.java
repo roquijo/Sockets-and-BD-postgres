@@ -34,6 +34,8 @@ public class PlayerDto implements Dto, Serializable {
     @Override
     public String insert() {
 
+        //INSERT INTO public.player(id_player, name, position, age, name_of_team, image_player) VALUES ('123','jorge','delantero','15','nacional','asdasd')
+
         String sql = "INSERT INTO public.player(id_player, name, position, age, name_of_team, image_player) VALUES ('"
                 + idPlayer +"', '"
                 + name.trim() + "','"

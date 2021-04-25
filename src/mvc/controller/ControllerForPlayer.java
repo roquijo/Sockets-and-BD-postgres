@@ -9,15 +9,17 @@ import server.persistence.serverSocket.TypeOperation;
 
 public class ControllerForPlayer {
 
-    public ControllerForPlayer() {
+    public static void ControllerForDeletePlayer() {
 
         PlayerDto playerDto = new PlayerDto(123);
         PlayerDao playerDao = new PlayerDao();
 
-        RequestDataBase requestDataBase = new RequestDataBase(PlayerDto.class,playerDto.delete(), TypeOperation.DELETE);
+        RequestDataBase requestDataBase = new RequestDataBase(PlayerDto.class,playerDto.delete(), TypeOperation.INSERT);
+
 
         ControllerForClient.getInstance(requestDataBase);
-        ControllerForClient.runClient();
         playerDao.delete(playerDto);
+        ControllerForClient.runClient();
+
     }
 }

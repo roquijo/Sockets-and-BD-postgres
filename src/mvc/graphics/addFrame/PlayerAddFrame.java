@@ -1,5 +1,8 @@
 package mvc.graphics.addFrame;
 
+import client.dto.PlayerDto;
+import mvc.controller.ControllerForPlayer;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -9,6 +12,7 @@ public class PlayerAddFrame extends JFrame implements ActionListener {
 
     private static final String ADD = "Agregar";
     private static final String CANCEL = "Cancelar";
+    private static final String CAMBIAR_EQUIPO = "CambiarEquipo";
 
     private JLabel jlbIdentificador;
     private JLabel jlblNombre;
@@ -17,6 +21,8 @@ public class PlayerAddFrame extends JFrame implements ActionListener {
     private JLabel jlblEdad;
     private JLabel jlblNombreEquipo;
     private JLabel jlblTitle;
+
+    private JComboBox comboEquipos;
 
     private JTextField txtIdentificador;
     private JTextField txtNombre;
@@ -93,10 +99,20 @@ public class PlayerAddFrame extends JFrame implements ActionListener {
         txtPosicion.setFont(fontTxt);
         txtPosicion.setEditable(true);
 
+
         txtNombreEquipo = new JTextField();
         txtNombreEquipo.setPreferredSize(new Dimension( 200, 30 ) );
         txtNombreEquipo.setFont(fontTxt);
         txtNombreEquipo.setEditable(true);
+
+/*
+        comboEquipos = new JComboBox( );
+        comboEquipos.setEditable( false );
+        comboEquipos.addActionListener( this );
+        //comboEquipos.setActionCommand(CAMBIAR_EQUIPO);
+        comboEquipos.setPreferredSize( new Dimension( 195, 30 ) );
+
+ */
 
         txtImagen = new JTextField();
         txtImagen.setFont(fontTxt);
@@ -148,13 +164,15 @@ public class PlayerAddFrame extends JFrame implements ActionListener {
 
         if(ADD.equals(comando))
         {
-            JOptionPane.showMessageDialog(null,"Agregado por Loka");
+            new PlayerDto(Integer.parseInt(txtIdentificador.getText()), txtNombre.getText(),txtPosicion.getText(), Integer.parseInt(txtEdad.getText()), txtNombreEquipo.getText(), txtImagen.getText());
+            new ControllerForPlayer();
+            JOptionPane.showMessageDialog(null,"Jugador Agregado");
             dispose();
 
         }
         else if( CANCEL.equals( comando ) )
         {
-            JOptionPane.showMessageDialog(null,"Cancelado por Loka");
+            JOptionPane.showMessageDialog(null,"Cancelado");
             dispose();
         }
     }

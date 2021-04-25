@@ -10,7 +10,7 @@ import server.persistence.serverSocket.TypeOperation;
 public class ControllerForFaculty {
 
     public ControllerForFaculty() {
-/*
+
         FacultyDto facultyDto = new FacultyDto(2000);
         FacultyDao facultyDao = new FacultyDao();
 
@@ -19,7 +19,7 @@ public class ControllerForFaculty {
         ControllerForClient.getInstance(requestDataBase);
         ControllerForClient.runClient();
         facultyDao.delete(facultyDto);
-        */
+
 
     }
 }
