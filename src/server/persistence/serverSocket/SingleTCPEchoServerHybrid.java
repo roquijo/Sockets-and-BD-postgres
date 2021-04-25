@@ -3,20 +3,12 @@ package server.persistence.serverSocket;
 
 import client.collection.NodeList;
 import client.dto.Dto;
-import client.dto.FacultyDto;
-import client.dto.PlayerDto;
-import client.dto.TeamDto;
 import server.bdConection.DataSource;
 import server.bdConection.Entity;
-import server.persistence.serverSocket.Operation;
-import server.persistence.serverSocket.RequestDataBase;
-import server.persistence.serverSocket.TypeOperation;
-
 
 import java.io.*;
 import java.net.Socket;
-import java.sql.Connection;
-import java.sql.ResultSet;
+
 
 public class SingleTCPEchoServerHybrid extends Thread{
 

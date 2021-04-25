@@ -5,16 +5,17 @@ import mvc.graphics.InterfaceTournament;
 
 public class ControllerForInterface {
 
-    private InterfaceTournament interfaceTournament;
+    private static ControllerForInterface controllerForInterface = null;
 
+    public static void getInstance(){
 
-    public ControllerForInterface() {
-        new InterfaceTournament();
-        new ControllerForClient(null);
-
+        if(controllerForInterface == null){
+            new InterfaceTournament();
+            ControllerForClient.getInstance(null);
+        }
     }
 
     public static void main(String[] args) {
-        new ControllerForInterface();
+        getInstance();
     }
 }

@@ -1,9 +1,12 @@
 package client.socket;
 
 import client.collection.NodeList;
+import client.dto.FacultyDto;
 import mvc.controller.ControllerBuildObject;
+import server.dto.Dto;
 import server.persistence.serverSocket.RequestDataBase;
 
+import javax.xml.stream.events.DTD;
 import java.io.*;
 import java.net.InetAddress;
 import java.net.Socket;
@@ -18,7 +21,7 @@ public class SingleTCPEchoClientHybrid
     ObjectInputStream in;
     ObjectOutputStream out;
     RequestDataBase requestDataBase;
-    static NodeList<Object> lista;
+    static NodeList<Dto> lista;
 
     public RequestDataBase getRequestDataBase() {
         return requestDataBase;
@@ -64,7 +67,7 @@ public class SingleTCPEchoClientHybrid
 
                 in = new ObjectInputStream(socket.getInputStream());
 
-                lista = (NodeList<Object>) in.readObject();
+                lista = (NodeList<Dto>) in.readObject();
 /*
                 for (int i = 0; i < nodeList.getSize(); i++) {
                     System.out.println(nodeList.pop(i));
@@ -89,11 +92,11 @@ public class SingleTCPEchoClientHybrid
         }
     }
 
-    public static  NodeList<Object> getLista() {
+    public static  NodeList<Dto> getLista() {
         return lista;
     }
 
-    public void setLista(NodeList<Object> lista) {
+    public void setLista(NodeList<Dto> lista) {
         this.lista = lista;
     }
 }

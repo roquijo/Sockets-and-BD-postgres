@@ -1,9 +1,13 @@
 package mvc.graphics.player;
 
+import client.collection.NodeList;
+import client.dto.FacultyDto;
 import client.dto.PlayerDto;
 import client.socket.SingleTCPEchoClientHybrid;
+import mvc.controller.ControllerForPlayer;
 import mvc.graphics.InterfaceTournament;
 import mvc.graphics.addFrame.PlayerAddFrame;
+import server.dto.Dto;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,9 +25,11 @@ public class PlayerInfoPanel extends JPanel implements ActionListener {
     private JLabel jlblPosicion;
 
     private JComboBox comboJugadores;
-    private JTextField txtIdentificacion;
-    private JTextField txtEdad;
+    private static JTextField txtIdentificacion;
+    private  JTextField txtEdad;
     private JTextField txtPosicion;
+
+    NodeList<PlayerDto> lista =  ControllerForPlayer.ControllerForReadPlayer();
     
     public PlayerInfoPanel(){
 
@@ -76,6 +82,15 @@ public class PlayerInfoPanel extends JPanel implements ActionListener {
 
         add(jlblPosicion);
         add(txtPosicion);
+
+        llenarCombobox();
+    }
+
+    private void llenarCombobox() {
+        comboJugadores.removeAllItems();
+        for (int i = 0; i < lista.getSize(); i++) {
+            comboJugadores.addItem(lista.pop(i).getName());
+        }
     }
 
     @Override
@@ -85,9 +100,25 @@ public class PlayerInfoPanel extends JPanel implements ActionListener {
         
         if(CAMBIAR_JUGADOR.equals(comando))
         {
-            for (int i = 0; i < SingleTCPEchoClientHybrid.getLista().getSize(); i++) {
-                comboJugadores.add(SingleTCPEchoClientHybrid.getLista().pop(i).getClass().getName(), null);
+           String name = comboJugadores.getSelectedItem().toString();
+           actualizarInfo(name);
+        }
+    }
+
+    private void actualizarInfo(String name) {
+
+        boolean encontro = false;
+        for (int i = 0; i < lista.getSize() && !encontro; i++) {
+            if(name.equals(lista.pop(i).getName())){
+                txtEdad.setText(Integer.toString(lista.pop(i).getAge()));
+                txtIdentificacion.setText(Integer.toString(lista.pop(i).getIdPlayer()));
+                txtPosicion.setText(lista.pop(i).getPosition());
+                encontro = true;
             }
         }
+    }
+
+    public static int getIdForDelete(){
+         return Integer.parseInt(txtIdentificacion.getText());
     }
 }

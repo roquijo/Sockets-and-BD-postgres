@@ -6,11 +6,10 @@ import server.persistence.serverSocket.RequestDataBase;
 public  class ControllerForClient {
 
     private static ControllerForClient controllerForClient = null;
-    private static SingleTCPEchoClientHybrid singleTCPEchoClientHybrid;
+    private static SingleTCPEchoClientHybrid singleTCPEchoClientHybrid = null;
 
-    public ControllerForClient(RequestDataBase requestDataBase)
+    private ControllerForClient(RequestDataBase requestDataBase)
     {
-        //Crear cliente
         singleTCPEchoClientHybrid = new SingleTCPEchoClientHybrid();
         singleTCPEchoClientHybrid.setRequestDataBase(requestDataBase);
     }
@@ -19,7 +18,6 @@ public  class ControllerForClient {
     {
         if(controllerForClient != null)
         {
-            //Set sql
             singleTCPEchoClientHybrid.setRequestDataBase(requestDataBase);
             return controllerForClient;
         }

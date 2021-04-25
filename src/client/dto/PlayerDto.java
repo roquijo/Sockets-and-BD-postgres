@@ -39,7 +39,6 @@ public class PlayerDto implements Dto, Serializable {
     public String insert() {
 
         //INSERT INTO public.player(id_player, name, position, age, name_of_team, image_player) VALUES ('123','jorge','delantero','15','nacional','asdasd')
-        System.out.println(name);
         String sql = "INSERT INTO public.player(id_player, name, position, age, name_of_team, image_player) VALUES ('"
                 + idPlayer +"', '"
                 + name + "','"
@@ -47,7 +46,6 @@ public class PlayerDto implements Dto, Serializable {
                 + age + "','"
                 + nameOfTeam+ "','"
                 + imagePlayer+"');";
-        System.out.println(sql);
         return sql;
     }
 
@@ -59,7 +57,6 @@ public class PlayerDto implements Dto, Serializable {
                 +"', age='" + age
                 +"', image_player= '"+imagePlayer +
                 "' WHERE id_player = " + idPlayer;
-        System.out.println(sql);
         return sql;
     }
 

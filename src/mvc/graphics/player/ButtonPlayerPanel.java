@@ -69,7 +69,7 @@ public class ButtonPlayerPanel extends JPanel implements ActionListener {
 
             if(resp == JOptionPane.YES_OPTION)
             {
-                ControllerForPlayer.ControllerForDeletePlayer();
+                ControllerForPlayer.ControllerForDeletePlayer(PlayerInfoPanel.getIdForDelete());
                 JOptionPane.showMessageDialog(this, "Borrado");
             }
         }
