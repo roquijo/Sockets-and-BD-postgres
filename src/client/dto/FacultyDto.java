@@ -59,13 +59,13 @@ public class FacultyDto implements Dto, Serializable {
     @Override
     public String delete() {
 
-        return "DELETE FROM faculty WHERE id_Faculty = " + idFaculty;
+        return "DELETE FROM faculty WHERE id_faculty = " + idFaculty;
     }
 
     @Override
     public String findById() {
 
-        return "SELECT * FROM faculty WHERE id_Faculty = " + idFaculty;
+        return "SELECT * FROM faculty WHERE id_faculty = " + idFaculty;
     }
 
     public int getIdFaculty() {

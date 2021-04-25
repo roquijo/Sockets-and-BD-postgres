@@ -1,9 +1,11 @@
 package mvc.graphics.faculty;
 
-import mvc.graphics.InterfaceTournament;
+import client.dto.FacultyDto;
+import mvc.controller.ControllerBuildObject;
+import mvc.controller.ControllerForFaculty;
+import server.persistence.serverSocket.TypeOperation;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
@@ -50,24 +52,17 @@ public class ButtonFacultyPanel extends JPanel implements ActionListener {
     public void actionPerformed( ActionEvent evento )
     {
         String comando = evento.getActionCommand( );
-/*
-        if( ADD_FACULTY.equals( comando ) )
+
+        if( DELETE_FACULTY.equals( comando ) )
         {
-            principal.mostrarDialogoAgregarEquipo( );
+            int resp = JOptionPane.showConfirmDialog(null, "Esta Seguro Que Desea Eliminar La Facultad?","Eliminar Facultad", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+
+            if(resp == JOptionPane.YES_OPTION)
+            {
+                new ControllerForFaculty();
+                JOptionPane.showMessageDialog(this, "Borrado");
+            }
         }
-        else if( DELETE_FACULTY.equals( comando ) )
-        {
-            principal.mostrarDialogoAgregarJugador( );
-        }
-        else if( MODIFY_FACULTY.equals( comando ) )
-        {
-            principal.calcularValorNomina( );
-        }
-        else if( MODIFICAR_INFORMACION_JUGADORES.equals( comando ) )
-        {
-            principal.modificarInformacionJugadores( );
-        }
-        */
     }
 
 }

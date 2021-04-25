@@ -1,6 +1,9 @@
 package mvc.graphics.player;
 
+import mvc.controller.ControllerBuildObject;
 import mvc.graphics.InterfaceTournament;
+import client.dto.PlayerDto;
+import server.persistence.serverSocket.TypeOperation;
 
 import javax.swing.*;
 import javax.swing.border.CompoundBorder;
@@ -43,10 +46,22 @@ public class ButtonPlayerPanel extends JPanel implements ActionListener {
         modifyPlayer.setActionCommand(MODIFY_PLAYER);
         modifyPlayer.addActionListener( this );
         add(modifyPlayer);
-
     }
 
     public void actionPerformed( ActionEvent evento ) {
+
         String comando = evento.getActionCommand();
+        PlayerDto playerDto = new PlayerDto();
+
+        if( DELETE_PLAYER.equals( comando ) )
+        {
+            int resp = JOptionPane.showConfirmDialog(null, "Esta Seguro Que Desea Eliminar el jugador?","Eliminar Jugador", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+
+            if(resp == JOptionPane.YES_OPTION)
+            {
+                ControllerBuildObject.crearObjeto(playerDto.getClass(),playerDto.delete(), TypeOperation.DELETE);
+                JOptionPane.showMessageDialog(this, "Borrado");
+            }
+        }
     }
 }

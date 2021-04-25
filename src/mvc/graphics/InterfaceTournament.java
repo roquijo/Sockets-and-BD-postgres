@@ -1,6 +1,6 @@
 package mvc.graphics;
 
-import mvc.controller.BuilderObject;
+import mvc.controller.ControllerBuildObject;
 import mvc.graphics.banner.PanelBanner;
 import mvc.graphics.faculty.FacultyPanel;
 import mvc.graphics.player.PlayerPanel;
@@ -12,7 +12,7 @@ import java.awt.*;
 //Interface Main
 public class InterfaceTournament extends  JFrame{
 
-    private  BuilderObject builderObject;
+    private ControllerBuildObject builderObject;
     private FacultyPanel facultyPanel;
     private TeamPanel teamPanel;
     private PlayerPanel playerPanel;

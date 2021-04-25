@@ -1,8 +1,8 @@
 package client.socket;
 
 import client.collection.NodeList;
+import mvc.controller.ControllerBuildObject;
 import server.persistence.serverSocket.RequestDataBase;
-import server.persistence.serverSocket.TypeOperation;
 
 import java.io.*;
 import java.net.InetAddress;
@@ -16,13 +16,21 @@ public class SingleTCPEchoClientHybrid
     private static final int   PORT = 1234;
     ObjectInputStream in;
     ObjectOutputStream out;
-    Socket sock;
+    RequestDataBase requestDataBase;
 
+    public RequestDataBase getRequestDataBase() {
+        return requestDataBase;
+    }
 
+    public void setRequestDataBase(RequestDataBase requestDataBase) {
+        this.requestDataBase = requestDataBase;
+    }
+/*
     public static void main(String[] args)
     {
         new SingleTCPEchoClientHybrid();
     }
+ */
 
     public SingleTCPEchoClientHybrid()
     {
@@ -38,39 +46,30 @@ public class SingleTCPEchoClientHybrid
             System.out.println("Host not found!");
             System.exit(1);
         }
-        this.run();
     }
 
-    public void createSocket() throws IOException {
-            sock = new Socket(host, PORT);
-            in = new ObjectInputStream((sock.getInputStream()));
-            out = new ObjectOutputStream(sock.getOutputStream());
-    }
+    public void run() {
 
-    private void run() {
-
+        Socket sock = null;
 
         try
         {
-             createSocket();
-             RequestDataBase sql= null;
+             sock = new Socket(host, PORT);
 
-            do {
-                
-                out.writeObject(sql);
-                NodeList<Object> nodeList = (NodeList<Object>) in.readObject();
+             InputStream inputStream = sock.getInputStream();
+             in = new ObjectInputStream(inputStream);
+             out = new ObjectOutputStream(sock.getOutputStream());
+
+             out.writeObject(requestDataBase);
+
+             NodeList<Object> nodeList = (NodeList<Object>) in.readObject();
 
                 for (int i = 0; i < nodeList.getSize(); i++) {
-
                     System.out.println(nodeList.pop(i));
-                
                 }
-
-            } while (sql.getOperation() != TypeOperation.EXIT);
         }
         catch (IOException | ClassNotFoundException e)
         {
-
             System.out.println(e.getMessage());
         }
         finally

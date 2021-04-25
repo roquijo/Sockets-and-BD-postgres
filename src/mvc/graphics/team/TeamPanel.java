@@ -13,7 +13,7 @@ import java.awt.*;
 
 public class TeamPanel extends JPanel {
 
-    private ButtonPlayerPanel buttonTeamPanel;
+    private ButtonTeamPanel buttonTeamPanel;
     private TeamInfoPanel teamInfoPanel;
     private ImageOfTeam imageOfTeam;
     private InterfaceTournament principal;
@@ -30,7 +30,7 @@ public class TeamPanel extends JPanel {
         imageOfTeam = new ImageOfTeam();
         add(imageOfTeam);
 
-        buttonTeamPanel = new ButtonPlayerPanel();
+        buttonTeamPanel = new ButtonTeamPanel();
         add(buttonTeamPanel);
     }
 }

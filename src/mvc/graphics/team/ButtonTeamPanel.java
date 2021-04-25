@@ -1,6 +1,9 @@
 package mvc.graphics.team;
 
+import mvc.controller.ControllerBuildObject;
 import mvc.graphics.InterfaceTournament;
+import client.dto.TeamDto;
+import server.persistence.serverSocket.TypeOperation;
 
 import javax.swing.*;
 import javax.swing.border.CompoundBorder;
@@ -26,9 +29,8 @@ public class ButtonTeamPanel extends JPanel implements ActionListener {
 
     private JButton modifyTeam;
 
-    public ButtonTeamPanel( InterfaceTournament ventana )
+    public ButtonTeamPanel()
     {
-        principal = ventana;
         setBorder( new CompoundBorder( new EmptyBorder(0 , 0, 20, 0 ), new TitledBorder( "Opciones" ) ) );
         setLayout( new GridLayout( 3, 1 ));
 
@@ -50,6 +52,19 @@ public class ButtonTeamPanel extends JPanel implements ActionListener {
     }
 
     public void actionPerformed( ActionEvent evento ) {
-        String comando = evento.getActionCommand();
+
+        String comando = evento.getActionCommand( );
+        TeamDto facultyDto = new TeamDto();
+
+        if( DELETE_TEAM.equals( comando ) )
+        {
+            int resp = JOptionPane.showConfirmDialog(null, "Esta Seguro Que Desea Eliminar El Equipo?","Eliminar Equipo", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+
+            if(resp == JOptionPane.YES_OPTION)
+            {
+                ControllerBuildObject.crearObjeto(facultyDto.getClass(),facultyDto.delete(), TypeOperation.DELETE);
+                JOptionPane.showMessageDialog(this, "Borrado");
+            }
+        }
     }
 }
