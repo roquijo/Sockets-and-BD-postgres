@@ -19,6 +19,9 @@ public class PlayerInfoPanel extends JPanel implements ActionListener {
     private JLabel jlblEdad;
     private JLabel jlblPosicion;
 
+    private static ImageOfPlayer image;
+
+
     private static JComboBox comboJugadores;
     private static JTextField txtIdentificacion;
     private static JTextField txtEdad;
@@ -127,12 +130,14 @@ public class PlayerInfoPanel extends JPanel implements ActionListener {
 
     public static void actualizarInfo (String name) {
 
+
         boolean encontro = false;
         for (int i = 0; i < lista.getSize() && !encontro; i++) {
             if(name.equals(lista.pop(i).getName())){
                 txtEdad.setText(Integer.toString(lista.pop(i).getAge()));
                 txtIdentificacion.setText(Integer.toString(lista.pop(i).getIdPlayer()));
                 txtPosicion.setText(lista.pop(i).getPosition());
+
                 encontro = true;
             }
         }
@@ -141,4 +146,6 @@ public class PlayerInfoPanel extends JPanel implements ActionListener {
     public static int getIdForDelete(){
          return Integer.parseInt(txtIdentificacion.getText());
     }
+
+
 }
