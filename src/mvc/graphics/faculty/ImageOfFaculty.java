@@ -5,10 +5,10 @@ import java.awt.*;
 
 public class ImageOfFaculty extends JPanel{
 
-    private JLabel etiquetaImagen;
+    private static JLabel etiquetaImagen;
     private JLabel blanco1;
     private JLabel blanco2;
-    private String ruta;
+    private static String ruta;
 
     public ImageOfFaculty()
     {
@@ -28,11 +28,20 @@ public class ImageOfFaculty extends JPanel{
 
     }
 
+
     public String getRuta() {
         return ruta;
     }
 
-    public void setRuta(String ruta) {
-        this.ruta = ruta;
+    public static void setRuta(String pRuta) {
+        ruta = pRuta;
+    }
+
+    public static void actualizarImagen(){
+        ImageIcon imagen = new ImageIcon(ruta);
+        if(etiquetaImagen != null){
+            etiquetaImagen.setIcon(imagen);
+        }
+
     }
 }

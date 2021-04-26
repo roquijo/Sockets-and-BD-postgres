@@ -18,7 +18,7 @@ public class FacultyAddFrame extends JFrame implements ActionListener {
     static Faculty faculty;
     private static final String ADD = "Agregar";
     private static final String CANCEL = "Cancelar";
-   
+
     private JLabel jlbIdentificador;
     private JLabel jlblNombre;
     private JLabel jlblCodigo;
@@ -28,7 +28,7 @@ public class FacultyAddFrame extends JFrame implements ActionListener {
     private JTextField txtIdentificador;
     private JTextField txtNombre;
     private JTextField txtCodigo;
-    private JTextField txtImagen;
+    private static JTextField txtImagen;
 
     private JButton btnAgregar;
     private JButton btnCancelar;
@@ -134,7 +134,6 @@ public class FacultyAddFrame extends JFrame implements ActionListener {
          {
              faculty = new Faculty(Integer.parseInt(txtIdentificador.getText()),
                      txtNombre.getText(),txtCodigo.getText(), txtImagen.getText());
-             //image.setRuta(txtImagen.getText());
              System.out.println(faculty.toString());
              FacultyInfoPanel.limpiar();
              FacultyInfoPanel.agregarALista(faculty);
@@ -150,5 +149,12 @@ public class FacultyAddFrame extends JFrame implements ActionListener {
              dispose();
          }
 
+    }
+
+    public static String getRuta(){
+        if(txtImagen != null){
+            return txtImagen.getText();
+        }
+       return  null;
     }
 }

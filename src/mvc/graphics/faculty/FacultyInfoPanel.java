@@ -7,6 +7,7 @@ import client.dto.Team;
 import mvc.controller.ControllerForFaculty;
 import mvc.controller.ControllerForPlayer;
 import mvc.controller.ControllerForTeam;
+import mvc.graphics.addFrame.FacultyAddFrame;
 import mvc.graphics.team.TeamInfoPanel;
 import server.dto.FacultyDto;
 
@@ -119,9 +120,26 @@ public class FacultyInfoPanel extends JPanel implements ActionListener {
             {
                 String name = comboFacultades.getSelectedItem().toString();
                 actualizarInfo(name);
+                ImageOfFaculty.setRuta(obtenerRuta());
+                ImageOfFaculty.actualizarImagen();
                 TeamInfoPanel.llenarCombobox();
             }
         }
+    }
+
+    public String obtenerRuta() {
+        String ruta = null;
+
+        if (comboFacultades.getSelectedItem() != null) {
+            String name = comboFacultades.getSelectedItem().toString();
+
+            for (int i = 0; i < lista.getSize(); i++) {
+                if (lista.pop(i).getName() == name){
+                    ruta = lista.pop(i).getImageFaculty();
+                }
+            }
+        }
+        return  ruta;
     }
     public static void actualizarFacultad()
     {
