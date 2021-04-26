@@ -24,12 +24,12 @@ public class PlayerInfoPanel extends JPanel implements ActionListener {
     private JLabel jlblEdad;
     private JLabel jlblPosicion;
 
-    private JComboBox comboJugadores;
+    private static JComboBox comboJugadores;
     private static JTextField txtIdentificacion;
-    private  JTextField txtEdad;
-    private JTextField txtPosicion;
+    private static JTextField txtEdad;
+    private static JTextField txtPosicion;
 
-    NodeList<PlayerDto> lista =  ControllerForPlayer.ControllerForReadPlayer();
+    private static NodeList<PlayerDto> lista =  ControllerForPlayer.ControllerForReadPlayer();
     
     public PlayerInfoPanel(){
 
@@ -86,11 +86,15 @@ public class PlayerInfoPanel extends JPanel implements ActionListener {
         llenarCombobox();
     }
 
-    private void llenarCombobox() {
-        comboJugadores.removeAllItems();
+    public static void llenarCombobox() {
+
         for (int i = 0; i < lista.getSize(); i++) {
             comboJugadores.addItem(lista.pop(i).getName());
         }
+    }
+
+    public static void limpiar(){
+        comboJugadores.removeAllItems();
     }
 
     @Override
@@ -100,12 +104,35 @@ public class PlayerInfoPanel extends JPanel implements ActionListener {
         
         if(CAMBIAR_JUGADOR.equals(comando))
         {
-           String name = comboJugadores.getSelectedItem().toString();
-           actualizarInfo(name);
+            if(comboJugadores.getSelectedItem() != null)
+            {
+                String name = comboJugadores.getSelectedItem().toString();
+                actualizarInfo(name);
+            }
+
+
         }
     }
 
-    private void actualizarInfo(String name) {
+    public  static  void actualizarLista(PlayerDto playerDto) {
+
+        lista.push(playerDto);
+    }
+
+    public  static  void eliminarElemento(int id)
+    {
+        
+        boolean encontro = false;
+        for (int i = 0; i < lista.getSize() && !encontro; i++) {
+            if(id == lista.pop(i).getIdPlayer()){
+               lista.pop(i);
+                encontro = true;
+            }
+        }
+
+    }
+
+    public static void actualizarInfo (String name) {
 
         boolean encontro = false;
         for (int i = 0; i < lista.getSize() && !encontro; i++) {
