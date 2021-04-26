@@ -4,6 +4,7 @@ import client.dto.Team;
 import mvc.controller.ControllerForTeam;
 import mvc.graphics.InterfaceTournament;
 import mvc.graphics.addFrame.TeamAddFrame;
+import mvc.graphics.player.PlayerInfoPanel;
 
 import javax.swing.*;
 import javax.swing.border.CompoundBorder;
