@@ -119,6 +119,19 @@ public class PlayerInfoPanel extends JPanel implements ActionListener {
         lista.push(playerDto);
     }
 
+    public  static  void eliminarElemento(int id)
+    {
+        
+        boolean encontro = false;
+        for (int i = 0; i < lista.getSize() && !encontro; i++) {
+            if(id == lista.pop(i).getIdPlayer()){
+               lista.pop(i);
+                encontro = true;
+            }
+        }
+
+    }
+
     public static void actualizarInfo (String name) {
 
         boolean encontro = false;
