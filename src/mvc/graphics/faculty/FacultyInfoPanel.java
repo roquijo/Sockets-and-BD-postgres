@@ -101,6 +101,8 @@ public class FacultyInfoPanel extends JPanel implements ActionListener {
 
     public static void limpiar(){
         comboFacultades.removeAllItems();
+        txtCodigo.setText("");
+        txtIdentificador.setText("");
     }
 
     @Override

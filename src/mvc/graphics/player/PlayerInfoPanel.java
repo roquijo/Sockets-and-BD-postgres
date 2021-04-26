@@ -99,6 +99,9 @@ public class PlayerInfoPanel extends JPanel implements ActionListener {
 
     public static void limpiar(){
         comboJugadores.removeAllItems();
+        txtEdad.setText("");
+        txtPosicion.setText("");
+        txtIdentificacion.setText("");
     }
 
     @Override
