@@ -1,10 +1,7 @@
 package mvc.graphics.faculty;
 
-import client.dto.FacultyDto;
-import mvc.controller.ControllerBuildObject;
 import mvc.controller.ControllerForFaculty;
 import mvc.graphics.addFrame.FacultyAddFrame;
-import server.persistence.serverSocket.TypeOperation;
 
 import javax.swing.*;
 import javax.swing.border.CompoundBorder;

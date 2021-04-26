@@ -2,16 +2,16 @@ package client.dto;
 
 import java.io.Serializable;
 
-public class TeamDto implements Dto, Serializable {
+public class Team implements Dto, Serializable {
 
     private static final long       serialVersionUID = 916479397570182364L;
     private  String  name;
     private  String  captain;
     private  String imageTeam;
     private  int idFaculty;
-    private TeamDto root;
+    private Team root;
 
-    public TeamDto(String name, String captain, String imageTeam, int idOfFaculty) {
+    public Team(String name, String captain, String imageTeam, int idOfFaculty) {
 
         this.name = name;
         this.captain = captain;
@@ -19,11 +19,11 @@ public class TeamDto implements Dto, Serializable {
         this.idFaculty = idOfFaculty;
     }
 
-    public TeamDto(String name) {
+    public Team(String name) {
         this.name = name;
     }
 
-    public TeamDto() {
+    public Team() {
     }
 
     @Override
@@ -99,11 +99,11 @@ public class TeamDto implements Dto, Serializable {
         this.idFaculty = idFaculty;
     }
 
-    public TeamDto getRoot() {
+    public Team getRoot() {
         return root;
     }
 
-    public void setRoot(TeamDto root) {
+    public void setRoot(Team root) {
         this.root = root;
     }
 

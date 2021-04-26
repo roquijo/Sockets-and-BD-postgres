@@ -1,12 +1,8 @@
 package mvc.graphics.player;
 
-import mvc.controller.ControllerBuildObject;
 import mvc.controller.ControllerForPlayer;
-import mvc.graphics.InterfaceTournament;
-import client.dto.PlayerDto;
+import client.dto.Player;
 import mvc.graphics.addFrame.PlayerAddFrame;
-import mvc.graphics.addFrame.TeamAddFrame;
-import server.persistence.serverSocket.TypeOperation;
 
 import javax.swing.*;
 import javax.swing.border.CompoundBorder;
@@ -56,7 +52,7 @@ public class ButtonPlayerPanel extends JPanel implements ActionListener {
     public void actionPerformed( ActionEvent evento ) {
 
         String comando = evento.getActionCommand();
-        PlayerDto playerDto = new PlayerDto();
+        Player playerDto = new Player();
 
         if(ADD_PLAYER.equals(comando))
         {

@@ -1,13 +1,8 @@
 package mvc.graphics.player;
 
 import client.collection.NodeList;
-import client.dto.FacultyDto;
-import client.dto.PlayerDto;
-import client.socket.SingleTCPEchoClientHybrid;
+import client.dto.Player;
 import mvc.controller.ControllerForPlayer;
-import mvc.graphics.InterfaceTournament;
-import mvc.graphics.addFrame.PlayerAddFrame;
-import server.dto.Dto;
 
 import javax.swing.*;
 import java.awt.*;
@@ -29,7 +24,7 @@ public class PlayerInfoPanel extends JPanel implements ActionListener {
     private static JTextField txtEdad;
     private static JTextField txtPosicion;
 
-    private static NodeList<PlayerDto> lista =  ControllerForPlayer.ControllerForReadPlayer();
+    private static NodeList<Player> lista =  ControllerForPlayer.ControllerForReadPlayer();
     
     public PlayerInfoPanel(){
 
@@ -88,8 +83,10 @@ public class PlayerInfoPanel extends JPanel implements ActionListener {
 
     public static void llenarCombobox() {
 
-        for (int i = 0; i < lista.getSize(); i++) {
-            comboJugadores.addItem(lista.pop(i).getName());
+        if(!lista.isEmpty()){
+            for (int i = 0; i < lista.getSize(); i++) {
+                comboJugadores.addItem(lista.pop(i).getName());
+            }
         }
     }
 
@@ -114,7 +111,7 @@ public class PlayerInfoPanel extends JPanel implements ActionListener {
         }
     }
 
-    public  static  void actualizarLista(PlayerDto playerDto) {
+    public  static  void actualizarLista(Player playerDto) {
 
         lista.push(playerDto);
     }

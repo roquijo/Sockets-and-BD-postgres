@@ -1,5 +1,10 @@
 package mvc.graphics.team;
 
+import client.collection.NodeList;
+import client.dto.Player;
+import client.dto.Team;
+import mvc.controller.ControllerForTeam;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -7,8 +12,7 @@ import java.awt.event.ActionListener;
 
 public class TeamInfoPanel extends JPanel implements ActionListener {
 
-    private static final String CAMBIAR_JUGADOR = "CambiarJugador";
-
+    private static final String CAMBIAR_EQUIPO = "CambiarEquipo";
 
     private JLabel jlblNombre;
     private JLabel jlblCapitan;
@@ -16,12 +20,12 @@ public class TeamInfoPanel extends JPanel implements ActionListener {
     private JLabel blanco1;
     private JLabel blanco2;
 
+    private static JComboBox comboTeam;
+    private static JTextField txtCapitan;
+    private static JTextField txtEdad;
+    private static JTextField txtIdentificador;
 
-
-    private JComboBox comboJugadores;
-    private JTextField txtCapitan;
-    private JTextField txtEdad;
-    private JTextField txtIdentificador;
+    private static NodeList<Team> lista =  ControllerForTeam.ControllerForReadTeam();
     
     public TeamInfoPanel(){
 
@@ -42,11 +46,11 @@ public class TeamInfoPanel extends JPanel implements ActionListener {
         jlblIdentificador = new JLabel("Identificador");
         jlblIdentificador.setFont(font);
 
-        comboJugadores = new JComboBox( );
-        comboJugadores.setEditable( false );
-        comboJugadores.addActionListener( this );
-        comboJugadores.setActionCommand( CAMBIAR_JUGADOR );
-        comboJugadores.setPreferredSize( new Dimension( 195, 30  ) );
+        comboTeam = new JComboBox( );
+        comboTeam.setEditable( false );
+        comboTeam.addActionListener( this );
+        comboTeam.setActionCommand( CAMBIAR_EQUIPO );
+        comboTeam.setPreferredSize( new Dimension( 195, 30  ) );
 
         txtCapitan = new JTextField();
         txtCapitan.setPreferredSize(new Dimension( 200, 30 ));
@@ -62,7 +66,7 @@ public class TeamInfoPanel extends JPanel implements ActionListener {
         add(blanco2);
 
         add(jlblNombre);
-        add(comboJugadores);
+        add(comboTeam);
 
         add(jlblCapitan);
         add(txtCapitan);
@@ -71,8 +75,59 @@ public class TeamInfoPanel extends JPanel implements ActionListener {
         add(txtIdentificador);
     }
 
+    public static void llenarCombobox() {
+
+        for (int i = 0; i < lista.getSize(); i++) {
+            comboTeam.addItem(lista.pop(i).getName());
+        }
+    }
+
+    public static void limpiar(){
+        comboTeam.removeAllItems();
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
 
+        String comando = e.getActionCommand();
+
+        if(CAMBIAR_EQUIPO.equals(comando))
+        {
+            if(comboTeam.getSelectedItem() != null)
+            {
+                String name = comboTeam.getSelectedItem().toString();
+                actualizarInfo(name);
+            }
+        }
+    }
+
+    public  static  void actualizarLista(Team teamDto) {
+
+        lista.push(teamDto);
+    }
+
+    public  static  void eliminarElemento(String name)
+    {
+        for (int i = 0; i < lista.getSize(); i++) {
+            if(lista.pop(i).getName() == name){
+                lista.remove(i);
+            }
+        }
+    }
+
+    public static void actualizarInfo (String name) {
+
+        boolean encontro = false;
+        for (int i = 0; i < lista.getSize() && !encontro; i++) {
+            if(name.equals(lista.pop(i).getName())){
+               txtCapitan.setText(lista.pop(i).getCaptain());
+               txtIdentificador.setText(Integer.toString(lista.pop(i).getIdFaculty()));
+               encontro = true;
+            }
+        }
+    }
+
+    public static String getNameForDelete(){
+         return comboTeam.getSelectedItem().toString();
     }
 }

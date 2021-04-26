@@ -2,17 +2,17 @@ package client.dto;
 
 import java.io.Serializable;
 
-public class FacultyDto implements Dto, Serializable {
+public class Faculty implements Dto, Serializable {
 
     private static final long       serialVersionUID = 916479397570182364L;
     private  int idFaculty;
     private  String name;
     private  String code;
     private  String imageFaculty;
-    private FacultyDto root;
-    private FacultyDto facultyDto;
+    private Faculty root;
+    private Faculty facultyDto;
 
-    public FacultyDto(int idFaculty, String name, String code, String imageFaculty) {
+    public Faculty(int idFaculty, String name, String code, String imageFaculty) {
 
         this.idFaculty = idFaculty;
         this.name = name;
@@ -20,11 +20,11 @@ public class FacultyDto implements Dto, Serializable {
         this.imageFaculty = imageFaculty;
     }
 
-    public FacultyDto(int idFaculty) {
+    public Faculty(int idFaculty) {
         this.idFaculty = idFaculty;
     }
 
-    public FacultyDto() {
+    public Faculty() {
     }
 
     @Override
@@ -100,11 +100,11 @@ public class FacultyDto implements Dto, Serializable {
         this.imageFaculty = imageFaculty;
     }
 
-    public FacultyDto getRoot() {
+    public Faculty getRoot() {
         return root;
     }
 
-    public void setRoot(FacultyDto root) {
+    public void setRoot(Faculty root) {
         this.root = root;
     }
 

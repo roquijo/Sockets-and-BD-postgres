@@ -123,19 +123,15 @@ public class FacultyAddFrame extends JFrame implements ActionListener {
 
          if(ADD.equals(comando))
          {
-             JOptionPane.showMessageDialog(null,"Agregado por Loka");
+             JOptionPane.showMessageDialog(null,"La Facultad Ha Sido Agregada");
              dispose();
 
          }
          else if( CANCEL.equals( comando ) )
          {
-             JOptionPane.showMessageDialog(null,"Cancelado por Loka");
+             JOptionPane.showMessageDialog(null,"Cancelado");
              dispose();
          }
-
-
-
-
 
     }
 }

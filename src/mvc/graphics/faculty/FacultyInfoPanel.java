@@ -1,6 +1,6 @@
 package mvc.graphics.faculty;
 
-import client.dto.FacultyDto;
+import client.dto.Faculty;
 
 import javax.swing.*;
 import java.awt.*;
@@ -57,7 +57,7 @@ public class FacultyInfoPanel extends JPanel implements ActionListener {
         txtIdentificador.setFont(fontTxt);
         txtIdentificador.setPreferredSize(new Dimension( 200, 30 ) );
         txtIdentificador.setEditable(false);
-        FacultyDto facultyDto = new FacultyDto();
+        Faculty facultyDto = new Faculty();
         facultyDto.setIdFaculty(2000);
 
 

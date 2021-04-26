@@ -1,11 +1,7 @@
 package server;
 
-import client.dao.FacultyDao;
 import client.dao.PlayerDao;
-import client.dao.TeamDao;
-import client.dto.FacultyDto;
-import client.dto.PlayerDto;
-import client.dto.TeamDto;
+import client.dto.Player;
 
 public class Test {
 
@@ -84,7 +80,7 @@ public class Test {
         personList.forEach(System.out::println);
 */
 
-        PlayerDto playerDto = new PlayerDto(180,
+        Player playerDto = new Player(180,
                 "Juan Lopéz",
                 "Delantero",
                 55,

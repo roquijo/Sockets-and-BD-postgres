@@ -2,7 +2,7 @@ package client.dto;
 
 import java.io.Serializable;
 
-public class PlayerDto implements Dto, Serializable {
+public class Player implements Dto, Serializable {
 
     private static final long  serialVersionUID = 916479397570182364L;
     private  int idPlayer;
@@ -11,9 +11,9 @@ public class PlayerDto implements Dto, Serializable {
     private  int  age;
     private  String nameOfTeam;
     private  String imagePlayer;
-    private  PlayerDto root;
+    private Player root;
 
-    public PlayerDto(int idPlayer, String name, String position, int age, String nameOfTeam, String imagePlayer) {
+    public Player(int idPlayer, String name, String position, int age, String nameOfTeam, String imagePlayer) {
 
         this.idPlayer = idPlayer;
         this.name = name;
@@ -27,12 +27,12 @@ public class PlayerDto implements Dto, Serializable {
 
 
 
-    public PlayerDto(int identification) {
+    public Player(int identification) {
 
         this.idPlayer = identification;
     }
 
-    public PlayerDto() {
+    public Player() {
     }
 
     @Override
@@ -126,11 +126,11 @@ public class PlayerDto implements Dto, Serializable {
         this.imagePlayer = imagePlayer;
     }
 
-    public PlayerDto getRoot() {
+    public Player getRoot() {
         return root;
     }
 
-    public void setRoot(PlayerDto root) {
+    public void setRoot(Player root) {
         this.root = root;
     }
 

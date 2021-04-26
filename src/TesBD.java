@@ -2,9 +2,9 @@ import client.collection.NodeList;
 import client.dao.FacultyDao;
 import client.dao.PlayerDao;
 import client.dao.TeamDao;
-import client.dto.FacultyDto;
-import client.dto.PlayerDto;
-import client.dto.TeamDto;
+import client.dto.Faculty;
+import client.dto.Player;
+import client.dto.Team;
 
 public class TesBD {
 
@@ -15,10 +15,10 @@ public class TesBD {
     public TesBD() {
        //Prueba read
         TeamDao teamDao = new TeamDao();
-        TeamDto teamDto = new TeamDto();
+        Team teamDto = new Team();
 
         //Almacena la lista generada con los datos d ela DB
-        NodeList<TeamDto> teamDtoLinkedList = new NodeList<TeamDto>();
+        NodeList<Team> teamDtoLinkedList = new NodeList<Team>();
         teamDtoLinkedList = teamDao.read(teamDto);
 
         System.out.printf("--------Teams------"+"\n");
@@ -30,10 +30,10 @@ public class TesBD {
 
 
         PlayerDao playerDao = new PlayerDao();
-        PlayerDto playerDto = new PlayerDto();
+        Player playerDto = new Player();
 
         //Almacena la lista generada con los datos d ela DB
-        NodeList<PlayerDto> playerDtoLinkedList = new NodeList<PlayerDto>();
+        NodeList<Player> playerDtoLinkedList = new NodeList<Player>();
         playerDtoLinkedList = playerDao.read(playerDto);
         System.out.printf("--------Players------"+"\n");
         //Mostrar resultados por Consola
@@ -42,11 +42,11 @@ public class TesBD {
         }
 
         FacultyDao facultyDao = new FacultyDao();
-        FacultyDto facultyDto = new FacultyDto();
+        Faculty facultyDto = new Faculty();
 
         //Almacena la lista generada con los datos d ela DB
-        NodeList<FacultyDto> facultyDtoLinkedList = new NodeList<FacultyDto>();
-        FacultyDto facultyDto1 = facultyDao.findById(facultyDto);
+        NodeList<Faculty> facultyDtoLinkedList = new NodeList<Faculty>();
+        Faculty facultyDto1 = facultyDao.findById(facultyDto);
         System.out.printf("--------Faculty------"+"\n");
 
         System.out.println(facultyDto1);

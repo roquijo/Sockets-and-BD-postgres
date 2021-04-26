@@ -1,20 +1,11 @@
 package mvc.controller;
 
 
-import client.dao.FacultyDao;
-import client.dto.FacultyDto;
-import server.persistence.serverSocket.TypeOperation;
+import mvc.graphics.faculty.FacultyInfoPanel;
 
 
 public class ControllerForFaculty {
 
-    public ControllerForFaculty() {
+     private static FacultyInfoPanel FacultyInfoPanel;
 
-        FacultyDto facultyDto = new FacultyDto();
-        FacultyDao facultyDao = new FacultyDao();
-
-        ControllerBuildObject.crearObjeto(FacultyDto.class,facultyDto.delete(), TypeOperation.DELETE);
-
-        facultyDao.delete(facultyDto);
-    }
 }

@@ -1,5 +1,9 @@
 package mvc.graphics.addFrame;
 
+import client.dto.Team;
+import mvc.controller.ControllerForTeam;
+import mvc.graphics.team.TeamInfoPanel;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -9,7 +13,9 @@ public class TeamAddFrame extends JFrame implements ActionListener {
 
    private static final String ADD = "Agregar";
    private static final String CANCEL = "Cancelar";
-   
+
+    static Team teamDto;
+
    private JLabel jlblNombre;
    private JLabel jlblCapitan;
    private JLabel jlblIdentificador;
@@ -115,6 +121,13 @@ public class TeamAddFrame extends JFrame implements ActionListener {
             btnPanel.add(btnCancelar);
    }
 
+     public static Team getTeamDto() {
+        return teamDto;
+    }
+
+    public void setTeamDto(Team teamDto) {
+        this.teamDto = teamDto;
+    }
 
     @Override
     public void actionPerformed(ActionEvent evento) {
@@ -123,12 +136,18 @@ public class TeamAddFrame extends JFrame implements ActionListener {
 
              if(ADD.equals(comando))
              {
-                 JOptionPane.showMessageDialog(null,"Agregado por Loka");
+                 teamDto = new Team(txtNombre.getText()
+                 ,txtCapitan.getText(), txtImagen.getText(),Integer.parseInt(txtIdentificador.getText()));
+                 TeamInfoPanel.limpiar();
+                 TeamInfoPanel.actualizarLista(teamDto);
+                 TeamInfoPanel.llenarCombobox();
+                 ControllerForTeam.ControllerForAddTeam(teamDto);
+                 JOptionPane.showMessageDialog(null,"El Equipo Ha Sido Agregado");
                  dispose();
                 }
              else if( CANCEL.equals( comando ) )
              {
-                 JOptionPane.showMessageDialog(null,"Cancelado por Loka");
+                 JOptionPane.showMessageDialog(null,"Cancelado");
                  dispose();
              }
 

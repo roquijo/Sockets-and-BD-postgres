@@ -1,6 +1,6 @@
 package mvc.graphics.addFrame;
 
-import client.dto.PlayerDto;
+import client.dto.Player;
 import mvc.controller.ControllerForPlayer;
 import mvc.graphics.player.PlayerInfoPanel;
 
@@ -15,7 +15,7 @@ public class PlayerAddFrame extends JFrame implements ActionListener {
     private static final String CANCEL = "Cancelar";
     private static final String CAMBIAR_EQUIPO = "CambiarEquipo";
 
-    static PlayerDto  playerDto;
+    static Player playerDto;
 
     private JLabel jlbIdentificador;
     private JLabel jlblNombre;
@@ -160,11 +160,11 @@ public class PlayerAddFrame extends JFrame implements ActionListener {
 
     }
 
-    public static PlayerDto getPlayerDto() {
+    public static Player getPlayerDto() {
         return playerDto;
     }
 
-    public void setPlayerDto(PlayerDto playerDto) {
+    public void setPlayerDto(Player playerDto) {
         this.playerDto = playerDto;
     }
 
@@ -175,14 +175,14 @@ public class PlayerAddFrame extends JFrame implements ActionListener {
 
         if(ADD.equals(comando))
         {
-            System.out.println(txtNombre.getText());
-            playerDto = new PlayerDto(Integer.parseInt(txtIdentificador.getText()),
+            
+            playerDto = new Player(Integer.parseInt(txtIdentificador.getText()),
             txtNombre.getText(),txtPosicion.getText(), Integer.parseInt(txtEdad.getText()), txtNombreEquipo.getText(), txtImagen.getText());
             PlayerInfoPanel.limpiar();
             PlayerInfoPanel.actualizarLista(playerDto);
             PlayerInfoPanel.llenarCombobox();
             ControllerForPlayer.ControllerForAddPlayer(playerDto);
-            JOptionPane.showMessageDialog(null,"Jugador Agregado");
+            JOptionPane.showMessageDialog(null,"El Jugador Ha Sido Agregado");
             dispose();
 
         }

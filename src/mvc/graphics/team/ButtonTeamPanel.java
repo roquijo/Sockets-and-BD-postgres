@@ -1,8 +1,9 @@
 package mvc.graphics.team;
 
 import mvc.controller.ControllerBuildObject;
+import mvc.controller.ControllerForTeam;
 import mvc.graphics.InterfaceTournament;
-import client.dto.TeamDto;
+import client.dto.Team;
 import mvc.graphics.addFrame.TeamAddFrame;
 import server.persistence.serverSocket.TypeOperation;
 
@@ -57,7 +58,7 @@ public class ButtonTeamPanel extends JPanel implements ActionListener {
     public void actionPerformed( ActionEvent evento ) {
 
         String comando = evento.getActionCommand( );
-        TeamDto facultyDto = new TeamDto();
+        Team facultyDto = new Team();
 
         if(ADD_TEAM.equals(comando))
         {
@@ -72,8 +73,16 @@ public class ButtonTeamPanel extends JPanel implements ActionListener {
 
             if(resp == JOptionPane.YES_OPTION)
             {
-                ControllerBuildObject.crearObjeto(facultyDto.getClass(),facultyDto.delete(), TypeOperation.DELETE);
-                JOptionPane.showMessageDialog(this, "Borrado");
+                
+                ControllerForTeam.ControllerForDeleteTeam(TeamInfoPanel.getNameForDelete());
+                JOptionPane.showMessageDialog(this, "Equipo eliminado");
+                TeamInfoPanel.limpiar();
+                TeamInfoPanel.eliminarElemento(TeamInfoPanel.getNameForDelete());
+                TeamInfoPanel.llenarCombobox();
+
+                 
+
+
             }
         }
     }

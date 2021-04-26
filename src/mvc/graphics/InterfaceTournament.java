@@ -81,6 +81,7 @@ public class InterfaceTournament extends  JFrame{
         frame.setVisible(true);
     }
  */
+    /*
     public static void main( String[] args )
     {/*
         BuilderObject builderObject = null;
@@ -94,8 +95,10 @@ public class InterfaceTournament extends  JFrame{
             e.printStackTrace( );
             System.exit( 1 );
         }
-        */
+        
         InterfaceTournament id = new InterfaceTournament( );
         id.setVisible( true );
     }
+    
+     */
 }
