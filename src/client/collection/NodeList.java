@@ -20,6 +20,31 @@ public class NodeList<T> implements Iterator<T>, Serializable {
         this.last = null;
     }
 
+    public void remove(int index){
+
+        Node<T> temp = root;
+
+        if(isEmpty()) {
+            return;
+        }
+        else if (index  == 0){
+           root =  temp.getNext();
+        }
+        else if (index  == size){
+
+            while (temp.getNext() != last){
+                temp.getNext();
+            }
+            last = temp;
+        }
+        else{
+            while (temp.getIndex() < index){
+                temp.getNext();
+            }
+            temp.setNext(temp.getNext().getNext());
+        }
+    }
+
     @Override
     public void push(T data) {
 
