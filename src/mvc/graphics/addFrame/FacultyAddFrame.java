@@ -60,7 +60,7 @@ public class FacultyAddFrame extends JFrame implements ActionListener {
         add(infoPanel, BorderLayout.CENTER);
 
         //Info
-
+        //Info x2
         jlbIdentificador = new JLabel("Identificador ");
         jlbIdentificador.setFont(font);
 
