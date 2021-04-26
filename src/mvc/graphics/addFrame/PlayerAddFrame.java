@@ -2,6 +2,7 @@ package mvc.graphics.addFrame;
 
 import client.dto.PlayerDto;
 import mvc.controller.ControllerForPlayer;
+import mvc.graphics.player.PlayerInfoPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,6 +14,8 @@ public class PlayerAddFrame extends JFrame implements ActionListener {
     private static final String ADD = "Agregar";
     private static final String CANCEL = "Cancelar";
     private static final String CAMBIAR_EQUIPO = "CambiarEquipo";
+
+    static PlayerDto  playerDto;
 
     private JLabel jlbIdentificador;
     private JLabel jlblNombre;
@@ -157,6 +160,14 @@ public class PlayerAddFrame extends JFrame implements ActionListener {
 
     }
 
+    public static PlayerDto getPlayerDto() {
+        return playerDto;
+    }
+
+    public void setPlayerDto(PlayerDto playerDto) {
+        this.playerDto = playerDto;
+    }
+
     @Override
     public void actionPerformed(ActionEvent evento) {
 
@@ -165,8 +176,11 @@ public class PlayerAddFrame extends JFrame implements ActionListener {
         if(ADD.equals(comando))
         {
             System.out.println(txtNombre.getText());
-            PlayerDto playerDto = new PlayerDto(Integer.parseInt(txtIdentificador.getText()),
-                    txtNombre.getText(),txtPosicion.getText(), Integer.parseInt(txtEdad.getText()), txtNombreEquipo.getText(), txtImagen.getText());
+            playerDto = new PlayerDto(Integer.parseInt(txtIdentificador.getText()),
+            txtNombre.getText(),txtPosicion.getText(), Integer.parseInt(txtEdad.getText()), txtNombreEquipo.getText(), txtImagen.getText());
+            PlayerInfoPanel.limpiar();
+            PlayerInfoPanel.actualizarLista(playerDto);
+            PlayerInfoPanel.llenarCombobox();
             ControllerForPlayer.ControllerForAddPlayer(playerDto);
             JOptionPane.showMessageDialog(null,"Jugador Agregado");
             dispose();
