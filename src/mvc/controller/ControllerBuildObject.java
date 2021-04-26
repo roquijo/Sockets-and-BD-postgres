@@ -17,8 +17,6 @@ public class ControllerBuildObject {
             requestDataBase.setQuery(sql);
             requestDataBase.setOperation(typeOperation);
         }
-
-
     }
     
     public static RequestDataBase getObjetoCreado() {

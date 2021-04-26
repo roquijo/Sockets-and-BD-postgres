@@ -113,8 +113,6 @@ public class PlayerInfoPanel extends JPanel implements ActionListener {
                 String name = comboJugadores.getSelectedItem().toString();
                 actualizarInfo(name);
             }
-
-
         }
     }
 

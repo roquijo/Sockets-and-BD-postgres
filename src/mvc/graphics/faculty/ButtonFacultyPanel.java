@@ -74,6 +74,7 @@ public class ButtonFacultyPanel extends JPanel implements ActionListener {
                 FacultyInfoPanel.llenarCombobox();
             }
         }
+
     }
 
 }

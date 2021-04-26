@@ -111,17 +111,17 @@ public class TeamInfoPanel extends JPanel implements ActionListener {
        return lista =  ControllerForTeam.ControllerForReadTeam();
     }
 
-/*
+
     public  static  void eliminarElemento(String name)
     {
         for (int i = 0; i < lista.getSize(); i++) {
-            if(lista.pop(i).getName() == name){
+            if(lista.pop(i).getName().equals(name)){
                 lista.remove(i);
             }
         }
     }
 
- */
+
 
     public static void actualizarInfo (String name) {
 
