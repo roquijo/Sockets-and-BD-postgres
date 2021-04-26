@@ -10,7 +10,7 @@ public class PlayerPanel extends JPanel {
 
     private ButtonPlayerPanel buttonPlayerPanel;
     private PlayerInfoPanel playerInfoPanel;
-    private ImageOfTeam imageOfPlayer;
+    private ImageOfPlayer imageOfPlayer;
     private InterfaceTournament principal;
 
     public PlayerPanel( InterfaceTournament ventana ) {
@@ -22,7 +22,7 @@ public class PlayerPanel extends JPanel {
         playerInfoPanel = new PlayerInfoPanel();
         add(playerInfoPanel);
 
-        imageOfPlayer = new ImageOfTeam();
+        imageOfPlayer = new ImageOfPlayer();
         add(imageOfPlayer);
 
         buttonPlayerPanel = new ButtonPlayerPanel();

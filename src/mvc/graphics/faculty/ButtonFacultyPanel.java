@@ -1,7 +1,9 @@
 package mvc.graphics.faculty;
 
+import client.dto.Faculty;
 import mvc.controller.ControllerForFaculty;
 import mvc.graphics.addFrame.FacultyAddFrame;
+
 
 import javax.swing.*;
 import javax.swing.border.CompoundBorder;
@@ -52,6 +54,7 @@ public class ButtonFacultyPanel extends JPanel implements ActionListener {
     public void actionPerformed( ActionEvent evento )
     {
         String comando = evento.getActionCommand( );
+        Faculty facultyDto = new Faculty();
 
         if(ADD_FACULTY.equals(comando))
         {
@@ -64,8 +67,11 @@ public class ButtonFacultyPanel extends JPanel implements ActionListener {
 
             if(resp == JOptionPane.YES_OPTION)
             {
-                new ControllerForFaculty();
-                JOptionPane.showMessageDialog(this, "Borrado");
+                ControllerForFaculty.ControllerForDeleteFaculty(FacultyInfoPanel.getIdForDelete());
+                JOptionPane.showMessageDialog(this, "Borrada");
+                FacultyInfoPanel.eliminarElemento(FacultyInfoPanel.getIdForDelete());
+                FacultyInfoPanel.limpiar();
+                FacultyInfoPanel.llenarCombobox();
             }
         }
     }

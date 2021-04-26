@@ -67,9 +67,10 @@ public class ButtonPlayerPanel extends JPanel implements ActionListener {
             {
                 ControllerForPlayer.ControllerForDeletePlayer(PlayerInfoPanel.getIdForDelete());
                 JOptionPane.showMessageDialog(this, "Borrado");
-                PlayerInfoPanel.limpiar();
                 PlayerInfoPanel.eliminarElemento(PlayerInfoPanel.getIdForDelete());
+                PlayerInfoPanel.limpiar();
                 PlayerInfoPanel.llenarCombobox();
+
             }
         }
     }

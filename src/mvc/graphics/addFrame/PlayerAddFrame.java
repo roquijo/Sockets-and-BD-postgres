@@ -2,6 +2,7 @@ package mvc.graphics.addFrame;
 
 import client.dto.Player;
 import mvc.controller.ControllerForPlayer;
+import mvc.graphics.player.ImageOfPlayer;
 import mvc.graphics.player.PlayerInfoPanel;
 
 import javax.swing.*;
@@ -16,6 +17,7 @@ public class PlayerAddFrame extends JFrame implements ActionListener {
     private static final String CAMBIAR_EQUIPO = "CambiarEquipo";
 
     static Player playerDto;
+    private ImageOfPlayer image = new ImageOfPlayer();
 
     private JLabel jlbIdentificador;
     private JLabel jlblNombre;
@@ -178,6 +180,7 @@ public class PlayerAddFrame extends JFrame implements ActionListener {
             
             playerDto = new Player(Integer.parseInt(txtIdentificador.getText()),
             txtNombre.getText(),txtPosicion.getText(), Integer.parseInt(txtEdad.getText()), txtNombreEquipo.getText(), txtImagen.getText());
+            image.setRuta(txtImagen.getText());
             PlayerInfoPanel.limpiar();
             PlayerInfoPanel.actualizarLista(playerDto);
             PlayerInfoPanel.llenarCombobox();

@@ -73,6 +73,8 @@ public class TeamInfoPanel extends JPanel implements ActionListener {
 
         add(jlblIdentificador);
         add(txtIdentificador);
+
+        llenarCombobox();
     }
 
     public static void llenarCombobox() {

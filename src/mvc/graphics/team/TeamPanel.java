@@ -1,9 +1,7 @@
 package mvc.graphics.team;
 
 import mvc.graphics.InterfaceTournament;
-import mvc.graphics.player.ButtonPlayerPanel;
-import mvc.graphics.player.ImageOfTeam;
-import mvc.graphics.player.PlayerInfoPanel;
+import mvc.graphics.player.ImageOfPlayer;
 
 import javax.swing.*;
 import javax.swing.border.CompoundBorder;
@@ -15,7 +13,7 @@ public class TeamPanel extends JPanel {
 
     private ButtonTeamPanel buttonTeamPanel;
     private TeamInfoPanel teamInfoPanel;
-    private ImageOfTeam imageOfTeam;
+    private ImageOfPlayer imageOfPlayer;
     private InterfaceTournament principal;
 
     public TeamPanel( InterfaceTournament ventana ) {
@@ -27,8 +25,8 @@ public class TeamPanel extends JPanel {
         teamInfoPanel = new TeamInfoPanel();
         add(teamInfoPanel);
 
-        imageOfTeam = new ImageOfTeam();
-        add(imageOfTeam);
+        imageOfPlayer = new ImageOfPlayer();
+        add(imageOfPlayer);
 
         buttonTeamPanel = new ButtonTeamPanel();
         add(buttonTeamPanel);

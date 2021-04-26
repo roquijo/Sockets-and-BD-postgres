@@ -52,7 +52,7 @@ public class FacultyAddFrame extends JFrame implements ActionListener {
 
         //Info
 
-        jlbIdentificador = new JLabel("Facultad       ");
+        jlbIdentificador = new JLabel("Identificador ");
         jlbIdentificador.setFont(font);
 
         jlblNombre = new JLabel("Codigo          ");

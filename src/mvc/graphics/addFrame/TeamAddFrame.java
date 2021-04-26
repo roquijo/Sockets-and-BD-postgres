@@ -136,8 +136,7 @@ public class TeamAddFrame extends JFrame implements ActionListener {
 
              if(ADD.equals(comando))
              {
-                 teamDto = new Team(txtNombre.getText()
-                 ,txtCapitan.getText(), txtImagen.getText(),Integer.parseInt(txtIdentificador.getText()));
+                 teamDto = new Team(txtNombre.getText(),txtCapitan.getText(), txtImagen.getText(),Integer.parseInt(txtIdentificador.getText()));
                  TeamInfoPanel.limpiar();
                  TeamInfoPanel.actualizarLista(teamDto);
                  TeamInfoPanel.llenarCombobox();
