@@ -80,7 +80,6 @@ public class ButtonFacultyPanel extends JPanel implements ActionListener {
             if(resp == JOptionPane.YES_OPTION)
 
             {
-
                 FacultyInfoPanel.actualizarFacultad();
                 JOptionPane.showMessageDialog(this, "Facultad Actualizado");
                 FacultyInfoPanel.limpiar();

@@ -16,7 +16,6 @@ public class ControllerForFaculty {
             faculty.setIdFaculty(id);
 
           ControllerBuildObject.crearObjeto(Faculty.class, faculty.delete(), TypeOperation.DELETE);
-
           ControllerForClient.getInstance(ControllerBuildObject.getObjetoCreado());
           ControllerForClient.runClient();
      }
@@ -24,21 +23,16 @@ public class ControllerForFaculty {
      public static void ControllerForAddFaculty(Faculty faculty) {
 
          ControllerBuildObject.crearObjeto(Faculty.class, faculty.insert(), TypeOperation.INSERT);
-
          ControllerForClient.getInstance(ControllerBuildObject.getObjetoCreado());
          ControllerForClient.runClient();
 
      }
 
      public static void ControllerForUpdateFaculty(Faculty faculty){
-
-
          ControllerBuildObject.crearObjeto(Player.class, faculty.update(), TypeOperation.UPDATE);
 
          ControllerForClient.getInstance(ControllerBuildObject.getObjetoCreado());
          ControllerForClient.runClient();
-
-
      }
 
      public static NodeList<Faculty> ControllerForReadFaculty() {

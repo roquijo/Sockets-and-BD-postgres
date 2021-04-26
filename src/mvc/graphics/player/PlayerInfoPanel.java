@@ -132,8 +132,6 @@ public class PlayerInfoPanel extends JPanel implements ActionListener {
             if(lista.pop(i).getName().equals(comboJugadores.getSelectedItem().toString())){
                 lista.pop(i).setAge(Integer.parseInt(txtEdad.getText()));
                 lista.pop(i).setPosition(txtPosicion.getText());
-
-
             }
         }
         ControllerForPlayer.ControllerForUpdatePlayer(playerM);
