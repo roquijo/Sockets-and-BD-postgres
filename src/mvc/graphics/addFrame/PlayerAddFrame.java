@@ -16,7 +16,7 @@ public class PlayerAddFrame extends JFrame implements ActionListener {
     private static final String CANCEL = "Cancelar";
     private static final String CAMBIAR_EQUIPO = "CambiarEquipo";
 
-    static Player playerDto;
+    static Player player;
     private ImageOfPlayer image = new ImageOfPlayer();
 
     private JLabel jlbIdentificador;
@@ -162,12 +162,12 @@ public class PlayerAddFrame extends JFrame implements ActionListener {
 
     }
 
-    public static Player getPlayerDto() {
-        return playerDto;
+    public static Player getPlayer() {
+        return player;
     }
 
-    public void setPlayerDto(Player playerDto) {
-        this.playerDto = playerDto;
+    public void setPlayerDto(Player player) {
+        this.player = player;
     }
 
     @Override
@@ -178,13 +178,13 @@ public class PlayerAddFrame extends JFrame implements ActionListener {
         if(ADD.equals(comando))
         {
             
-            playerDto = new Player(Integer.parseInt(txtIdentificador.getText()),
+            player = new Player(Integer.parseInt(txtIdentificador.getText()),
             txtNombre.getText(),txtPosicion.getText(), Integer.parseInt(txtEdad.getText()), txtNombreEquipo.getText(), txtImagen.getText());
-            image.setRuta(txtImagen.getText());
+            //image.setRuta(txtImagen.getText());
             PlayerInfoPanel.limpiar();
-            PlayerInfoPanel.actualizarLista(playerDto);
+            PlayerInfoPanel.agregarALista(player);
             PlayerInfoPanel.llenarCombobox();
-            ControllerForPlayer.ControllerForAddPlayer(playerDto);
+            ControllerForPlayer.ControllerForAddPlayer(player);
             JOptionPane.showMessageDialog(null,"El Jugador Ha Sido Agregado");
             dispose();
 

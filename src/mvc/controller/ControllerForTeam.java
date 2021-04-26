@@ -2,32 +2,45 @@ package mvc.controller;
 
 import client.collection.NodeList;
 import client.dao.TeamDao;
+import client.dto.Player;
 import client.dto.Team;
 import mvc.graphics.team.TeamInfoPanel;
+import server.persistence.serverSocket.TypeOperation;
 
 public class ControllerForTeam {
 
     private static TeamInfoPanel playerInfoPanel;
 
+
+
     public static void ControllerForDeleteTeam(String name) {
 
-        Team teamDto = new Team(name);
-        TeamDao teamDao = new TeamDao();
+       Team team = new Team(name);
 
-        teamDao.delete(teamDto);
+        
+        ControllerBuildObject.crearObjeto(Team.class,team.delete(), TypeOperation.DELETE);
+
+        ControllerForClient.getInstance(ControllerBuildObject.getObjetoCreado());
+        ControllerForClient.runClient();
     }
 
-    public static void ControllerForAddTeam(Team playerDto) {
+    public static void ControllerForAddTeam(Team team) {
 
-        TeamDao teamDao = new TeamDao();
-        teamDao.insert(playerDto);
+        ControllerBuildObject.crearObjeto(Team.class,team.insert(), TypeOperation.INSERT);
+
+        ControllerForClient.getInstance(ControllerBuildObject.getObjetoCreado());
+        ControllerForClient.runClient();
 
     }
 
-    public static void ControllerForUpdateTeam(Team teamDto){
-        TeamDao teamDao = new TeamDao();
-        teamDao.update(teamDto);
+    public static void ControllerForUpdateTeam(){
 
+        Team team = new Team();
+        
+        ControllerBuildObject.crearObjeto(Team.class,team.update(), TypeOperation.UPDATE);
+
+        ControllerForClient.getInstance(ControllerBuildObject.getObjetoCreado());
+        ControllerForClient.runClient();
 
     }
 

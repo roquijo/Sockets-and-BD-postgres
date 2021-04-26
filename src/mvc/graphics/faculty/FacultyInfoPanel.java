@@ -1,6 +1,11 @@
 package mvc.graphics.faculty;
 
+import client.collection.NodeList;
 import client.dto.Faculty;
+import client.dto.Player;
+import mvc.controller.ControllerForFaculty;
+import mvc.controller.ControllerForPlayer;
+import server.dto.FacultyDto;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,9 +24,10 @@ public class FacultyInfoPanel extends JPanel implements ActionListener {
     private JLabel blanco2;
 
 
-    private JComboBox comboFacultades;
-    private JTextField txtCodigo;
-    private JTextField txtIdentificador;
+    private static JComboBox comboFacultades;
+    private static JTextField txtCodigo;
+    private static JTextField txtIdentificador;
+    private static NodeList<Faculty> lista = ControllerForFaculty.ControllerForReadFaculty();
 
     public FacultyInfoPanel(){
 
@@ -73,9 +79,64 @@ public class FacultyInfoPanel extends JPanel implements ActionListener {
 
         add(jlblIdentificador);
         add(txtIdentificador);
+
+        llenarCombobox();
+
+
         }
+
+    public  static  void agregarALista(Faculty faculty) {
+
+        lista.push(faculty);
+    }
+
+    public static void llenarCombobox() {
+
+        if(!lista.isEmpty()){
+            for (int i = 0; i < lista.getSize(); i++) {
+                comboFacultades.addItem(lista.pop(i).getName());
+            }
+        }
+    }
+
+    public static void limpiar(){
+        comboFacultades.removeAllItems();
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
+
+        String comando = e.getActionCommand();
+
+        if(CAMBIAR_FACULTAD.equals(comando))
+        {
+            if(comboFacultades.getSelectedItem() != null)
+            {
+                String name = comboFacultades.getSelectedItem().toString();
+                actualizarInfo(name);
+            }
+
+
+        }
+    }
+
+    public static NodeList<Faculty> actualizarLista(){
+        return lista =  ControllerForFaculty.ControllerForReadFaculty();
+    }
+
+    public static void actualizarInfo (String name) {
+
+        boolean encontro = false;
+        for (int i = 0; i < lista.getSize() && !encontro; i++) {
+            if(name.equals(lista.pop(i).getName())){
+                txtIdentificador.setText(Integer.toString(lista.pop(i).getIdFaculty()));
+                txtCodigo.setText(lista.pop(i).getCode());
+                encontro = true;
+            }
+        }
+    }
+
+    public static int getIdForDelete(){
+        return Integer.parseInt(txtIdentificador.getText());
     }
 }

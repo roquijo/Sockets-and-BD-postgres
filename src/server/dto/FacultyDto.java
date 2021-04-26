@@ -2,7 +2,7 @@ package server.dto;
 
 import java.io.Serializable;
 
-public class FacultyDto implements Dto, Serializable {
+public class FacultyDto implements Dto, Serializable, client.dto.Dto {
 
     private static final long       serialVersionUID = 916479397570182364L;
     private  int idFaculty;

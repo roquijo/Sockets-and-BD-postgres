@@ -92,6 +92,10 @@ public class PlayerInfoPanel extends JPanel implements ActionListener {
             }
         }
     }
+    
+    public static NodeList<Player> actualizarLista(){
+       return lista =  ControllerForPlayer.ControllerForReadPlayer();
+    }
 
     public static void limpiar(){
         comboJugadores.removeAllItems();
@@ -114,7 +118,7 @@ public class PlayerInfoPanel extends JPanel implements ActionListener {
         }
     }
 
-    public  static  void actualizarLista(Player playerDto) {
+    public  static  void agregarALista(Player playerDto) {
 
         lista.push(playerDto);
     }

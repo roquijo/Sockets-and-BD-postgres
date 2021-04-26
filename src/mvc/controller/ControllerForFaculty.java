@@ -4,26 +4,29 @@ package mvc.controller;
 import client.collection.NodeList;
 import client.dao.FacultyDao;
 import client.dto.Faculty;
-import mvc.graphics.faculty.FacultyInfoPanel;
+import server.dto.FacultyDto;
+import server.persistence.serverSocket.TypeOperation;
 
 
 public class ControllerForFaculty {
-
-     private static FacultyInfoPanel FacultyInfoPanel;
-
-
+    
      public static void ControllerForDeleteFaculty(int id) {
 
-          Faculty facultyDto = new Faculty(id);
-          FacultyDao facultyDao = new FacultyDao();
+            Faculty faculty = new Faculty();
+            faculty.setIdFaculty(id);
 
-          facultyDao.delete(facultyDto);
+          ControllerBuildObject.crearObjeto(Faculty.class, faculty.delete(), TypeOperation.DELETE);
+
+          ControllerForClient.getInstance(ControllerBuildObject.getObjetoCreado());
+          ControllerForClient.runClient();
      }
 
-     public static void ControllerForAddPlayer(Faculty facultyDto) {
+     public static void ControllerForAddFaculty(Faculty faculty) {
 
-          FacultyDao facultyDao = new FacultyDao();
-          facultyDao.insert(facultyDto);
+         ControllerBuildObject.crearObjeto(Faculty.class, faculty.insert(), TypeOperation.INSERT);
+
+         ControllerForClient.getInstance(ControllerBuildObject.getObjetoCreado());
+         ControllerForClient.runClient();
 
      }
 

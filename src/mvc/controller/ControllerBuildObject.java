@@ -9,7 +9,16 @@ public class ControllerBuildObject {
 
     public static void crearObjeto(Class entity, String sql, TypeOperation typeOperation){
 
-        requestDataBase = new RequestDataBase(entity,sql,typeOperation);
+        if(requestDataBase == null){
+            requestDataBase = new RequestDataBase(entity,sql,typeOperation);
+        }
+        else{
+            requestDataBase.setEntity(entity);
+            requestDataBase.setQuery(sql);
+            requestDataBase.setOperation(typeOperation);
+        }
+
+
     }
     
     public static RequestDataBase getObjetoCreado() {

@@ -69,7 +69,7 @@ public class ButtonFacultyPanel extends JPanel implements ActionListener {
             {
                 ControllerForFaculty.ControllerForDeleteFaculty(FacultyInfoPanel.getIdForDelete());
                 JOptionPane.showMessageDialog(this, "Borrada");
-                FacultyInfoPanel.eliminarElemento(FacultyInfoPanel.getIdForDelete());
+                FacultyInfoPanel.actualizarLista();
                 FacultyInfoPanel.limpiar();
                 FacultyInfoPanel.llenarCombobox();
             }

@@ -1,6 +1,8 @@
 package mvc.controller;
 
+import client.collection.NodeList;
 import client.socket.SingleTCPEchoClientHybrid;
+import server.dto.Dto;
 import server.persistence.serverSocket.RequestDataBase;
 
 public  class ControllerForClient {
@@ -30,5 +32,11 @@ public  class ControllerForClient {
     public static void runClient()
     {
         singleTCPEchoClientHybrid.run();
+    }
+
+    public static NodeList<Dto> darLista(){
+       return singleTCPEchoClientHybrid.getLista();
+
+
     }
 }

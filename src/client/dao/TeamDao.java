@@ -1,7 +1,7 @@
 package client.dao;
 
-import server.bdConection.DataSource;
 import client.dto.Team;
+import server.bdConection.DataSource;
 
 public class TeamDao extends Dao<Team> {
 

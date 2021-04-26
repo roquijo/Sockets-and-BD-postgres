@@ -1,7 +1,6 @@
 package mvc.graphics.team;
 
 import client.collection.NodeList;
-import client.dto.Player;
 import client.dto.Team;
 import mvc.controller.ControllerForTeam;
 
@@ -108,6 +107,11 @@ public class TeamInfoPanel extends JPanel implements ActionListener {
         lista.push(teamDto);
     }
 
+    public static NodeList<Team> actualizarLista(){
+       return lista =  ControllerForTeam.ControllerForReadTeam();
+    }
+
+/*
     public  static  void eliminarElemento(String name)
     {
         for (int i = 0; i < lista.getSize(); i++) {
@@ -116,6 +120,8 @@ public class TeamInfoPanel extends JPanel implements ActionListener {
             }
         }
     }
+
+ */
 
     public static void actualizarInfo (String name) {
 

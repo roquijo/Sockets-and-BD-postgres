@@ -1,6 +1,9 @@
 package client.socket;
 
 import client.collection.NodeList;
+import client.dto.Faculty;
+import client.dto.Player;
+import client.dto.Team;
 import server.dto.Dto;
 import server.persistence.serverSocket.RequestDataBase;
 
@@ -19,6 +22,7 @@ public class SingleTCPEchoClientHybrid
     ObjectOutputStream out;
     RequestDataBase requestDataBase;
     static NodeList<Dto> lista;
+    
 
     public RequestDataBase getRequestDataBase() {
         return requestDataBase;
@@ -54,11 +58,14 @@ public class SingleTCPEchoClientHybrid
 
         try
         {
+            do{
                 out.writeObject(requestDataBase);
 
                 in = new ObjectInputStream(socket.getInputStream());
-
+                
                 lista = (NodeList<Dto>) in.readObject();
+            }while (requestDataBase != null);
+
 
         }
         catch (IOException | ClassNotFoundException e)
@@ -78,7 +85,7 @@ public class SingleTCPEchoClientHybrid
         }
     }
 
-    public static  NodeList<Dto> getLista() {
+    public NodeList<Dto> getLista() {
         return lista;
     }
 

@@ -5,6 +5,7 @@ import client.dao.TeamDao;
 import client.dto.Faculty;
 import client.dto.Player;
 import client.dto.Team;
+import server.dto.FacultyDto;
 
 public class TesBD {
 

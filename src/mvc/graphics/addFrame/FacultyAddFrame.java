@@ -1,5 +1,13 @@
 package mvc.graphics.addFrame;
 
+import client.dto.Faculty;
+import client.dto.Player;
+import mvc.controller.ControllerForFaculty;
+import mvc.controller.ControllerForPlayer;
+import mvc.graphics.faculty.FacultyInfoPanel;
+import mvc.graphics.player.PlayerInfoPanel;
+import server.dto.FacultyDto;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -7,6 +15,7 @@ import java.awt.event.ActionListener;
 
 public class FacultyAddFrame extends JFrame implements ActionListener {
 
+    static Faculty faculty;
     private static final String ADD = "Agregar";
     private static final String CANCEL = "Cancelar";
    
@@ -55,10 +64,10 @@ public class FacultyAddFrame extends JFrame implements ActionListener {
         jlbIdentificador = new JLabel("Identificador ");
         jlbIdentificador.setFont(font);
 
-        jlblNombre = new JLabel("Codigo          ");
+        jlblNombre = new JLabel("Facultad       ");
         jlblNombre.setFont(font);
 
-        jlblCodigo = new JLabel("Identificador ");
+        jlblCodigo = new JLabel("Codigo          ");
         jlblCodigo.setFont(font);
 
         jlblImagen = new JLabel("Ruta Imagen");
@@ -123,6 +132,14 @@ public class FacultyAddFrame extends JFrame implements ActionListener {
 
          if(ADD.equals(comando))
          {
+             faculty = new Faculty(Integer.parseInt(txtIdentificador.getText()),
+                     txtNombre.getText(),txtCodigo.getText(), txtImagen.getText());
+             //image.setRuta(txtImagen.getText());
+             System.out.println(faculty.toString());
+             FacultyInfoPanel.limpiar();
+             FacultyInfoPanel.agregarALista(faculty);
+             FacultyInfoPanel.llenarCombobox();
+             ControllerForFaculty.ControllerForAddFaculty(faculty);
              JOptionPane.showMessageDialog(null,"La Facultad Ha Sido Agregada");
              dispose();
 

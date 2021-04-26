@@ -1,14 +1,16 @@
 package server.persistence.serverSocket;
 
+import client.dto.Dto;
+
 import java.io.Serializable;
 
-public class RequestDataBase implements  Serializable{
+public class RequestDataBase <T extends Dto> implements  Serializable{
 
     private static final long       serialVersionUID = 916582397570182364L;
     
-    private  final Class entity;
-    private  final String query;
-    private  final TypeOperation operation;
+    private   Class entity;
+    private   String query;
+    private   TypeOperation operation;
 
     
     public RequestDataBase(Class entity, String query, TypeOperation operation) {
@@ -16,8 +18,20 @@ public class RequestDataBase implements  Serializable{
         this.query = query;
         this.operation = operation;
     }
-    
-    public  Class getEntity() {
+
+    public void setEntity(Class entity) {
+        this.entity = entity;
+    }
+
+    public void setQuery(String query) {
+        this.query = query;
+    }
+
+    public void setOperation(TypeOperation operation) {
+        this.operation = operation;
+    }
+
+    public  Class<Dto> getEntity() {
         return entity;
     }
 

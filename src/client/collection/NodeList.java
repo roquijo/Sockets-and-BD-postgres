@@ -1,5 +1,8 @@
 package client.collection;
 
+import client.dto.Dto;
+import mvc.controller.ControllerForPlayer;
+
 import java.io.Serializable;
 
 public class NodeList<T> implements Iterator<T>, Serializable {
@@ -30,20 +33,27 @@ public class NodeList<T> implements Iterator<T>, Serializable {
         else if (index  == 0){
            root =  temp.getNext();
         }
-        else if (index  == size){
+        else
+        {
+            boolean eliminado =false;
+            Node<T> actual = root;
+            Node<T> sig = actual.getNext();
 
-            while (temp.getNext() != last){
-                temp.getNext();
+            while(sig != null && !eliminado)
+            {
+                if(sig.getIndex()==index){
+
+                        actual.setNext(sig.getNext());
+                }
+                else
+                {
+                    actual = sig;
+                    sig = actual.getNext();
+                }
             }
-            last = temp;
-        }
-        else{
-            while (temp.getIndex() < index){
-                temp.getNext();
-            }
-            temp.setNext(temp.getNext().getNext());
         }
     }
+    
 
     @Override
     public void push(T data) {

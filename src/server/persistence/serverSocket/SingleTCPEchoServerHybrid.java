@@ -42,20 +42,24 @@ public class SingleTCPEchoServerHybrid extends Thread{
 
     public void run()
     {
+
+        RequestDataBase sql= null;
+
         try
         {
-            RequestDataBase sql= null;
-
+            do{
                 sql = (RequestDataBase) in.readObject();
 
                 System.out.println("Message recived" +" "+sql.toString());
 
                 if(sql.getOperation() != TypeOperation.EXIT) {
 
-                        Entity<Dto> entity = new Entity<>(sql.getEntity());
-                        NodeList<?> nodeList = (NodeList<?>) Operation.doOperation(sql, entity);
-                        out.writeObject( nodeList);
+                    Entity<Dto> entity = new Entity<>(sql.getEntity());
+                    NodeList<?> nodeList = (NodeList<?>) Operation.doOperation(sql, entity);
+                    out.writeObject( nodeList);
                 }
+            }while(sql.getOperation() != TypeOperation.EXIT);
+
 
             System.out.println("Client disconnected...");
         }

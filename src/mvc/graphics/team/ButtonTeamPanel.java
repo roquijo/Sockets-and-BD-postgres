@@ -1,11 +1,9 @@
 package mvc.graphics.team;
 
-import mvc.controller.ControllerBuildObject;
+import client.dto.Team;
 import mvc.controller.ControllerForTeam;
 import mvc.graphics.InterfaceTournament;
-import client.dto.Team;
 import mvc.graphics.addFrame.TeamAddFrame;
-import server.persistence.serverSocket.TypeOperation;
 
 import javax.swing.*;
 import javax.swing.border.CompoundBorder;
@@ -58,7 +56,6 @@ public class ButtonTeamPanel extends JPanel implements ActionListener {
     public void actionPerformed( ActionEvent evento ) {
 
         String comando = evento.getActionCommand( );
-        Team facultyDto = new Team();
 
         if(ADD_TEAM.equals(comando))
         {
@@ -77,7 +74,7 @@ public class ButtonTeamPanel extends JPanel implements ActionListener {
                 ControllerForTeam.ControllerForDeleteTeam(TeamInfoPanel.getNameForDelete());
                 JOptionPane.showMessageDialog(this, "Equipo eliminado");
                 TeamInfoPanel.limpiar();
-                TeamInfoPanel.eliminarElemento(TeamInfoPanel.getNameForDelete());
+                TeamInfoPanel.actualizarLista();
                 TeamInfoPanel.llenarCombobox();
 
                  

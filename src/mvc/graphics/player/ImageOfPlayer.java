@@ -33,7 +33,7 @@ public class ImageOfPlayer extends JPanel {
             add(etiquetaImagen);
 
         }
-
+/*
     public  String getRuta() {
         return ruta;
     }
@@ -49,6 +49,8 @@ public class ImageOfPlayer extends JPanel {
     public void setRuta(String ruta) {
         this.ruta = ruta;
     }
+
+ */
 
 
 }

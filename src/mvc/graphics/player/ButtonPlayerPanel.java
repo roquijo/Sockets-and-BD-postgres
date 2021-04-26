@@ -67,6 +67,20 @@ public class ButtonPlayerPanel extends JPanel implements ActionListener {
             {
                 ControllerForPlayer.ControllerForDeletePlayer(PlayerInfoPanel.getIdForDelete());
                 JOptionPane.showMessageDialog(this, "Borrado");
+                PlayerInfoPanel.actualizarLista();
+                PlayerInfoPanel.limpiar();
+                PlayerInfoPanel.llenarCombobox();
+
+            }
+        }
+        else if( MODIFY_PLAYER.equals( comando ) )
+        {
+            int resp = JOptionPane.showConfirmDialog(null, "Esta Seguro Que Desea Modificar el jugador?","Modificar Jugador", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+
+            if(resp == JOptionPane.YES_OPTION)
+            {
+               // ControllerForPlayer.ControllerForUpdatePlayer(player);
+                JOptionPane.showMessageDialog(this, "Jugador Actualizado");
                 PlayerInfoPanel.eliminarElemento(PlayerInfoPanel.getIdForDelete());
                 PlayerInfoPanel.limpiar();
                 PlayerInfoPanel.llenarCombobox();
