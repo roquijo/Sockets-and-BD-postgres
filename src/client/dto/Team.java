@@ -52,7 +52,7 @@ public class Team implements Dto, Serializable {
     @Override
     public String delete() {
 
-        return "DELETE FROM team WHERE name = " + name;
+        return "DELETE FROM team WHERE name = '" + name+"'";
     }
 
     @Override
