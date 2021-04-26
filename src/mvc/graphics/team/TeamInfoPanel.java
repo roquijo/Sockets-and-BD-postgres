@@ -111,7 +111,7 @@ public class TeamInfoPanel extends JPanel implements ActionListener {
        return lista =  ControllerForTeam.ControllerForReadTeam();
     }
 
-/*
+
     public  static  void eliminarElemento(String name)
     {
         for (int i = 0; i < lista.getSize(); i++) {
@@ -121,7 +121,7 @@ public class TeamInfoPanel extends JPanel implements ActionListener {
         }
     }
 
- */
+
 
     public static void actualizarInfo (String name) {
 

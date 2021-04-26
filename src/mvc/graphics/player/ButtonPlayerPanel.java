@@ -20,6 +20,8 @@ public class ButtonPlayerPanel extends JPanel implements ActionListener {
 
     private static final String MODIFY_PLAYER = "ModificarJugador";
 
+    static Player player;
+
     private PlayerAddFrame addFrame;
 
     private JButton addPlayer;
@@ -78,8 +80,10 @@ public class ButtonPlayerPanel extends JPanel implements ActionListener {
             int resp = JOptionPane.showConfirmDialog(null, "Esta Seguro Que Desea Modificar el jugador?","Modificar Jugador", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
 
             if(resp == JOptionPane.YES_OPTION)
+
             {
-               // ControllerForPlayer.ControllerForUpdatePlayer(player);
+                player = new Player();
+                ControllerForPlayer.ControllerForUpdatePlayer(player);
                 JOptionPane.showMessageDialog(this, "Jugador Actualizado");
                 PlayerInfoPanel.eliminarElemento(PlayerInfoPanel.getIdForDelete());
                 PlayerInfoPanel.limpiar();

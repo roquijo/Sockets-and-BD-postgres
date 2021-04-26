@@ -73,6 +73,8 @@ public class ButtonTeamPanel extends JPanel implements ActionListener {
                 
                 ControllerForTeam.ControllerForDeleteTeam(TeamInfoPanel.getNameForDelete());
                 JOptionPane.showMessageDialog(this, "Equipo eliminado");
+                //TeamIzarLista();
+                TeamInfoPanel.eliminarElemento(TeamInfoPanel.getNameForDelete());
                 TeamInfoPanel.limpiar();
                 TeamInfoPanel.actualizarLista();
                 TeamInfoPanel.llenarCombobox();
