@@ -133,7 +133,7 @@ public class FacultyInfoPanel extends JPanel implements ActionListener {
         }
         ControllerForFaculty.ControllerForUpdateFaculty(facultyM);
     }
-    ///
+    ///Comentario
 
     public static NodeList<Faculty> actualizarLista(){
         return lista =  ControllerForFaculty.ControllerForReadFaculty();
