@@ -4,7 +4,7 @@ package mvc.controller;
 import client.collection.NodeList;
 import client.dao.FacultyDao;
 import client.dto.Faculty;
-import server.dto.FacultyDto;
+import client.dto.Player;
 import server.persistence.serverSocket.TypeOperation;
 
 
@@ -30,9 +30,13 @@ public class ControllerForFaculty {
 
      }
 
-     public static void ControllerForUpdateFaculty(Faculty facultyDto){
-         FacultyDao facultyDao = new FacultyDao();
-         facultyDao.update(facultyDto);
+     public static void ControllerForUpdateFaculty(Faculty faculty){
+
+
+         ControllerBuildObject.crearObjeto(Player.class, faculty.update(), TypeOperation.UPDATE);
+
+         ControllerForClient.getInstance(ControllerBuildObject.getObjetoCreado());
+         ControllerForClient.runClient();
 
 
      }

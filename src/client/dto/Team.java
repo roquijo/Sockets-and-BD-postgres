@@ -41,10 +41,9 @@ public class Team implements Dto, Serializable {
     @Override
     public String update() {
 
-        String sql = "UPDATE public.team SET name= '"+name
-                +"', captain='" + captain
-                +"', image_team= '"+ imageTeam +
-                "' WHERE id_of_faculty = " + idFaculty;
+        String sql = "UPDATE public.team SET captain= '"+  captain
+                +
+                "' WHERE name = '" + name + "'";
         System.out.println(sql);
         return sql;
     }

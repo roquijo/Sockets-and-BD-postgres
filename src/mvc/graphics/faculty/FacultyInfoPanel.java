@@ -3,8 +3,10 @@ package mvc.graphics.faculty;
 import client.collection.NodeList;
 import client.dto.Faculty;
 import client.dto.Player;
+import client.dto.Team;
 import mvc.controller.ControllerForFaculty;
 import mvc.controller.ControllerForPlayer;
+import mvc.controller.ControllerForTeam;
 import server.dto.FacultyDto;
 
 import javax.swing.*;
@@ -120,6 +122,16 @@ public class FacultyInfoPanel extends JPanel implements ActionListener {
 
 
         }
+    }
+    public static void actualizarFacultad()
+    {
+        Faculty facultyM = new Faculty(Integer.parseInt(txtIdentificador.getText()),comboFacultades.getSelectedItem().toString(),txtCodigo.getText(), "image");
+        for (int i = 0; i < lista.getSize(); i++) {
+            if(lista.pop(i).getName().equals(comboFacultades.getSelectedItem().toString())){
+                lista.pop(i).setCode(txtCodigo.getText());
+            }
+        }
+        ControllerForFaculty.ControllerForUpdateFaculty(facultyM);
     }
 
     public static NodeList<Faculty> actualizarLista(){

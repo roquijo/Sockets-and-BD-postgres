@@ -48,10 +48,9 @@ public class Faculty implements Dto, Serializable {
     @Override
     public String update() {
 
-        String sql = "UPDATE public.faculty SET name= '"+ name
-                +"', code='"+ code
-                +"', image_faculty='"+imageFaculty +
-                "' WHERE id_faculty = " + idFaculty;
+        String sql = "UPDATE public.faculty SET code= '"+ code
+                 +
+                "' WHERE id_faculty = '" + idFaculty + "'";
         System.out.println(sql);
         return sql;
     }

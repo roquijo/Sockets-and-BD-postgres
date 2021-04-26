@@ -1,7 +1,9 @@
 package mvc.graphics.team;
 
 import client.collection.NodeList;
+import client.dto.Player;
 import client.dto.Team;
+import mvc.controller.ControllerForPlayer;
 import mvc.controller.ControllerForTeam;
 
 import javax.swing.*;
@@ -87,7 +89,7 @@ public class TeamInfoPanel extends JPanel implements ActionListener {
         comboTeam.removeAllItems();
         txtIdentificador.setText("");
         txtCapitan.setText("");
-        txtEdad.setText("");
+
     }
 
     @Override
@@ -105,9 +107,17 @@ public class TeamInfoPanel extends JPanel implements ActionListener {
         }
     }
 
-    public  static  void actualizarLista(Team teamDto) {
+    public  static  void actualizarLista(Team teamDto) {lista.push(teamDto);}
 
-        lista.push(teamDto);
+    public static void actualizarEquipo()
+    {
+        Team teamM = new Team(comboTeam.getSelectedItem().toString(), txtCapitan.getText(), "Image", Integer.parseInt(txtIdentificador.getText()));
+        for (int i = 0; i < lista.getSize(); i++) {
+            if(lista.pop(i).getName().equals(comboTeam.getSelectedItem().toString())){
+                lista.pop(i).setCaptain(txtCapitan.getText());
+            }
+        }
+        ControllerForTeam.ControllerForUpdateTeam(teamM);
     }
 
     public static NodeList<Team> actualizarLista(){

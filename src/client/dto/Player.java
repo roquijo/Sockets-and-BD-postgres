@@ -54,8 +54,7 @@ public class Player implements Dto, Serializable {
 
         String sql = "UPDATE public.player SET name= '"+name
                 +"', position='" + position
-                +"', age='" + age
-                +"', image_player= '"+imagePlayer +
+                +"', age='" + age +
                 "' WHERE id_player = " + idPlayer;
         return sql;
     }

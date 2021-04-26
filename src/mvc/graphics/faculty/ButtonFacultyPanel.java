@@ -3,6 +3,7 @@ package mvc.graphics.faculty;
 import client.dto.Faculty;
 import mvc.controller.ControllerForFaculty;
 import mvc.graphics.addFrame.FacultyAddFrame;
+import mvc.graphics.player.PlayerInfoPanel;
 
 
 import javax.swing.*;
@@ -73,6 +74,21 @@ public class ButtonFacultyPanel extends JPanel implements ActionListener {
                 FacultyInfoPanel.limpiar();
                 FacultyInfoPanel.llenarCombobox();
             }
+        }
+        else if(MODIFY_FACULTY.equals(comando)){
+            int resp = JOptionPane.showConfirmDialog(null, "Esta Seguro Que Desea Modificar el Facultad?","Modificar Jugador", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+
+            if(resp == JOptionPane.YES_OPTION)
+
+            {
+
+                FacultyInfoPanel.actualizarFacultad();
+                JOptionPane.showMessageDialog(this, "Facultad Actualizado");
+                FacultyInfoPanel.limpiar();
+                FacultyInfoPanel.llenarCombobox();
+
+            }
+
         }
 
     }

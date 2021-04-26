@@ -24,6 +24,8 @@ public class ButtonPlayerPanel extends JPanel implements ActionListener {
 
     private PlayerAddFrame addFrame;
 
+    private PlayerInfoPanel playerInfo;
+
     private JButton addPlayer;
 
     private JButton deletePlayer;
@@ -82,10 +84,9 @@ public class ButtonPlayerPanel extends JPanel implements ActionListener {
             if(resp == JOptionPane.YES_OPTION)
 
             {
-                player = new Player();
-                ControllerForPlayer.ControllerForUpdatePlayer(player);
+
+                PlayerInfoPanel.actualizarJugador();
                 JOptionPane.showMessageDialog(this, "Jugador Actualizado");
-                PlayerInfoPanel.eliminarElemento(PlayerInfoPanel.getIdForDelete());
                 PlayerInfoPanel.limpiar();
                 PlayerInfoPanel.llenarCombobox();
 

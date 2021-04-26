@@ -7,6 +7,7 @@ import client.dto.Faculty;
 import client.dto.Player;
 import mvc.graphics.player.PlayerInfoPanel;
 import server.dto.Dto;
+import server.dto.PlayerDto;
 import server.persistence.serverSocket.TypeOperation;
 
 

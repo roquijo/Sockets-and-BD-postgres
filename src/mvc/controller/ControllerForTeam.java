@@ -33,11 +33,11 @@ public class ControllerForTeam {
 
     }
 
-    public static void ControllerForUpdateTeam(){
+    public static void ControllerForUpdateTeam(Team team){
 
-        Team team = new Team();
+
         
-        ControllerBuildObject.crearObjeto(Team.class,team.update(), TypeOperation.UPDATE);
+        ControllerBuildObject.crearObjeto(Team.class, team.update(), TypeOperation.UPDATE);
 
         ControllerForClient.getInstance(ControllerBuildObject.getObjetoCreado());
         ControllerForClient.runClient();
