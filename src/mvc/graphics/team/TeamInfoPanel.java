@@ -85,6 +85,9 @@ public class TeamInfoPanel extends JPanel implements ActionListener {
 
     public static void limpiar(){
         comboTeam.removeAllItems();
+        txtIdentificador.setText("");
+        txtCapitan.setText("");
+        txtEdad.setText("");
     }
 
     @Override
