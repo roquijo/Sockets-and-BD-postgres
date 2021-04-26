@@ -3,6 +3,8 @@ package mvc.graphics.player;
 import client.collection.NodeList;
 import client.dto.Player;
 import mvc.controller.ControllerForPlayer;
+import mvc.graphics.faculty.FacultyInfoPanel;
+import mvc.graphics.team.TeamInfoPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -86,9 +88,12 @@ public class PlayerInfoPanel extends JPanel implements ActionListener {
 
     public static void llenarCombobox() {
 
-        if(!lista.isEmpty()){
+        if(comboJugadores != null){
+            limpiar();
             for (int i = 0; i < lista.getSize(); i++) {
-                comboJugadores.addItem(lista.pop(i).getName());
+                if(lista.pop(i).getNameOfTeam().equals(TeamInfoPanel.getNameOfTeam())){
+                    comboJugadores.addItem(lista.pop(i).getName());
+                }
             }
         }
     }

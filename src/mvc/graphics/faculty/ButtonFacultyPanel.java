@@ -3,7 +3,6 @@ package mvc.graphics.faculty;
 import client.dto.Faculty;
 import mvc.controller.ControllerForFaculty;
 import mvc.graphics.addFrame.FacultyAddFrame;
-import mvc.graphics.player.PlayerInfoPanel;
 
 
 import javax.swing.*;
@@ -68,7 +67,7 @@ public class ButtonFacultyPanel extends JPanel implements ActionListener {
 
             if(resp == JOptionPane.YES_OPTION)
             {
-                ControllerForFaculty.ControllerForDeleteFaculty(FacultyInfoPanel.getIdForDelete());
+                ControllerForFaculty.ControllerForDeleteFaculty(FacultyInfoPanel.getId());
                 JOptionPane.showMessageDialog(this, "Borrada");
                 FacultyInfoPanel.actualizarLista();
                 FacultyInfoPanel.limpiar();

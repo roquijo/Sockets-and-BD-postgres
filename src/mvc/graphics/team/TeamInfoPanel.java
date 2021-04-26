@@ -5,6 +5,8 @@ import client.dto.Player;
 import client.dto.Team;
 import mvc.controller.ControllerForPlayer;
 import mvc.controller.ControllerForTeam;
+import mvc.graphics.faculty.FacultyInfoPanel;
+import mvc.graphics.player.PlayerInfoPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -23,7 +25,6 @@ public class TeamInfoPanel extends JPanel implements ActionListener {
 
     private static JComboBox comboTeam;
     private static JTextField txtCapitan;
-    private static JTextField txtEdad;
     private static JTextField txtIdentificador;
 
     private static NodeList<Team> lista =  ControllerForTeam.ControllerForReadTeam();
@@ -80,9 +81,15 @@ public class TeamInfoPanel extends JPanel implements ActionListener {
 
     public static void llenarCombobox() {
 
-        for (int i = 0; i < lista.getSize(); i++) {
-            comboTeam.addItem(lista.pop(i).getName());
+        if(comboTeam != null){
+            limpiar();
+            for (int i = 0; i < lista.getSize(); i++) {
+                if(lista.pop(i).getIdFaculty() == FacultyInfoPanel.getId()){
+                    comboTeam.addItem(lista.pop(i).getName());
+                }
+            }
         }
+
     }
 
     public static void limpiar(){
@@ -103,11 +110,14 @@ public class TeamInfoPanel extends JPanel implements ActionListener {
             {
                 String name = comboTeam.getSelectedItem().toString();
                 actualizarInfo(name);
+                PlayerInfoPanel.llenarCombobox();
             }
         }
     }
 
-    public  static  void actualizarLista(Team teamDto) {lista.push(teamDto);}
+    public  static  void actualizarLista(Team teamDto) {
+        lista.push(teamDto);
+    }
 
     public static void actualizarEquipo()
     {
@@ -124,15 +134,6 @@ public class TeamInfoPanel extends JPanel implements ActionListener {
        return lista =  ControllerForTeam.ControllerForReadTeam();
     }
 
-    public  static  void eliminarElemento(String name)
-    {
-        for (int i = 0; i < lista.getSize(); i++) {
-            if(lista.pop(i).getName().equals(name)){
-                lista.remove(i);
-            }
-        }
-    }
-
     public static void actualizarInfo (String name) {
         boolean encontro = false;
         for (int i = 0; i < lista.getSize() && !encontro; i++) {
@@ -144,7 +145,7 @@ public class TeamInfoPanel extends JPanel implements ActionListener {
         }
     }
 
-    public static String getNameForDelete(){
+    public static String getNameOfTeam(){
          return comboTeam.getSelectedItem().toString();
     }
 }

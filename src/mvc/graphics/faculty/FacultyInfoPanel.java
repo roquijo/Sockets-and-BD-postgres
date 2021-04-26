@@ -7,6 +7,7 @@ import client.dto.Team;
 import mvc.controller.ControllerForFaculty;
 import mvc.controller.ControllerForPlayer;
 import mvc.controller.ControllerForTeam;
+import mvc.graphics.team.TeamInfoPanel;
 import server.dto.FacultyDto;
 
 import javax.swing.*;
@@ -118,9 +119,8 @@ public class FacultyInfoPanel extends JPanel implements ActionListener {
             {
                 String name = comboFacultades.getSelectedItem().toString();
                 actualizarInfo(name);
+                TeamInfoPanel.llenarCombobox();
             }
-
-
         }
     }
     public static void actualizarFacultad()
@@ -151,7 +151,7 @@ public class FacultyInfoPanel extends JPanel implements ActionListener {
         }
     }
 
-    public static int getIdForDelete(){
+    public static int getId(){
         return Integer.parseInt(txtIdentificador.getText());
     }
 }
