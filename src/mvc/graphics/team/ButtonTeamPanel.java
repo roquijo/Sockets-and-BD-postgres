@@ -60,8 +60,6 @@ public class ButtonTeamPanel extends JPanel implements ActionListener {
         {
              addFrame = new TeamAddFrame();
              addFrame.setVisible(true);
-
-
         }
         else if( DELETE_TEAM.equals( comando ) )
         {
@@ -69,19 +67,27 @@ public class ButtonTeamPanel extends JPanel implements ActionListener {
 
             if(resp == JOptionPane.YES_OPTION)
             {
-                
                 ControllerForTeam.ControllerForDeleteTeam(TeamInfoPanel.getNameForDelete());
                 JOptionPane.showMessageDialog(this, "Equipo eliminado");
-                //TeamIzarLista();
                 TeamInfoPanel.eliminarElemento(TeamInfoPanel.getNameForDelete());
                 TeamInfoPanel.limpiar();
                 TeamInfoPanel.actualizarLista();
                 TeamInfoPanel.llenarCombobox();
-
-                 
-
-
             }
+        }
+        else if(MODIFY_TEAM.equals(comando))
+        {
+            int resp = JOptionPane.showConfirmDialog(null, "Esta Seguro Que Desea Modificar El Equipo?","Modificar Equipo", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+
+            if(resp == JOptionPane.YES_OPTION)
+
+            {
+                TeamInfoPanel.actualizarEquipo();
+                JOptionPane.showMessageDialog(this, "Equipo Actualizado");
+                TeamInfoPanel.limpiar();
+                TeamInfoPanel.llenarCombobox();
+            }
+
         }
     }
 }

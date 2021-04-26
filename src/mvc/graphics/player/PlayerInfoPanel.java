@@ -119,8 +119,22 @@ public class PlayerInfoPanel extends JPanel implements ActionListener {
         }
     }
 
-    public  static  void agregarALista(Player playerDto) {
+    public static void actualizarJugador()
+    {
+        Player playerM = new Player(Integer.parseInt(txtIdentificacion.getText()), comboJugadores.getSelectedItem().toString(),
+                txtPosicion.getText(), Integer.parseInt(txtEdad.getText()),"team", "image");
+        for (int i = 0; i < lista.getSize(); i++) {
+            if(lista.pop(i).getName().equals(comboJugadores.getSelectedItem().toString())){
+                lista.pop(i).setAge(Integer.parseInt(txtEdad.getText()));
+                lista.pop(i).setPosition(txtPosicion.getText());
 
+
+            }
+        }
+        ControllerForPlayer.ControllerForUpdatePlayer(playerM);
+    }
+
+    public  static  void agregarALista(Player playerDto) {
         lista.push(playerDto);
     }
 
@@ -134,8 +148,6 @@ public class PlayerInfoPanel extends JPanel implements ActionListener {
     }
 
     public static void actualizarInfo (String name) {
-
-
         boolean encontro = false;
         for (int i = 0; i < lista.getSize() && !encontro; i++) {
             if(name.equals(lista.pop(i).getName())){

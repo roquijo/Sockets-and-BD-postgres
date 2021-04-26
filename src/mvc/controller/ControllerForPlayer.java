@@ -42,8 +42,6 @@ public class ControllerForPlayer {
 
         ControllerForClient.getInstance(ControllerBuildObject.getObjetoCreado());
         ControllerForClient.runClient();
-
-
     }
 
     public static NodeList<Player> ControllerForReadPlayer() {

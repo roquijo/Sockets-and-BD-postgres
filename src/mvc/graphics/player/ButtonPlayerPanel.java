@@ -74,7 +74,6 @@ public class ButtonPlayerPanel extends JPanel implements ActionListener {
                 PlayerInfoPanel.actualizarLista();
                 PlayerInfoPanel.limpiar();
                 PlayerInfoPanel.llenarCombobox();
-
             }
         }
         else if( MODIFY_PLAYER.equals( comando ) )
